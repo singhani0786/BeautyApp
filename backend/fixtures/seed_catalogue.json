@@ -1,0 +1,845 @@
+[
+  {
+    "id": "maybelline-fit-me-foundation",
+    "title": "Maybelline New York Fit Me Matte+Poreless Liquid Foundation",
+    "brand": "Maybelline New York",
+    "category": "foundation",
+    "description": "Oil-free matte liquid foundation formulated with clay and micro-powders to refine pores and control shine.",
+    "skin_tones": ["fair", "light", "medium", "tan", "deep"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["oily", "combination", "normal"],
+    "finish": "matte",
+    "coverage": "medium",
+    "rating": 4.4,
+    "review_count": 48200,
+    "variants": [
+      {
+        "id": "fitme-115-ivory",
+        "shade_name": "115 Ivory",
+        "shade_code": "115",
+        "hex_color": "#F3D6B5",
+        "undertone": "cool",
+        "depth_level": "fair",
+        "sku": "MAY-FITME-115",
+        "image_url": "https://m.media-amazon.com/images/I/61k2YwYlqRL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 649.0,
+            "current_price": 454.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B073X2T49M"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 649.0,
+            "current_price": 487.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-liquid-foundation/p/132473"
+          }
+        ]
+      },
+      {
+        "id": "fitme-128-warm-nude",
+        "shade_name": "128 Warm Nude",
+        "shade_code": "128",
+        "hex_color": "#E6BE94",
+        "undertone": "warm",
+        "depth_level": "light",
+        "sku": "MAY-FITME-128",
+        "image_url": "https://m.media-amazon.com/images/I/61o4u4O6TUL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 649.0,
+            "current_price": 454.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B073X1G66K"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 649.0,
+            "current_price": 487.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-liquid-foundation/p/132473?skuId=132480"
+          }
+        ]
+      },
+      {
+        "id": "fitme-220-natural-beige",
+        "shade_name": "220 Natural Beige",
+        "shade_code": "220",
+        "hex_color": "#DFA975",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "MAY-FITME-220",
+        "image_url": "https://m.media-amazon.com/images/I/61k2YwYlqRL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 649.0,
+            "current_price": 454.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B073X2Q1R3"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 649.0,
+            "current_price": 487.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-liquid-foundation/p/132473?skuId=132483"
+          }
+        ]
+      },
+      {
+        "id": "fitme-310-sun-beige",
+        "shade_name": "310 Sun Beige",
+        "shade_code": "310",
+        "hex_color": "#C98E56",
+        "undertone": "warm",
+        "depth_level": "tan",
+        "sku": "MAY-FITME-310",
+        "image_url": "https://m.media-amazon.com/images/I/61o4u4O6TUL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 649.0,
+            "current_price": 479.0,
+            "discount_percent": 26.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B073X2Z1K2"
+          }
+        ]
+      },
+      {
+        "id": "fitme-332-golden-caramel",
+        "shade_name": "332 Golden Caramel",
+        "shade_code": "332",
+        "hex_color": "#A46636",
+        "undertone": "neutral",
+        "depth_level": "deep",
+        "sku": "MAY-FITME-332",
+        "image_url": "https://m.media-amazon.com/images/I/61k2YwYlqRL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 649.0,
+            "current_price": 479.0,
+            "discount_percent": 26.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07W8W118D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mac-studio-fix-foundation",
+    "title": "M.A.C Studio Fix Fluid SPF 15 24HR Matte Foundation",
+    "brand": "M.A.C",
+    "category": "foundation",
+    "description": "Iconic professional 24-hour buildable matte finish foundation with broad spectrum sun protection.",
+    "skin_tones": ["fair", "light", "medium", "tan", "deep"],
+    "undertones": ["warm", "cool", "neutral", "olive"],
+    "skin_types": ["oily", "combination", "normal"],
+    "finish": "matte",
+    "coverage": "full",
+    "rating": 4.7,
+    "review_count": 14200,
+    "variants": [
+      {
+        "id": "mac-nc25",
+        "shade_name": "NC25 (Golden Olive Fair-Light)",
+        "shade_code": "NC25",
+        "hex_color": "#E5B98A",
+        "undertone": "olive",
+        "depth_level": "light",
+        "sku": "MAC-SFF-NC25",
+        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 3900.0,
+            "current_price": 3510.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89052"
+          },
+          {
+            "retailer": "amazon_in",
+            "mrp": 3900.0,
+            "current_price": 3700.0,
+            "discount_percent": 5.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B004W8XU9A"
+          }
+        ]
+      },
+      {
+        "id": "mac-nc40",
+        "shade_name": "NC40 (Golden Olive Medium)",
+        "shade_code": "NC40",
+        "hex_color": "#D19C64",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "MAC-SFF-NC40",
+        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 3900.0,
+            "current_price": 3510.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89059"
+          }
+        ]
+      },
+      {
+        "id": "mac-nc42",
+        "shade_name": "NC42 (Warm Golden Tan)",
+        "shade_code": "NC42",
+        "hex_color": "#BE864F",
+        "undertone": "warm",
+        "depth_level": "tan",
+        "sku": "MAC-SFF-NC42",
+        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 3900.0,
+            "current_price": 3510.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89060"
+          }
+        ]
+      },
+      {
+        "id": "mac-nw45",
+        "shade_name": "NW45 (Rich Mahogany Deep)",
+        "shade_code": "NW45",
+        "hex_color": "#874D28",
+        "undertone": "cool",
+        "depth_level": "deep",
+        "sku": "MAC-SFF-NW45",
+        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 3900.0,
+            "current_price": 3510.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89073"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay-beauty-hydrating-foundation",
+    "title": "Kay Beauty Hydrating Foundation with Hyaluronic Acid",
+    "brand": "Kay Beauty",
+    "category": "foundation",
+    "description": "Enriched with Hyaluronic Acid & Chamomile oil, gives a natural radiant dewy finish with medium buildable coverage tailored for Indian complexions.",
+    "skin_tones": ["light", "medium", "tan", "deep"],
+    "undertones": ["warm", "cool", "neutral", "olive"],
+    "skin_types": ["dry", "combination", "normal", "sensitive"],
+    "finish": "dewy",
+    "coverage": "medium",
+    "rating": 4.5,
+    "review_count": 21300,
+    "variants": [
+      {
+        "id": "kay-120y-medium-warm",
+        "shade_name": "120Y Medium Warm",
+        "shade_code": "120Y",
+        "hex_color": "#DFAB79",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "KAY-FND-120Y",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/f/ff326e68904320707742_1.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 1299.0,
+            "current_price": 1039.0,
+            "discount_percent": 20.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1063625?skuId=1063632"
+          }
+        ]
+      },
+      {
+        "id": "kay-130p-medium-cool",
+        "shade_name": "130P Medium Cool",
+        "shade_code": "130P",
+        "hex_color": "#D99F72",
+        "undertone": "cool",
+        "depth_level": "medium",
+        "sku": "KAY-FND-130P",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/f/ff326e68904320707742_1.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 1299.0,
+            "current_price": 1039.0,
+            "discount_percent": 20.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1063625?skuId=1063635"
+          }
+        ]
+      },
+      {
+        "id": "kay-140n-tan-neutral",
+        "shade_name": "140N Tan Neutral",
+        "shade_code": "140N",
+        "hex_color": "#C48A54",
+        "undertone": "neutral",
+        "depth_level": "tan",
+        "sku": "KAY-FND-140N",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/f/ff326e68904320707742_1.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 1299.0,
+            "current_price": 1104.0,
+            "discount_percent": 15.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1063625?skuId=1063638"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "loreal-infallible-foundation",
+    "title": "L'Oreal Paris Infallible 32H Fresh Wear Liquid Foundation",
+    "brand": "L'Oreal Paris",
+    "category": "foundation",
+    "description": "Breathable longwear formula with SPF 25 and Vitamin C, waterproof and sweat-resistant for 32 hours.",
+    "skin_tones": ["light", "medium", "tan"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["oily", "combination", "normal"],
+    "finish": "satin",
+    "coverage": "medium",
+    "rating": 4.5,
+    "review_count": 16900,
+    "variants": [
+      {
+        "id": "loreal-200-golden-sand",
+        "shade_name": "200 Golden Sand",
+        "shade_code": "200",
+        "hex_color": "#DCA776",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "LOR-INF-200",
+        "image_url": "https://m.media-amazon.com/images/I/61NlUo0V2EL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 1299.0,
+            "current_price": 974.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07RLL2BHR"
+          }
+        ]
+      },
+      {
+        "id": "loreal-250-radiant-sand",
+        "shade_name": "250 Radiant Sand",
+        "shade_code": "250",
+        "hex_color": "#CF925F",
+        "undertone": "neutral",
+        "depth_level": "medium",
+        "sku": "LOR-INF-250",
+        "image_url": "https://m.media-amazon.com/images/I/61NlUo0V2EL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 1299.0,
+            "current_price": 999.0,
+            "discount_percent": 23.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07RNK5SZ1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lakme-9to5-primer-matte-foundation",
+    "title": "Lakme 9 to 5 Primer + Matte Perfect Cover Foundation",
+    "brand": "Lakme",
+    "category": "foundation",
+    "description": "Built-in primer with SPF 20 provides smooth, crease-less matte coverage for all-day office wear.",
+    "skin_tones": ["light", "medium", "tan"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["oily", "combination", "normal"],
+    "finish": "matte",
+    "coverage": "medium",
+    "rating": 4.2,
+    "review_count": 28400,
+    "variants": [
+      {
+        "id": "lakme-w160-warm-beige",
+        "shade_name": "W160 Warm Beige",
+        "shade_code": "W160",
+        "hex_color": "#E3AF80",
+        "undertone": "warm",
+        "depth_level": "light",
+        "sku": "LAK-9TO5-W160",
+        "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 525.0,
+            "current_price": 367.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07YZ3M91J"
+          }
+        ]
+      },
+      {
+        "id": "lakme-n220-natural-medium",
+        "shade_name": "N220 Natural Medium",
+        "shade_code": "N220",
+        "hex_color": "#D59D69",
+        "undertone": "neutral",
+        "depth_level": "medium",
+        "sku": "LAK-9TO5-N220",
+        "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 525.0,
+            "current_price": 367.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07YZ47XZ5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maybelline-age-rewind-concealer",
+    "title": "Maybelline Instant Age Rewind Multi-Use Eraser Dark Circles Concealer",
+    "brand": "Maybelline New York",
+    "category": "concealer",
+    "description": "Micro-corrector cushion applicator with Goji berry & Haloxyl to instantly erase dark circles and fine lines.",
+    "skin_tones": ["fair", "light", "medium", "tan"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["dry", "combination", "normal", "sensitive"],
+    "finish": "natural",
+    "coverage": "full",
+    "rating": 4.4,
+    "review_count": 39000,
+    "variants": [
+      {
+        "id": "rewind-120-light",
+        "shade_name": "120 Light",
+        "shade_code": "120",
+        "hex_color": "#EFCEAA",
+        "undertone": "neutral",
+        "depth_level": "light",
+        "sku": "MAY-AR-120",
+        "image_url": "https://m.media-amazon.com/images/I/61I2lKzL7RL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 729.0,
+            "current_price": 546.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B004Y9G9BK"
+          }
+        ]
+      },
+      {
+        "id": "rewind-130-medium",
+        "shade_name": "130 Medium",
+        "shade_code": "130",
+        "hex_color": "#DFAB79",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "MAY-AR-130",
+        "image_url": "https://m.media-amazon.com/images/I/61I2lKzL7RL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 729.0,
+            "current_price": 546.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B004Y9G9G0"
+          }
+        ]
+      },
+      {
+        "id": "rewind-140-honey",
+        "shade_name": "140 Honey",
+        "shade_code": "140",
+        "hex_color": "#CD8F58",
+        "undertone": "warm",
+        "depth_level": "tan",
+        "sku": "MAY-AR-140",
+        "image_url": "https://m.media-amazon.com/images/I/61I2lKzL7RL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 729.0,
+            "current_price": 546.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B004Y9G9HI"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "swiss-beauty-liquid-concealer",
+    "title": "Swiss Beauty Liquid Light Weight Concealer",
+    "brand": "Swiss Beauty",
+    "category": "concealer",
+    "description": "Ultra-affordable, blendable liquid concealer with luminous satin finish for blemishes and dark spots.",
+    "skin_tones": ["fair", "light", "medium", "tan"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["dry", "combination", "oily", "normal"],
+    "finish": "satin",
+    "coverage": "medium",
+    "rating": 4.2,
+    "review_count": 31000,
+    "variants": [
+      {
+        "id": "swiss-02-sand-sable",
+        "shade_name": "02 Sand Sable",
+        "shade_code": "02",
+        "hex_color": "#E6B887",
+        "undertone": "neutral",
+        "depth_level": "light",
+        "sku": "SWISS-CON-02",
+        "image_url": "https://m.media-amazon.com/images/I/51H9N2XpCIL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 249.0,
+            "current_price": 199.0,
+            "discount_percent": 20.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07DFCGZ5N"
+          }
+        ]
+      },
+      {
+        "id": "swiss-04-medium-beige",
+        "shade_name": "04 Medium Beige",
+        "shade_code": "04",
+        "hex_color": "#D39F6E",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "SWISS-CON-04",
+        "image_url": "https://m.media-amazon.com/images/I/51H9N2XpCIL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 249.0,
+            "current_price": 199.0,
+            "discount_percent": 20.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07DFD2N6B"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mac-matte-lipstick",
+    "title": "M.A.C Matte Lipstick",
+    "brand": "M.A.C",
+    "category": "lipstick",
+    "description": "Richly pigmented creamy matte formula that delivers intense color payoff without feathering.",
+    "skin_tones": ["fair", "light", "medium", "tan", "deep"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["dry", "combination", "normal"],
+    "finish": "matte",
+    "coverage": "full",
+    "rating": 4.6,
+    "review_count": 18500,
+    "variants": [
+      {
+        "id": "mac-ruby-woo",
+        "shade_name": "Ruby Woo (Vivid Blue-Red)",
+        "shade_code": "RUBY-WOO",
+        "hex_color": "#9E1321",
+        "undertone": "cool",
+        "depth_level": "medium",
+        "sku": "MAC-LIP-RW",
+        "image_url": "https://m.media-amazon.com/images/I/51E4h774lUL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 2300.0,
+            "current_price": 2070.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/89004?skuId=89012"
+          }
+        ]
+      },
+      {
+        "id": "mac-velvet-teddy",
+        "shade_name": "Velvet Teddy (Deep-Tone Beige)",
+        "shade_code": "VELVET-TEDDY",
+        "hex_color": "#B57662",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "MAC-LIP-VT",
+        "image_url": "https://m.media-amazon.com/images/I/51E4h774lUL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 2300.0,
+            "current_price": 2070.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/89004?skuId=89014"
+          }
+        ]
+      },
+      {
+        "id": "mac-chili",
+        "shade_name": "Chili (Brownish Orange-Red)",
+        "shade_code": "CHILI",
+        "hex_color": "#A43929",
+        "undertone": "warm",
+        "depth_level": "tan",
+        "sku": "MAC-LIP-CHILI",
+        "image_url": "https://m.media-amazon.com/images/I/51E4h774lUL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "nykaa",
+            "mrp": 2300.0,
+            "current_price": 2070.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/89004?skuId=89008"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maybelline-creamy-matte-lipstick",
+    "title": "Maybelline New York Color Sensational Creamy Matte Lipstick",
+    "brand": "Maybelline New York",
+    "category": "lipstick",
+    "description": "Infused with nourishing shea butter for comfortable, non-drying bold matte lip color.",
+    "skin_tones": ["light", "medium", "tan", "deep"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["dry", "combination", "normal"],
+    "finish": "matte",
+    "coverage": "full",
+    "rating": 4.3,
+    "review_count": 34800,
+    "variants": [
+      {
+        "id": "maybelline-touch-of-spice",
+        "shade_name": "Touch of Spice (Warm Rosy Mauve)",
+        "shade_code": "660",
+        "hex_color": "#9F5A5E",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "MAY-CM-660",
+        "image_url": "https://m.media-amazon.com/images/I/61NqF7n8eJL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 329.0,
+            "current_price": 249.0,
+            "discount_percent": 24.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B00V4J53C4"
+          }
+        ]
+      },
+      {
+        "id": "maybelline-nude-nuance",
+        "shade_name": "Nude Nuance (Warm Terracotta Brown)",
+        "shade_code": "657",
+        "hex_color": "#945648",
+        "undertone": "warm",
+        "depth_level": "tan",
+        "sku": "MAY-CM-657",
+        "image_url": "https://m.media-amazon.com/images/I/61NqF7n8eJL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 329.0,
+            "current_price": 249.0,
+            "discount_percent": 24.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B01B1T0F8W"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maybelline-fit-me-compact",
+    "title": "Maybelline New York Fit Me 12Hr Oil Control Compact Powder",
+    "brand": "Maybelline New York",
+    "category": "compact",
+    "description": "Micro-velvet powder with SPF 28 PA+++ that absorbs oil and stays fresh for up to 12 hours.",
+    "skin_tones": ["light", "medium", "tan"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["oily", "combination", "normal"],
+    "finish": "matte",
+    "coverage": "medium",
+    "rating": 4.4,
+    "review_count": 27500,
+    "variants": [
+      {
+        "id": "fitme-cmp-128",
+        "shade_name": "128 Warm Nude",
+        "shade_code": "128",
+        "hex_color": "#E5BC90",
+        "undertone": "warm",
+        "depth_level": "light",
+        "sku": "MAY-CMP-128",
+        "image_url": "https://m.media-amazon.com/images/I/61gX4G8WqUL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 275.0,
+            "current_price": 206.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07X68Y3QZ"
+          }
+        ]
+      },
+      {
+        "id": "fitme-cmp-220",
+        "shade_name": "220 Natural Beige",
+        "shade_code": "220",
+        "hex_color": "#DFA975",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "MAY-CMP-220",
+        "image_url": "https://m.media-amazon.com/images/I/61gX4G8WqUL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 275.0,
+            "current_price": 206.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07X38V12L"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maybelline-fit-me-blush",
+    "title": "Maybelline New York Fit Me Mono Blush Powder",
+    "brand": "Maybelline New York",
+    "category": "blush",
+    "description": "True-to-tone blendable blush powder providing a natural flush of healthy color that enhances Indian skin tones.",
+    "skin_tones": ["light", "medium", "tan"],
+    "undertones": ["warm", "cool", "neutral"],
+    "skin_types": ["dry", "combination", "oily", "normal"],
+    "finish": "natural",
+    "coverage": "sheer",
+    "rating": 4.3,
+    "review_count": 14900,
+    "variants": [
+      {
+        "id": "fitme-blush-rose",
+        "shade_name": "30 Rose (Soft Rosy Pink)",
+        "shade_code": "30",
+        "hex_color": "#D77382",
+        "undertone": "cool",
+        "depth_level": "medium",
+        "sku": "MAY-BLS-30",
+        "image_url": "https://m.media-amazon.com/images/I/61K1zWpP7GL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 599.0,
+            "current_price": 449.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B074VGMN5G"
+          }
+        ]
+      },
+      {
+        "id": "fitme-blush-peach",
+        "shade_name": "40 Peach (Warm Golden Coral)",
+        "shade_code": "40",
+        "hex_color": "#E68B6E",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "MAY-BLS-40",
+        "image_url": "https://m.media-amazon.com/images/I/61K1zWpP7GL._SL1000_.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 599.0,
+            "current_price": 449.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B074VG7Q8W"
+          }
+        ]
+      }
+    ]
+  }
+]
+

@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: glowguide_db
+    restart: always
+    environment:
+      POSTGRES_USER: glowguide_user
+      POSTGRES_PASSWORD: glowguide_secure_password
+      POSTGRES_DB: glowguide_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U glowguide_user -d glowguide_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: glowguide_backend
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql+psycopg://glowguide_user:glowguide_secure_password@db:5432/glowguide_db
+      - ENVIRONMENT=production
+      - PRICE_STALE_HOURS=24
+      - ALLOW_FACE_STORAGE=false
+      # Amazon India Credentials (optional - leave blank until approved)
+      - AMAZON_ACCESS_KEY_ID=${AMAZON_ACCESS_KEY_ID:-}
+      - AMAZON_SECRET_KEY=${AMAZON_SECRET_KEY:-}
+      - AMAZON_ASSOCIATE_TAG=${AMAZON_ASSOCIATE_TAG:-}
+      # Cuelinks Credentials (optional)
+      - CUELINKS_API_TOKEN=${CUELINKS_API_TOKEN:-}
+      - CUELINKS_PUB_ID=${CUELINKS_PUB_ID:-}
+      - CUELINKS_CHANNEL_ID=${CUELINKS_CHANNEL_ID:-}
+      # Nykaa Affiliate Credentials (optional)
+      - NYKAA_AFFILIATE_ID=${NYKAA_AFFILIATE_ID:-}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: glowguide_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+
