@@ -37,7 +37,7 @@ class Settings(BaseSettings):
     # Privacy & Safety Policy
     ALLOW_FACE_STORAGE: bool = False
     FACE_PROCESSING_IN_MEMORY_ONLY: bool = True
-    MAX_IMAGE_UPLOAD_BYTES: int = 5 * 1024 * 1024  # 5 MB max
+    MAX_IMAGE_UPLOAD_BYTES: int = 30 * 1024 * 1024  # 30 MB max (supports high-res mobile selfies)
     
     # CORS
     CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]

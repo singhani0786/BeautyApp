@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Camera, Upload, Shield, AlertCircle, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { FaceAnalysisResult } from '../types/api';
 import { API_BASE_URL } from '../api/config';
@@ -23,20 +23,25 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
   const streamRef = useRef<MediaStream | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
+  // Bind video stream once the camera becomes active in DOM
+  useEffect(() => {
+    if (isCameraActive && videoRef.current && streamRef.current) {
+      videoRef.current.srcObject = streamRef.current;
+      videoRef.current.play().catch(e => console.warn('Camera video play error:', e));
+    }
+  }, [isCameraActive]);
+
   const startCamera = async () => {
     try {
       setErrorMsg(null);
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'user', width: { ideal: 720 }, height: { ideal: 720 } }
+        video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } }
       });
       streamRef.current = stream;
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-      }
       setIsCameraActive(true);
       setMode('camera');
-    } catch (err) {
-      setErrorMsg('Unable to access webcam. Please check permissions or upload a selfie file instead.');
+    } catch (err: any) {
+      setErrorMsg('Unable to access webcam. Please check camera permissions in your browser or upload a selfie photo instead.');
     }
   };
 
@@ -56,6 +61,7 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Draw un-mirrored for accurate skin reading
     ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
     canvas.toBlob(blob => {
       if (blob) {
@@ -67,23 +73,71 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
     }, 'image/jpeg', 0.92);
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Client-side automatic compression for high-res smartphone photos (e.g. 10MB+)
+  const compressImage = (file: File): Promise<File> => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const maxDim = 1600;
+          let { width, height } = img;
+          if (width > maxDim || height > maxDim) {
+            if (width > height) {
+              height = Math.round((height * maxDim) / width);
+              width = maxDim;
+            } else {
+              width = Math.round((width * maxDim) / height);
+              height = maxDim;
+            }
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) {
+            resolve(file);
+            return;
+          }
+          ctx.drawImage(img, 0, 0, width, height);
+          canvas.toBlob(
+            (blob) => {
+              if (blob) {
+                const compressed = new File([blob], file.name.replace(/\.[^.]+$/, '.jpg'), {
+                  type: 'image/jpeg',
+                });
+                resolve(compressed);
+              } else {
+                resolve(file);
+              }
+            },
+            'image/jpeg',
+            0.88
+          );
+        };
+        img.onerror = () => resolve(file);
+        img.src = e.target?.result as string;
+      };
+      reader.onerror = () => resolve(file);
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     if (!file.type.startsWith('image/')) {
-      setErrorMsg('Please select an image file (JPEG, PNG, or WEBP).');
-      return;
-    }
-
-    if (file.size > 5 * 1024 * 1024) {
-      setErrorMsg('Image file size must be less than 5 MB.');
+      setErrorMsg('Please select a valid image file (JPEG, PNG, or WEBP).');
       return;
     }
 
     setErrorMsg(null);
     setPreviewUrl(URL.createObjectURL(file));
-    uploadAndAnalyze(file);
+
+    // Compress heavy mobile camera photos (> 1MB) so upload is instantaneous
+    const finalFile = file.size > 1024 * 1024 ? await compressImage(file) : file;
+    uploadAndAnalyze(finalFile);
   };
 
   const uploadAndAnalyze = async (file: File) => {
@@ -125,7 +179,7 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
             Step 1: Face & Skin Tone Detection
           </h2>
           <p className="text-sm text-stone-500 mt-1">
-            Capture a selfie in natural light or upload an existing photo to compute your undertone.
+            Capture a selfie in natural light or upload any phone photo to compute your exact undertone.
           </p>
         </div>
 
@@ -150,18 +204,23 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div className="relative aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 border-2 border-dashed border-stone-300 flex flex-col items-center justify-center p-4">
           {isCameraActive ? (
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full flex items-center justify-center bg-black rounded-xl overflow-hidden">
               <video
                 ref={videoRef}
                 autoPlay
                 playsInline
                 muted
-                className="w-full h-full object-cover rounded-xl"
+                onLoadedMetadata={() => {
+                  videoRef.current?.play().catch(console.warn);
+                }}
+                style={{ transform: 'scaleX(-1)' }}
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 pointer-events-none border-2 border-rose-400/50 rounded-full w-48 h-64 m-auto" />
+              <div className="absolute inset-0 pointer-events-none border-2 border-rose-400/60 rounded-full w-48 h-64 m-auto shadow-inner" />
               <button
+                type="button"
                 onClick={handleCapturePhoto}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-full shadow-lg flex items-center gap-2 transition-all"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-full shadow-lg flex items-center gap-2 transition-all active:scale-95"
               >
                 <Camera className="w-4 h-4" />
                 <span>Snap Selfie</span>
@@ -181,6 +240,7 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
                 </div>
               )}
               <button
+                type="button"
                 onClick={handleReset}
                 className="absolute top-3 right-3 bg-white/90 hover:bg-white text-stone-700 text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md transition-all"
               >
@@ -194,26 +254,26 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
               </div>
               <p className="text-sm font-semibold text-stone-800">Select capture method</p>
               <p className="text-xs text-stone-500 mt-1 max-w-xs mx-auto">
-                Ensure even daylight without colored artificial tint for true shade calibration.
+                Ensure natural daylight without colored filters for true shade calibration. High-res photos auto-compress.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-3 mt-5">
                 <button
                   type="button"
                   onClick={startCamera}
-                  className="px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-sm transition-all"
+                  className="px-4 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-sm transition-all active:scale-95"
                 >
                   <Camera className="w-4 h-4" />
-                  <span>Use Webcam</span>
+                  <span>Use Webcam / Selfie</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="px-4 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all"
+                  className="px-4 py-2.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all active:scale-95"
                 >
                   <Upload className="w-4 h-4" />
-                  <span>Upload Image</span>
+                  <span>Upload Phone Photo</span>
                 </button>
                 <input
                   ref={fileInputRef}
@@ -300,11 +360,11 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5" />
-                  <span><strong>Calibrated for South Asian Skin:</strong> Differentiates warm golden undertones, olive undertones, and neutral wheatish complexions.</span>
+                  <span><strong>High-Res Auto Compression:</strong> Upload high-res photos from any iPhone or Android camera without file-size errors.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5" />
-                  <span><strong>Manual override available:</strong> You can fine-tune or choose any tone below.</span>
+                  <span><strong>Calibrated for South Asian Skin:</strong> Differentiates warm golden undertones, olive undertones, and neutral wheatish complexions.</span>
                 </li>
               </ul>
             </div>
@@ -314,4 +374,3 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
     </div>
   );
 };
-

@@ -45,8 +45,19 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item }) 
     authorized_feed: 'Verified Partner Store',
   }[price?.retailer || ''] || price?.retailer || 'Retailer';
 
+  const productUrl = price?.affiliate_url || price?.product_url || '#';
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    if (productUrl && productUrl !== '#') {
+      window.open(productUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
-    <div className={`bg-white rounded-3xl overflow-hidden border shadow-sm transition-all hover:shadow-md flex flex-col justify-between ${tagStyles.border}`}>
+    <div
+      onClick={handleCardClick}
+      className={`bg-white rounded-3xl overflow-hidden border shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 cursor-pointer flex flex-col justify-between group ${tagStyles.border}`}
+    >
       {/* Category Tag Header */}
       <div>
         <div className={`px-5 py-2.5 flex items-center justify-between text-xs font-bold uppercase tracking-wider ${tagStyles.bg}`}>
@@ -65,7 +76,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item }) 
         <div className="p-6">
           <div className="flex gap-4">
             {/* Variant Image */}
-            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-stone-100 flex-shrink-0 overflow-hidden border border-stone-200/60 p-2 flex items-center justify-center relative">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-stone-100 flex-shrink-0 overflow-hidden border border-stone-200/60 p-2 flex items-center justify-center relative group-hover:scale-105 transition-transform">
               {variant?.image_url ? (
                 <img
                   src={variant.image_url}
@@ -83,7 +94,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item }) 
               <span className="text-[11px] font-bold uppercase tracking-wider text-rose-600">
                 {product.brand}
               </span>
-              <h3 className="font-bold text-base text-stone-900 leading-snug line-clamp-2 mt-0.5">
+              <h3 className="font-bold text-base text-stone-900 leading-snug line-clamp-2 mt-0.5 group-hover:text-rose-600 transition-colors">
                 {product.title}
               </h3>
 
@@ -124,7 +135,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item }) 
                     <span className="text-[10px] uppercase font-extrabold text-rose-700 tracking-wider block">
                       Your Exact Face Match
                     </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-ping" />
                   </div>
                   <span className="font-bold text-sm text-stone-900 block mt-0.5">
                     {variant.shade_name}
@@ -164,7 +175,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item }) 
                 </div>
                 <div className="flex items-center gap-1 text-[11px] text-stone-400 mt-1">
                   <Clock className="w-3 h-3" />
-                  <span>Freshness: Verified Live / Seed Data</span>
+                  <span>Freshness: Verified Live Retailer Link</span>
                 </div>
               </div>
 
@@ -180,17 +191,19 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item }) 
       {price && (
         <div className="p-5 pt-0">
           <a
-            href={price.affiliate_url || price.product_url}
+            href={productUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all"
+            onClick={(e) => {
+              e.stopPropagation(); // prevent double trigger
+            }}
+            className="w-full py-3.5 px-4 rounded-xl bg-stone-900 hover:bg-rose-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all"
           >
             <span>View & Buy on {retailerName}</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-4 h-4" />
           </a>
         </div>
       )}
     </div>
   );
 };
-

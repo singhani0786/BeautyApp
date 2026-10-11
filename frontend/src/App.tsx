@@ -184,7 +184,19 @@ export function App() {
           )}
 
           {/* 4 Categorized Cards */}
-          {recommendations && recommendations.recommendations.length > 0 ? (
+          {isLoadingRecommendations ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="bg-white rounded-3xl p-6 border border-stone-200/80 shadow-sm animate-pulse space-y-4">
+                  <div className="h-4 bg-stone-200 rounded-full w-2/3" />
+                  <div className="h-32 bg-stone-100 rounded-2xl" />
+                  <div className="h-5 bg-stone-200 rounded-md w-3/4" />
+                  <div className="h-4 bg-stone-100 rounded-md w-1/2" />
+                  <div className="h-10 bg-stone-200 rounded-xl mt-4" />
+                </div>
+              ))}
+            </div>
+          ) : recommendations && recommendations.recommendations.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {recommendations.recommendations.map(rec => (
                 <RecommendationCard key={rec.tag} item={rec} />
@@ -217,43 +229,44 @@ export function App() {
                 Additional Matching Formulations
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {recommendations.alternative_picks.map(alt => (
-                  <div
-                    key={alt.id}
-                    className="p-4 bg-white rounded-2xl border border-stone-200/70 shadow-2xs flex items-center justify-between"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-7 h-7 rounded-full border border-black/10 shadow-xs flex-shrink-0"
-                        style={{ backgroundColor: alt.matched_variant?.hex_color || '#E5A882' }}
-                      />
-                      <div>
-                        <span className="text-[10px] uppercase font-bold text-rose-600 block">
-                          {alt.brand}
+                {recommendations.alternative_picks.map(alt => {
+                  const altUrl = alt.best_price?.affiliate_url || alt.best_price?.product_url || '#';
+                  return (
+                    <div
+                      key={alt.id}
+                      onClick={() => {
+                        if (altUrl && altUrl !== '#') window.open(altUrl, '_blank', 'noopener,noreferrer');
+                      }}
+                      className="p-4 bg-white rounded-2xl border border-stone-200/70 shadow-2xs hover:shadow-md hover:border-rose-300 transition-all cursor-pointer flex items-center justify-between group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-8 h-8 rounded-full border border-black/10 shadow-xs flex-shrink-0"
+                          style={{ backgroundColor: alt.matched_variant?.hex_color || '#E5A882' }}
+                        />
+                        <div>
+                          <span className="text-[10px] uppercase font-bold text-rose-600 block">
+                            {alt.brand}
+                          </span>
+                          <span className="font-bold text-xs text-stone-900 line-clamp-1 group-hover:text-rose-600 transition-colors">
+                            {alt.title}
+                          </span>
+                          <span className="text-[11px] text-stone-500">
+                            Shade: {alt.matched_variant?.shade_name}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <span className="font-bold text-sm text-stone-900 block">
+                          ₹{alt.best_price?.current_price.toLocaleString('en-IN')}
                         </span>
-                        <span className="font-bold text-xs text-stone-900 line-clamp-1">
-                          {alt.title}
-                        </span>
-                        <span className="text-[11px] text-stone-500">
-                          Shade: {alt.matched_variant?.shade_name}
+                        <span className="text-[11px] text-rose-600 font-bold group-hover:underline">
+                          View &rarr;
                         </span>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <span className="font-bold text-sm text-stone-900 block">
-                        ₹{alt.best_price?.current_price.toLocaleString('en-IN')}
-                      </span>
-                      <a
-                        href={alt.best_price?.affiliate_url || alt.best_price?.product_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[11px] text-rose-600 font-bold hover:underline"
-                      >
-                        View &rarr;
-                      </a>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

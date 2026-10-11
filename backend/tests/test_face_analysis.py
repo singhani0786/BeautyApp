@@ -25,8 +25,8 @@ def test_warm_medium_skin_analysis():
     assert result.confidence > 0.8
 
 def test_image_size_safety_limit():
-    # Oversized image bytes simulation
-    fake_huge_bytes = b"0" * (6 * 1024 * 1024)  # 6MB > 5MB limit
+    # Oversized image bytes simulation (> 30MB limit)
+    fake_huge_bytes = b"0" * (35 * 1024 * 1024)
     with pytest.raises(ValueError) as excinfo:
         analyze_face_photo(fake_huge_bytes)
     assert "exceeds safety limit" in str(excinfo.value)
