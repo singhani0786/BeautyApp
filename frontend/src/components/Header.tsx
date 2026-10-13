@@ -1,13 +1,21 @@
 import React from 'react';
-import { Sparkles, ShieldCheck, Database, ExternalLink } from 'lucide-react';
+import { Sparkles, ShieldCheck, Database } from 'lucide-react';
 import { SourceStatusInfo } from '../types/api';
+import { UserMenu } from './UserMenu';
 
 interface HeaderProps {
   sources: SourceStatusInfo[];
   onOpenMatrix: () => void;
+  detectedTone?: string;
+  detectedUndertone?: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ sources, onOpenMatrix }) => {
+export const Header: React.FC<HeaderProps> = ({
+  sources,
+  onOpenMatrix,
+  detectedTone,
+  detectedUndertone,
+}) => {
   const configuredCount = sources.filter(s => s.is_configured).length;
 
   return (
@@ -26,33 +34,35 @@ export const Header: React.FC<HeaderProps> = ({ sources, onOpenMatrix }) => {
                 India Edition
               </span>
             </div>
-            <p className="text-xs text-stone-500 font-medium">
+            <p className="text-xs text-stone-500 font-medium hidden sm:block">
               Precision Undertone & Complexion Match with Real INR Pricing
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-2 text-xs text-stone-600 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200/60">
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="hidden lg:flex items-center gap-2 text-xs text-stone-600 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200/60">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>Zero Photo Persistence</span>
           </div>
 
           <button
             onClick={onOpenMatrix}
-            className="flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-stone-800 border border-stone-200 transition-colors shadow-sm"
+            className="flex items-center gap-1.5 sm:gap-2 text-xs font-semibold px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-stone-800 border border-stone-200 transition-colors shadow-2xs"
           >
             <Database className="w-3.5 h-3.5 text-stone-600" />
-            <span>Retailer Matrix</span>
+            <span className="hidden sm:inline">Retailer Matrix</span>
             <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
               configuredCount > 0 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
             }`}>
-              {configuredCount}/{sources.length} Live
+              {configuredCount}/{sources.length}
             </span>
           </button>
+
+          {/* Google Sign In & Profile Menu */}
+          <UserMenu detectedTone={detectedTone} detectedUndertone={detectedUndertone} />
         </div>
       </div>
     </header>
   );
 };
-

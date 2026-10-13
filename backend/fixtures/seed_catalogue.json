@@ -5,9 +5,23 @@
     "brand": "Maybelline New York",
     "category": "foundation",
     "description": "Oil-free matte liquid foundation formulated with clay and micro-powders to refine pores and control shine.",
-    "skin_tones": ["fair", "light", "medium", "tan", "deep"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["oily", "combination", "normal"],
+    "skin_tones": [
+      "fair",
+      "light",
+      "medium",
+      "tan",
+      "deep"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "oily",
+      "combination",
+      "normal"
+    ],
     "finish": "matte",
     "coverage": "medium",
     "rating": 4.4,
@@ -30,7 +44,7 @@
             "discount_percent": 30.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B073X2T49M"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+115+Ivory"
           },
           {
             "retailer": "nykaa",
@@ -39,7 +53,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-liquid-foundation/p/132473"
+            "product_url": "https://www.nykaa.com/search/result/?q=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+115+Ivory"
           }
         ]
       },
@@ -60,7 +74,7 @@
             "discount_percent": 30.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B073X1G66K"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+128+Warm+Nude"
           },
           {
             "retailer": "nykaa",
@@ -69,7 +83,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-liquid-foundation/p/132473?skuId=132480"
+            "product_url": "https://www.nykaa.com/search/result/?q=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+128+Warm+Nude"
           }
         ]
       },
@@ -90,7 +104,7 @@
             "discount_percent": 30.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B073X2Q1R3"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+220+Natural+Beige"
           },
           {
             "retailer": "nykaa",
@@ -99,7 +113,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-liquid-foundation/p/132473?skuId=132483"
+            "product_url": "https://www.nykaa.com/search/result/?q=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+220+Natural+Beige"
           }
         ]
       },
@@ -120,7 +134,7 @@
             "discount_percent": 26.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B073X2Z1K2"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+310+Sun+Beige"
           }
         ]
       },
@@ -141,7 +155,7 @@
             "discount_percent": 26.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07W8W118D"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+Matte+Poreless+Liquid+Foundation+332+Golden+Caramel"
           }
         ]
       }
@@ -153,9 +167,24 @@
     "brand": "M.A.C",
     "category": "foundation",
     "description": "Iconic professional 24-hour buildable matte finish foundation with broad spectrum sun protection.",
-    "skin_tones": ["fair", "light", "medium", "tan", "deep"],
-    "undertones": ["warm", "cool", "neutral", "olive"],
-    "skin_types": ["oily", "combination", "normal"],
+    "skin_tones": [
+      "fair",
+      "light",
+      "medium",
+      "tan",
+      "deep"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral",
+      "olive"
+    ],
+    "skin_types": [
+      "oily",
+      "combination",
+      "normal"
+    ],
     "finish": "matte",
     "coverage": "full",
     "rating": 4.7,
@@ -178,7 +207,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89052"
+            "product_url": "https://www.nykaa.com/search/result/?q=M.A.C+M.A.C+Studio+Fix+Fluid+SPF+15+24HR+Matte+Foundation+NC25+(Golden+Olive+Fair-Light)"
           },
           {
             "retailer": "amazon_in",
@@ -187,7 +216,7 @@
             "discount_percent": 5.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B004W8XU9A"
+            "product_url": "https://www.amazon.in/s?k=M.A.C+M.A.C+Studio+Fix+Fluid+SPF+15+24HR+Matte+Foundation+NC25+(Golden+Olive+Fair-Light)"
           }
         ]
       },
@@ -208,7 +237,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89059"
+            "product_url": "https://www.nykaa.com/search/result/?q=M.A.C+M.A.C+Studio+Fix+Fluid+SPF+15+24HR+Matte+Foundation+NC40+(Golden+Olive+Medium)"
           }
         ]
       },
@@ -229,7 +258,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89060"
+            "product_url": "https://www.nykaa.com/search/result/?q=M.A.C+M.A.C+Studio+Fix+Fluid+SPF+15+24HR+Matte+Foundation+NC42+(Warm+Golden+Tan)"
           }
         ]
       },
@@ -250,7 +279,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/89046?skuId=89073"
+            "product_url": "https://www.nykaa.com/search/result/?q=M.A.C+M.A.C+Studio+Fix+Fluid+SPF+15+24HR+Matte+Foundation+NW45+(Rich+Mahogany+Deep)"
           }
         ]
       }
@@ -262,9 +291,24 @@
     "brand": "Kay Beauty",
     "category": "foundation",
     "description": "Enriched with Hyaluronic Acid & Chamomile oil, gives a natural radiant dewy finish with medium buildable coverage tailored for Indian complexions.",
-    "skin_tones": ["light", "medium", "tan", "deep"],
-    "undertones": ["warm", "cool", "neutral", "olive"],
-    "skin_types": ["dry", "combination", "normal", "sensitive"],
+    "skin_tones": [
+      "light",
+      "medium",
+      "tan",
+      "deep"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral",
+      "olive"
+    ],
+    "skin_types": [
+      "dry",
+      "combination",
+      "normal",
+      "sensitive"
+    ],
     "finish": "dewy",
     "coverage": "medium",
     "rating": 4.5,
@@ -287,7 +331,7 @@
             "discount_percent": 20.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1063625?skuId=1063632"
+            "product_url": "https://www.nykaa.com/search/result/?q=Kay+Beauty+Kay+Beauty+Hydrating+Foundation+with+Hyaluronic+Acid+120Y+Medium+Warm"
           }
         ]
       },
@@ -308,7 +352,7 @@
             "discount_percent": 20.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1063625?skuId=1063635"
+            "product_url": "https://www.nykaa.com/search/result/?q=Kay+Beauty+Kay+Beauty+Hydrating+Foundation+with+Hyaluronic+Acid+130P+Medium+Cool"
           }
         ]
       },
@@ -329,7 +373,7 @@
             "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1063625?skuId=1063638"
+            "product_url": "https://www.nykaa.com/search/result/?q=Kay+Beauty+Kay+Beauty+Hydrating+Foundation+with+Hyaluronic+Acid+140N+Tan+Neutral"
           }
         ]
       }
@@ -341,9 +385,21 @@
     "brand": "L'Oreal Paris",
     "category": "foundation",
     "description": "Breathable longwear formula with SPF 25 and Vitamin C, waterproof and sweat-resistant for 32 hours.",
-    "skin_tones": ["light", "medium", "tan"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["oily", "combination", "normal"],
+    "skin_tones": [
+      "light",
+      "medium",
+      "tan"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "oily",
+      "combination",
+      "normal"
+    ],
     "finish": "satin",
     "coverage": "medium",
     "rating": 4.5,
@@ -366,7 +422,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07RLL2BHR"
+            "product_url": "https://www.amazon.in/s?k=L'Oreal+Paris+L'Oreal+Paris+Infallible+32H+Fresh+Wear+Liquid+Foundation+200+Golden+Sand"
           }
         ]
       },
@@ -387,7 +443,7 @@
             "discount_percent": 23.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07RNK5SZ1"
+            "product_url": "https://www.amazon.in/s?k=L'Oreal+Paris+L'Oreal+Paris+Infallible+32H+Fresh+Wear+Liquid+Foundation+250+Radiant+Sand"
           }
         ]
       }
@@ -399,9 +455,21 @@
     "brand": "Lakme",
     "category": "foundation",
     "description": "Built-in primer with SPF 20 provides smooth, crease-less matte coverage for all-day office wear.",
-    "skin_tones": ["light", "medium", "tan"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["oily", "combination", "normal"],
+    "skin_tones": [
+      "light",
+      "medium",
+      "tan"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "oily",
+      "combination",
+      "normal"
+    ],
     "finish": "matte",
     "coverage": "medium",
     "rating": 4.2,
@@ -424,7 +492,7 @@
             "discount_percent": 30.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07YZ3M91J"
+            "product_url": "https://www.amazon.in/s?k=Lakme+Lakme+9+to+5+Primer+++Matte+Perfect+Cover+Foundation+W160+Warm+Beige"
           }
         ]
       },
@@ -445,7 +513,7 @@
             "discount_percent": 30.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07YZ47XZ5"
+            "product_url": "https://www.amazon.in/s?k=Lakme+Lakme+9+to+5+Primer+++Matte+Perfect+Cover+Foundation+N220+Natural+Medium"
           }
         ]
       }
@@ -457,9 +525,23 @@
     "brand": "Maybelline New York",
     "category": "concealer",
     "description": "Micro-corrector cushion applicator with Goji berry & Haloxyl to instantly erase dark circles and fine lines.",
-    "skin_tones": ["fair", "light", "medium", "tan"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["dry", "combination", "normal", "sensitive"],
+    "skin_tones": [
+      "fair",
+      "light",
+      "medium",
+      "tan"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "dry",
+      "combination",
+      "normal",
+      "sensitive"
+    ],
     "finish": "natural",
     "coverage": "full",
     "rating": 4.4,
@@ -482,7 +564,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B004Y9G9BK"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+Instant+Age+Rewind+Multi-Use+Eraser+Dark+Circles+Concealer+120+Light"
           }
         ]
       },
@@ -503,7 +585,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B004Y9G9G0"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+Instant+Age+Rewind+Multi-Use+Eraser+Dark+Circles+Concealer+130+Medium"
           }
         ]
       },
@@ -524,7 +606,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B004Y9G9HI"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+Instant+Age+Rewind+Multi-Use+Eraser+Dark+Circles+Concealer+140+Honey"
           }
         ]
       }
@@ -536,9 +618,23 @@
     "brand": "Swiss Beauty",
     "category": "concealer",
     "description": "Ultra-affordable, blendable liquid concealer with luminous satin finish for blemishes and dark spots.",
-    "skin_tones": ["fair", "light", "medium", "tan"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["dry", "combination", "oily", "normal"],
+    "skin_tones": [
+      "fair",
+      "light",
+      "medium",
+      "tan"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "dry",
+      "combination",
+      "oily",
+      "normal"
+    ],
     "finish": "satin",
     "coverage": "medium",
     "rating": 4.2,
@@ -561,7 +657,7 @@
             "discount_percent": 20.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07DFCGZ5N"
+            "product_url": "https://www.amazon.in/s?k=Swiss+Beauty+Swiss+Beauty+Liquid+Light+Weight+Concealer+02+Sand+Sable"
           }
         ]
       },
@@ -582,7 +678,7 @@
             "discount_percent": 20.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07DFD2N6B"
+            "product_url": "https://www.amazon.in/s?k=Swiss+Beauty+Swiss+Beauty+Liquid+Light+Weight+Concealer+04+Medium+Beige"
           }
         ]
       }
@@ -594,9 +690,23 @@
     "brand": "M.A.C",
     "category": "lipstick",
     "description": "Richly pigmented creamy matte formula that delivers intense color payoff without feathering.",
-    "skin_tones": ["fair", "light", "medium", "tan", "deep"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["dry", "combination", "normal"],
+    "skin_tones": [
+      "fair",
+      "light",
+      "medium",
+      "tan",
+      "deep"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "dry",
+      "combination",
+      "normal"
+    ],
     "finish": "matte",
     "coverage": "full",
     "rating": 4.6,
@@ -619,7 +729,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/89004?skuId=89012"
+            "product_url": "https://www.nykaa.com/search/result/?q=M.A.C+M.A.C+Matte+Lipstick+Ruby+Woo+(Vivid+Blue-Red)"
           }
         ]
       },
@@ -640,7 +750,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/89004?skuId=89014"
+            "product_url": "https://www.nykaa.com/search/result/?q=M.A.C+M.A.C+Matte+Lipstick+Velvet+Teddy+(Deep-Tone+Beige)"
           }
         ]
       },
@@ -661,7 +771,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/89004?skuId=89008"
+            "product_url": "https://www.nykaa.com/search/result/?q=M.A.C+M.A.C+Matte+Lipstick+Chili+(Brownish+Orange-Red)"
           }
         ]
       }
@@ -673,9 +783,22 @@
     "brand": "Maybelline New York",
     "category": "lipstick",
     "description": "Infused with nourishing shea butter for comfortable, non-drying bold matte lip color.",
-    "skin_tones": ["light", "medium", "tan", "deep"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["dry", "combination", "normal"],
+    "skin_tones": [
+      "light",
+      "medium",
+      "tan",
+      "deep"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "dry",
+      "combination",
+      "normal"
+    ],
     "finish": "matte",
     "coverage": "full",
     "rating": 4.3,
@@ -698,7 +821,7 @@
             "discount_percent": 24.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B00V4J53C4"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Color+Sensational+Creamy+Matte+Lipstick+Touch+of+Spice+(Warm+Rosy+Mauve)"
           }
         ]
       },
@@ -719,7 +842,7 @@
             "discount_percent": 24.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B01B1T0F8W"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Color+Sensational+Creamy+Matte+Lipstick+Nude+Nuance+(Warm+Terracotta+Brown)"
           }
         ]
       }
@@ -731,9 +854,21 @@
     "brand": "Maybelline New York",
     "category": "compact",
     "description": "Micro-velvet powder with SPF 28 PA+++ that absorbs oil and stays fresh for up to 12 hours.",
-    "skin_tones": ["light", "medium", "tan"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["oily", "combination", "normal"],
+    "skin_tones": [
+      "light",
+      "medium",
+      "tan"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "oily",
+      "combination",
+      "normal"
+    ],
     "finish": "matte",
     "coverage": "medium",
     "rating": 4.4,
@@ -756,7 +891,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07X68Y3QZ"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+12Hr+Oil+Control+Compact+Powder+128+Warm+Nude"
           }
         ]
       },
@@ -777,7 +912,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07X38V12L"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+12Hr+Oil+Control+Compact+Powder+220+Natural+Beige"
           }
         ]
       }
@@ -789,9 +924,22 @@
     "brand": "Maybelline New York",
     "category": "blush",
     "description": "True-to-tone blendable blush powder providing a natural flush of healthy color that enhances Indian skin tones.",
-    "skin_tones": ["light", "medium", "tan"],
-    "undertones": ["warm", "cool", "neutral"],
-    "skin_types": ["dry", "combination", "oily", "normal"],
+    "skin_tones": [
+      "light",
+      "medium",
+      "tan"
+    ],
+    "undertones": [
+      "warm",
+      "cool",
+      "neutral"
+    ],
+    "skin_types": [
+      "dry",
+      "combination",
+      "oily",
+      "normal"
+    ],
     "finish": "natural",
     "coverage": "sheer",
     "rating": 4.3,
@@ -814,7 +962,7 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B074VGMN5G"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+Mono+Blush+Powder+30+Rose+(Soft+Rosy+Pink)"
           }
         ]
       },
@@ -835,11 +983,10 @@
             "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B074VG7Q8W"
+            "product_url": "https://www.amazon.in/s?k=Maybelline+New+York+Maybelline+New+York+Fit+Me+Mono+Blush+Powder+40+Peach+(Warm+Golden+Coral)"
           }
         ]
       }
     ]
   }
 ]
-
