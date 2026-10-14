@@ -1,7 +1,6 @@
 import React from 'react';
 import { Sparkles, ShieldCheck, Database } from 'lucide-react';
 import { SourceStatusInfo } from '../types/api';
-import { UserMenu } from './UserMenu';
 
 interface HeaderProps {
   sources: SourceStatusInfo[];
@@ -58,9 +57,6 @@ export const Header: React.FC<HeaderProps> = ({
               {configuredCount}/{sources.length}
             </span>
           </button>
-
-          {/* Google Sign In & Profile Menu */}
-          <UserMenu detectedTone={detectedTone} detectedUndertone={detectedUndertone} />
         </div>
       </div>
     </header>

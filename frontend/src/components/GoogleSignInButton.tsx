@@ -46,3 +46,4 @@ export const GoogleSignInButton: React.FC<{ label?: string }> = ({
     </button>
   );
 };
+

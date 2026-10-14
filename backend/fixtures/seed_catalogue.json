@@ -486,13 +486,13 @@
         "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "amazon_in",
+            "retailer": "lakme_official",
             "mrp": 525.0,
-            "current_price": 367.0,
-            "discount_percent": 30.0,
+            "current_price": 489.0,
+            "discount_percent": 7.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/s?k=Lakme+Lakme+9+to+5+Primer+++Matte+Perfect+Cover+Foundation+W160+Warm+Beige"
+            "product_url": "https://www.lakmeindia.com/products/lakme-9-to-5-primer-matte-perfect-cover-foundation"
           }
         ]
       },
@@ -507,13 +507,13 @@
         "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "amazon_in",
+            "retailer": "lakme_official",
             "mrp": 525.0,
-            "current_price": 367.0,
-            "discount_percent": 30.0,
+            "current_price": 489.0,
+            "discount_percent": 7.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/s?k=Lakme+Lakme+9+to+5+Primer+++Matte+Perfect+Cover+Foundation+N220+Natural+Medium"
+            "product_url": "https://www.lakmeindia.com/products/lakme-9-to-5-primer-matte-perfect-cover-foundation"
           }
         ]
       }

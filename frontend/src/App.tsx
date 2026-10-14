@@ -3,14 +3,17 @@ import { Header } from './components/Header';
 import { PhotoCapture } from './components/PhotoCapture';
 import { ToneSelector } from './components/ToneSelector';
 import { RecommendationCard } from './components/RecommendationCard';
+import { SingleProductModal } from './components/SingleProductModal';
 import { RetailerDrawer } from './components/RetailerDrawer';
 import {
   FaceAnalysisResult,
   RecommendationResponse,
+  RecommendationCategoryResult,
   SourceStatusInfo,
   ProductInfo,
 } from './types/api';
 import { API_BASE_URL } from './api/config';
+import { getSafeProductUrl } from './utils/urlHelper';
 import { Sparkles, ShoppingBag, ShieldCheck, HelpCircle } from 'lucide-react';
 
 export function App() {
@@ -27,6 +30,7 @@ export function App() {
   // States
   const [faceAnalysis, setFaceAnalysis] = useState<FaceAnalysisResult | null>(null);
   const [recommendations, setRecommendations] = useState<RecommendationResponse | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<RecommendationCategoryResult | null>(null);
   const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false);
   const [isLoadingAnalysis, setIsLoadingAnalysis] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -204,7 +208,11 @@ export function App() {
           ) : recommendations && recommendations.recommendations.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {recommendations.recommendations.map(rec => (
-                <RecommendationCard key={rec.tag} item={rec} />
+                <RecommendationCard
+                  key={rec.tag}
+                  item={rec}
+                  onSelectProduct={(item) => setSelectedProduct(item)}
+                />
               ))}
             </div>
           ) : (
@@ -226,55 +234,6 @@ export function App() {
               </button>
             </div>
           )}
-
-          {/* Alternative Picks Section */}
-          {recommendations && recommendations.alternative_picks.length > 0 && (
-            <div className="pt-8 space-y-4">
-              <h3 className="font-serif-display font-bold text-lg text-stone-900">
-                Additional Matching Formulations
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {recommendations.alternative_picks.map(alt => {
-                  const altUrl = alt.best_price?.affiliate_url || alt.best_price?.product_url || '#';
-                  return (
-                    <div
-                      key={alt.id}
-                      onClick={() => {
-                        if (altUrl && altUrl !== '#') window.open(altUrl, '_blank', 'noopener,noreferrer');
-                      }}
-                      className="p-4 bg-white rounded-2xl border border-stone-200/70 shadow-2xs hover:shadow-md hover:border-rose-300 transition-all cursor-pointer flex items-center justify-between group"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className="w-8 h-8 rounded-full border border-black/10 shadow-xs flex-shrink-0"
-                          style={{ backgroundColor: alt.matched_variant?.hex_color || '#E5A882' }}
-                        />
-                        <div>
-                          <span className="text-[10px] uppercase font-bold text-rose-600 block">
-                            {alt.brand}
-                          </span>
-                          <span className="font-bold text-xs text-stone-900 line-clamp-1 group-hover:text-rose-600 transition-colors">
-                            {alt.title}
-                          </span>
-                          <span className="text-[11px] text-stone-500">
-                            Shade: {alt.matched_variant?.shade_name}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <span className="font-bold text-sm text-stone-900 block">
-                          ₹{alt.best_price?.current_price.toLocaleString('en-IN')}
-                        </span>
-                        <span className="text-[11px] text-rose-600 font-bold group-hover:underline">
-                          View &rarr;
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
         </section>
       </main>
 
@@ -294,6 +253,14 @@ export function App() {
           </div>
         </div>
       </footer>
+
+      {/* Single Dedicated Product Modal */}
+      {selectedProduct && (
+        <SingleProductModal
+          item={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
 
       {/* Retailer Integration Matrix Drawer */}
       <RetailerDrawer

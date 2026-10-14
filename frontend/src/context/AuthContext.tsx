@@ -24,41 +24,73 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // 1. Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        setUser({
-          id: session.user.id,
-          email: session.user.email || '',
-          name: session.user.user_metadata?.full_name || session.user.user_metadata?.name || session.user.email?.split('@')[0] || 'User',
-          avatar_url: session.user.user_metadata?.avatar_url || '',
-        });
-      } else {
-        // Check localStorage fallback for offline/guest profile
-        const localUser = localStorage.getItem('glowguide_user');
-        if (localUser) {
-          try {
-            setUser(JSON.parse(localUser));
-          } catch {
-            localStorage.removeItem('glowguide_user');
+    // 1. Process hash token params if returned from OAuth redirect (e.g. #access_token=... or ?code=...)
+    const processInitialSession = async () => {
+      try {
+        // If window has URL hash with tokens, supabase automatically extracts it
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+        if (sessionError) {
+          console.warn('Initial session lookup:', sessionError.message);
+        }
+
+        if (session?.user) {
+          const profile: UserProfile = {
+            id: session.user.id,
+            email: session.user.email || '',
+            name:
+              session.user.user_metadata?.full_name ||
+              session.user.user_metadata?.name ||
+              session.user.email?.split('@')[0] ||
+              'User',
+            avatar_url: session.user.user_metadata?.avatar_url || '',
+          };
+          setUser(profile);
+          localStorage.setItem('glowguide_user', JSON.stringify(profile));
+
+          // Clean up ugly OAuth hash parameters from the browser address bar
+          if (window.location.hash && window.location.hash.includes('access_token')) {
+            window.history.replaceState(null, '', window.location.pathname);
+          }
+        } else {
+          // Check localStorage fallback
+          const localUser = localStorage.getItem('glowguide_user');
+          if (localUser) {
+            try {
+              setUser(JSON.parse(localUser));
+            } catch {
+              localStorage.removeItem('glowguide_user');
+            }
           }
         }
+      } catch (err) {
+        console.error('Auth initialization error:', err);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
-    });
+    };
 
-    // 2. Listen to auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    processInitialSession();
+
+    // 2. Listen to continuous auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (session?.user) {
         const profile: UserProfile = {
           id: session.user.id,
           email: session.user.email || '',
-          name: session.user.user_metadata?.full_name || session.user.user_metadata?.name || session.user.email?.split('@')[0] || 'User',
+          name:
+            session.user.user_metadata?.full_name ||
+            session.user.user_metadata?.name ||
+            session.user.email?.split('@')[0] ||
+            'User',
           avatar_url: session.user.user_metadata?.avatar_url || '',
         };
         setUser(profile);
         localStorage.setItem('glowguide_user', JSON.stringify(profile));
-      } else {
+        
+        if (window.location.hash && window.location.hash.includes('access_token')) {
+          window.history.replaceState(null, '', window.location.pathname);
+        }
+      } else if (event === 'SIGNED_OUT') {
         setUser(null);
         localStorage.removeItem('glowguide_user');
       }
@@ -71,6 +103,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const signInWithGoogle = async () => {
+    // Current origin (https://beautyapp-279.pages.dev)
     const redirectUrl = window.location.origin;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -84,12 +117,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
     if (error) {
       console.error('Google Sign-in Error:', error);
+      alert(error.message || 'Unable to open Google sign-in window.');
       throw error;
     }
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    try {
+      await supabase.auth.signOut();
+    } catch (e) {
+      console.warn('SignOut error:', e);
+    }
     setUser(null);
     localStorage.removeItem('glowguide_user');
   };
