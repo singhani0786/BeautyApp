@@ -43,15 +43,14 @@ const SingleProductModalContent: React.FC<{
     );
   }, [product.brand, product.title, variant?.shade_name, price?.retailer]);
 
-  // Default store: Lakmé official for Lakme, otherwise the product's primary retailer or first store
+  // Default store:
+  // - Lakmé Official Store for Lakmé (100% authentic brand product page)
+  // - Nykaa for other cosmetics (100% direct single-product page with live shades & Add to Bag)
   const defaultStoreId = useMemo(() => {
     const b = (product.brand || '').toLowerCase();
     if (b.includes('lakme')) return 'lakme';
-    if (price?.retailer?.includes('amazon')) return 'amazon';
-    if (price?.retailer?.includes('nykaa')) return 'nykaa';
-    if (price?.retailer?.includes('flipkart')) return 'flipkart';
-    return availableStores[0]?.id || 'amazon';
-  }, [product.brand, price?.retailer, availableStores]);
+    return availableStores[0]?.id || 'nykaa';
+  }, [product.brand, availableStores]);
 
   const [selectedStoreId, setSelectedStoreId] = useState<string>(defaultStoreId);
 
