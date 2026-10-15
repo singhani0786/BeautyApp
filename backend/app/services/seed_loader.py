@@ -8,13 +8,18 @@ from app.sources.registry import registry
 
 FIXTURE_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "fixtures", "seed_catalogue.json")
 
-async def load_seed_catalogue_if_empty(session: AsyncSession) -> int:
+async def load_seed_catalogue_if_empty(session: AsyncSession, force: bool = False) -> int:
     """
-    Checks if products exist. If empty, loads authentic verified seed catalogue.
+    Checks if products exist. If empty or force=True, loads authentic verified seed catalogue.
     """
-    existing_result = await session.execute(select(Product))
-    if existing_result.scalars().first() is not None:
-        return 0  # Already seeded
+    if not force:
+        existing_result = await session.execute(select(Product))
+        if existing_result.scalars().first() is not None:
+            return 0  # Already seeded
+    else:
+        from sqlalchemy import delete
+        await session.execute(delete(Product))
+        await session.commit()
 
     if not os.path.exists(FIXTURE_PATH):
         return 0

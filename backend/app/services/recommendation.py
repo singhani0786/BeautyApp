@@ -37,7 +37,22 @@ def build_product_info(product: Product, variant: ProductVariant, price: PriceRe
         depth_level=variant.depth_level,
         sku=variant.sku,
         image_url=variant.image_url,
-        prices=[price_info]
+        prices=[
+            PriceInfo(
+                retailer=p.retailer,
+                currency=p.currency,
+                mrp=p.mrp,
+                current_price=p.current_price,
+                discount_percent=p.discount_percent,
+                in_stock=p.in_stock,
+                stock_status=p.stock_status,
+                product_url=p.product_url,
+                affiliate_url=p.affiliate_url or p.product_url,
+                is_stale=p.is_stale,
+                last_checked_at=p.last_checked_at.isoformat() if hasattr(p.last_checked_at, "isoformat") else str(p.last_checked_at),
+            )
+            for p in variant.prices
+        ] if variant.prices else [price_info]
     )
 
     all_v_infos = [

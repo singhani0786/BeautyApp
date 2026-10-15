@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Star, ShoppingBag, Sparkles, TrendingUp, Award, Gem, Eye } from 'lucide-react';
 import { RecommendationCategoryResult } from '../types/api';
-import { getRetailerDisplayName } from '../utils/urlHelper';
+import { getRetailerDisplayName, getAvailableStores } from '../utils/urlHelper';
 
 interface RecommendationCardProps {
   item: RecommendationCategoryResult;
@@ -61,7 +61,26 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
     cardTag: 'Verified Match',
   };
 
-  const retailerName = getRetailerDisplayName(price?.retailer, product.brand);
+  // Resolve store options & best deal price
+  const availableStores = useMemo(() => {
+    return getAvailableStores(
+      product.brand,
+      product.title,
+      variant?.shade_name,
+      price?.retailer,
+      variant?.prices,
+      price
+    );
+  }, [product.brand, product.title, variant?.shade_name, price?.retailer, variant?.prices, price]);
+
+  const bestStore = useMemo(() => {
+    return availableStores.find(s => s.isLowest) || availableStores[0];
+  }, [availableStores]);
+
+  const displayPrice = bestStore?.price || price?.current_price || 0;
+  const displayMrp = bestStore?.mrp || price?.mrp || displayPrice;
+  const displayDiscount = bestStore?.discountPercent ?? (displayMrp > displayPrice ? Math.round(((displayMrp - displayPrice) / displayMrp) * 100) : 0);
+  const displayRetailer = bestStore?.name || getRetailerDisplayName(price?.retailer, product.brand);
 
   const handleClick = () => {
     if (onSelectProduct) {
@@ -187,28 +206,28 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
           )}
 
           {/* Pricing Row */}
-          {price && (
+          {displayPrice > 0 && (
             <div className="mt-4 pt-3.5 border-t border-stone-100 flex items-baseline justify-between">
               <div>
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-xl font-black text-stone-900">
-                    ₹{price.current_price.toLocaleString('en-IN')}
+                    ₹{displayPrice.toLocaleString('en-IN')}
                   </span>
-                  {price.mrp > price.current_price && (
+                  {displayMrp > displayPrice && (
                     <span className="text-[11px] text-stone-400 line-through">
-                      ₹{price.mrp.toLocaleString('en-IN')}
+                      ₹{displayMrp.toLocaleString('en-IN')}
                     </span>
                   )}
-                  {price.discount_percent > 0 && (
+                  {displayDiscount > 0 && (
                     <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/60">
-                      {Math.round(price.discount_percent)}% OFF
+                      {displayDiscount}% OFF
                     </span>
                   )}
                 </div>
               </div>
 
               <span className="text-[11px] font-semibold text-stone-600 bg-stone-100/80 px-2 py-0.5 rounded-md">
-                {retailerName}
+                {displayRetailer}
               </span>
             </div>
           )}

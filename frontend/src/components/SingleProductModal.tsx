@@ -33,23 +33,26 @@ const SingleProductModalContent: React.FC<{
   const variant = product.matched_variant;
   const price = product.best_price;
 
-  // Generate available stores for this product
+  // Generate available stores for this product with accurate store-specific pricing
   const availableStores = useMemo(() => {
     return getAvailableStores(
       product.brand,
       product.title,
       variant?.shade_name,
-      price?.retailer
+      price?.retailer,
+      variant?.prices,
+      price
     );
-  }, [product.brand, product.title, variant?.shade_name, price?.retailer]);
+  }, [product.brand, product.title, variant?.shade_name, price?.retailer, variant?.prices, price]);
 
   // Default store:
   // - Lakmé Official Store for Lakmé (100% authentic brand product page)
-  // - Nykaa for other cosmetics (100% direct single-product page with live shades & Add to Bag)
+  // - Lowest price store deal across verified retailers
   const defaultStoreId = useMemo(() => {
     const b = (product.brand || '').toLowerCase();
     if (b.includes('lakme')) return 'lakme';
-    return availableStores[0]?.id || 'nykaa';
+    const lowest = availableStores.find(s => s.isLowest);
+    return lowest?.id || availableStores[0]?.id || 'nykaa';
   }, [product.brand, availableStores]);
 
   const [selectedStoreId, setSelectedStoreId] = useState<string>(defaultStoreId);
@@ -58,6 +61,10 @@ const SingleProductModalContent: React.FC<{
   const activeStore: StoreOption = useMemo(() => {
     return availableStores.find(s => s.id === selectedStoreId) || availableStores[0];
   }, [availableStores, selectedStoreId]);
+
+  const currentStorePrice = activeStore?.price || price?.current_price || 0;
+  const currentStoreMrp = activeStore?.mrp || price?.mrp || currentStorePrice;
+  const currentStoreDiscount = activeStore?.discountPercent ?? (currentStoreMrp > currentStorePrice ? Math.round(((currentStoreMrp - currentStorePrice) / currentStoreMrp) * 100) : 0);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`${product.brand} ${product.title} - Shade: ${variant?.shade_name}`);
@@ -157,21 +164,33 @@ const SingleProductModalContent: React.FC<{
               </div>
 
               {/* Pricing Display */}
-              {price && (
-                <div className="mt-4 pt-3 border-t border-stone-100 flex items-baseline justify-center sm:justify-start gap-3">
-                  <span className="text-3xl font-black text-stone-900">
-                    ₹{price.current_price.toLocaleString('en-IN')}
-                  </span>
-                  {price.mrp > price.current_price && (
-                    <span className="text-sm text-stone-400 line-through">
-                      ₹{price.mrp.toLocaleString('en-IN')}
+              {currentStorePrice > 0 && (
+                <div className="mt-4 pt-3 border-t border-stone-100 flex flex-col sm:flex-row sm:items-baseline justify-center sm:justify-start gap-2 sm:gap-3">
+                  <div className="flex items-baseline justify-center sm:justify-start gap-2.5">
+                    <span className="text-3xl font-black text-stone-900">
+                      ₹{currentStorePrice.toLocaleString('en-IN')}
                     </span>
-                  )}
-                  {price.discount_percent > 0 && (
-                    <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                      {Math.round(price.discount_percent)}% OFF Special Deal
+                    {currentStoreMrp > currentStorePrice && (
+                      <span className="text-sm text-stone-400 line-through">
+                        ₹{currentStoreMrp.toLocaleString('en-IN')}
+                      </span>
+                    )}
+                    {currentStoreDiscount > 0 && (
+                      <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                        {currentStoreDiscount}% OFF
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-1.5 self-center sm:self-auto">
+                    <span className="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-md">
+                      on {activeStore.name}
                     </span>
-                  )}
+                    {activeStore.isLowest && (
+                      <span className="text-[11px] font-extrabold text-emerald-800 bg-emerald-100/90 px-2 py-0.5 rounded-full border border-emerald-300 flex items-center gap-1">
+                        ✨ Best Price Deal
+                      </span>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -217,10 +236,10 @@ const SingleProductModalContent: React.FC<{
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
                 <Store className="w-4 h-4 text-rose-600" />
-                Select Shopping Site:
+                Multi-Store Price Comparison:
               </span>
               <span className="text-[11px] text-stone-500">
-                Choose your preferred store
+                Select store to view live price
               </span>
             </div>
 
@@ -253,35 +272,57 @@ const SingleProductModalContent: React.FC<{
                       </span>
                     </div>
 
-                    <div className="mt-2.5 pt-2 border-t border-stone-100 flex items-center justify-between">
-                      <span
-                        className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
-                          store.isOfficial
-                            ? 'bg-rose-100 text-rose-700'
-                            : 'bg-stone-100 text-stone-600'
-                        }`}
-                      >
-                        {store.badge}
-                      </span>
-                      <a
-                        href={store.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-stone-400 hover:text-rose-600 p-0.5"
-                        title={`Open directly on ${store.name}`}
-                      >
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
+                    <div className="mt-2.5 pt-2 border-t border-stone-100">
+                      <div className="flex items-baseline justify-between mb-1">
+                        <span className="text-sm font-extrabold text-stone-900">
+                          ₹{store.price.toLocaleString('en-IN')}
+                        </span>
+                        {store.mrp > store.price && (
+                          <span className="text-[10px] text-stone-400 line-through">
+                            ₹{store.mrp.toLocaleString('en-IN')}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        {store.isLowest ? (
+                          <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded">
+                            Best Deal
+                          </span>
+                        ) : (
+                          <span
+                            className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
+                              store.isOfficial
+                                ? 'bg-rose-100 text-rose-700'
+                                : 'bg-stone-100 text-stone-600'
+                            }`}
+                          >
+                            {store.badge}
+                          </span>
+                        )}
+                        <a
+                          href={store.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-stone-400 hover:text-rose-600 p-0.5"
+                          title={`Open directly on ${store.name}`}
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
                     </div>
                   </button>
                 );
               })}
             </div>
-            
-            <p className="text-[11px] text-stone-500 italic pt-1">
-              {activeStore.tagline} &bull; Opens directly on <strong>{activeStore.domain}</strong>
-            </p>
+
+            {/* Price comparison helper */}
+            <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-200/50 flex items-start gap-2 text-[11px] text-blue-900">
+              <span className="text-sm leading-none mt-0.5">💡</span>
+              <p className="leading-snug">
+                <strong>Live Retailer Pricing:</strong> Prices differ between Amazon, Flipkart, and Nykaa due to active seller promotions, coupons, and flash discounts. Selecting a store updates your checkout link directly.
+              </p>
+            </div>
           </div>
 
           {/* Why this product was recommended */}
@@ -344,7 +385,7 @@ const SingleProductModalContent: React.FC<{
               </>
             ) : (
               <>
-                <span>Buy on {activeStore.name} ({activeStore.domain})</span>
+                <span>Buy on {activeStore.name} — ₹{currentStorePrice.toLocaleString('en-IN')}</span>
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </>
             )}

@@ -73,10 +73,13 @@ async def get_sources_status():
     return registry.get_all_statuses()
 
 @router.post("/sources/seed")
-async def trigger_seed_database(db: AsyncSession = Depends(get_db)):
+async def trigger_seed_database(
+    force: bool = Query(True, description="Force reseed database from seed catalogue"),
+    db: AsyncSession = Depends(get_db)
+):
     """
     Seed database with authentic verified Indian market products and prices.
     """
-    count = await load_seed_catalogue_if_empty(db)
+    count = await load_seed_catalogue_if_empty(db, force=force)
     return {"message": "Catalogue seed processed", "new_products_inserted": count}
 
