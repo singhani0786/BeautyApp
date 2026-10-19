@@ -116,8 +116,12 @@ const SingleProductModalContent: React.FC<{
                       target.src = 'https://images-static.nykaa.com/media/catalog/product/0/0/0060d708901030569210-new_1.jpg';
                     } else if (b.includes('loreal') || b.includes("l'oreal")) {
                       target.src = 'https://images-static.nykaa.com/media/catalog/product/f/d/fd0ed65LOREA00000050_1.jpg';
+                    } else if (b.includes('mac') || b.includes('m.a.c')) {
+                      target.src = 'https://m.media-amazon.com/images/I/51wlTTPlSPL._SL1000_.jpg';
+                    } else if (b.includes('kay')) {
+                      target.src = 'https://m.media-amazon.com/images/I/51pnyFKFi4L._SL1000_.jpg';
                     } else {
-                      target.src = 'https://images-static.nykaa.com/media/catalog/product/1/3/132473_h-8901526407270.jpg';
+                      target.src = 'https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg';
                     }
                   }}
                 />

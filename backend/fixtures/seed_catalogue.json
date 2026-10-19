@@ -35,7 +35,7 @@
         "undertone": "cool",
         "depth_level": "fair",
         "sku": "MAY-FITME-115",
-        "image_url": "https://m.media-amazon.com/images/I/61k2YwYlqRL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -65,7 +65,7 @@
         "undertone": "warm",
         "depth_level": "light",
         "sku": "MAY-FITME-128",
-        "image_url": "https://m.media-amazon.com/images/I/61o4u4O6TUL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -95,7 +95,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "MAY-FITME-220",
-        "image_url": "https://m.media-amazon.com/images/I/61k2YwYlqRL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -125,7 +125,7 @@
         "undertone": "warm",
         "depth_level": "tan",
         "sku": "MAY-FITME-310",
-        "image_url": "https://m.media-amazon.com/images/I/61o4u4O6TUL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -155,7 +155,7 @@
         "undertone": "neutral",
         "depth_level": "deep",
         "sku": "MAY-FITME-332",
-        "image_url": "https://m.media-amazon.com/images/I/61k2YwYlqRL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -216,7 +216,7 @@
         "undertone": "olive",
         "depth_level": "light",
         "sku": "MAC-SFF-NC25",
-        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51wlTTPlSPL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -237,7 +237,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "MAC-SFF-NC40",
-        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51wlTTPlSPL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -258,7 +258,7 @@
         "undertone": "warm",
         "depth_level": "tan",
         "sku": "MAC-SFF-NC42",
-        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51wlTTPlSPL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -279,7 +279,7 @@
         "undertone": "cool",
         "depth_level": "deep",
         "sku": "MAC-SFF-NW45",
-        "image_url": "https://m.media-amazon.com/images/I/51rYfV9h09L._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51wlTTPlSPL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -331,7 +331,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "KAY-FND-120Y",
-        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/f/ff326e68904320707742_1.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51pnyFKFi4L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -352,7 +352,7 @@
         "undertone": "cool",
         "depth_level": "medium",
         "sku": "KAY-FND-130P",
-        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/f/ff326e68904320707742_1.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51pnyFKFi4L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -373,7 +373,7 @@
         "undertone": "neutral",
         "depth_level": "tan",
         "sku": "KAY-FND-140N",
-        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/f/ff326e68904320707742_1.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51pnyFKFi4L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -422,7 +422,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "LOR-INF-200",
-        "image_url": "https://m.media-amazon.com/images/I/61NlUo0V2EL._SL1000_.jpg",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/d/fd0ed65LOREA00000050_1.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -452,7 +452,7 @@
         "undertone": "neutral",
         "depth_level": "medium",
         "sku": "LOR-INF-250",
-        "image_url": "https://m.media-amazon.com/images/I/61NlUo0V2EL._SL1000_.jpg",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/f/d/fd0ed65LOREA00000050_1.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -510,7 +510,7 @@
         "undertone": "warm",
         "depth_level": "light",
         "sku": "LAK-9TO5-W160",
-        "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/0/0/0060d708901030569210-new_1.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -549,7 +549,7 @@
         "undertone": "neutral",
         "depth_level": "medium",
         "sku": "LAK-9TO5-N220",
-        "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/0/0/0060d708901030569210-new_1.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -618,7 +618,7 @@
         "undertone": "neutral",
         "depth_level": "light",
         "sku": "MAY-AR-120",
-        "image_url": "https://m.media-amazon.com/images/I/61I2lKzL7RL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41JH2Raft3L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -648,7 +648,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "MAY-AR-130",
-        "image_url": "https://m.media-amazon.com/images/I/61I2lKzL7RL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41JH2Raft3L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -678,7 +678,7 @@
         "undertone": "warm",
         "depth_level": "tan",
         "sku": "MAY-AR-140",
-        "image_url": "https://m.media-amazon.com/images/I/61I2lKzL7RL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/41JH2Raft3L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -738,7 +738,7 @@
         "undertone": "neutral",
         "depth_level": "light",
         "sku": "SWISS-CON-02",
-        "image_url": "https://m.media-amazon.com/images/I/51H9N2XpCIL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51P0iBL1P3L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -768,7 +768,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "SWISS-CON-04",
-        "image_url": "https://m.media-amazon.com/images/I/51H9N2XpCIL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51P0iBL1P3L._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -828,7 +828,7 @@
         "undertone": "cool",
         "depth_level": "medium",
         "sku": "MAC-LIP-RW",
-        "image_url": "https://m.media-amazon.com/images/I/51E4h774lUL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/71xtdu5CyAL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -849,7 +849,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "MAC-LIP-VT",
-        "image_url": "https://m.media-amazon.com/images/I/51E4h774lUL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/71xtdu5CyAL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -870,7 +870,7 @@
         "undertone": "warm",
         "depth_level": "tan",
         "sku": "MAC-LIP-CHILI",
-        "image_url": "https://m.media-amazon.com/images/I/51E4h774lUL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/71xtdu5CyAL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -920,7 +920,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "MAY-CM-660",
-        "image_url": "https://m.media-amazon.com/images/I/61NqF7n8eJL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/71xtdu5CyAL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -950,7 +950,7 @@
         "undertone": "warm",
         "depth_level": "tan",
         "sku": "MAY-CM-657",
-        "image_url": "https://m.media-amazon.com/images/I/61NqF7n8eJL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/71xtdu5CyAL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "nykaa",
@@ -1008,7 +1008,7 @@
         "undertone": "warm",
         "depth_level": "light",
         "sku": "MAY-CMP-128",
-        "image_url": "https://m.media-amazon.com/images/I/61gX4G8WqUL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/714IpkGJ4bL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -1038,7 +1038,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "MAY-CMP-220",
-        "image_url": "https://m.media-amazon.com/images/I/61gX4G8WqUL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/714IpkGJ4bL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -1097,7 +1097,7 @@
         "undertone": "cool",
         "depth_level": "medium",
         "sku": "MAY-BLS-30",
-        "image_url": "https://m.media-amazon.com/images/I/61K1zWpP7GL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51kSJgP5rcL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
@@ -1127,7 +1127,7 @@
         "undertone": "warm",
         "depth_level": "medium",
         "sku": "MAY-BLS-40",
-        "image_url": "https://m.media-amazon.com/images/I/61K1zWpP7GL._SL1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/I/51kSJgP5rcL._SL1000_.jpg",
         "prices": [
           {
             "retailer": "amazon_in",
