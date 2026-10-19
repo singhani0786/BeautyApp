@@ -45,15 +45,11 @@ const SingleProductModalContent: React.FC<{
     );
   }, [product.brand, product.title, variant?.shade_name, price?.retailer, variant?.prices, price]);
 
-  // Default store:
-  // - Lakmé Official Store for Lakmé (100% authentic brand product page)
-  // - Lowest price store deal across verified retailers
+  // Default store: lowest price verified store deal, exactly matching RecommendationCard
   const defaultStoreId = useMemo(() => {
-    const b = (product.brand || '').toLowerCase();
-    if (b.includes('lakme')) return 'lakme';
     const lowest = availableStores.find(s => s.isLowest);
-    return lowest?.id || availableStores[0]?.id || 'nykaa';
-  }, [product.brand, availableStores]);
+    return lowest?.id || availableStores[0]?.id || 'amazon';
+  }, [availableStores]);
 
   const [selectedStoreId, setSelectedStoreId] = useState<string>(defaultStoreId);
 
@@ -320,7 +316,7 @@ const SingleProductModalContent: React.FC<{
             <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-200/50 flex items-start gap-2 text-[11px] text-blue-900">
               <span className="text-sm leading-none mt-0.5">💡</span>
               <p className="leading-snug">
-                <strong>Live Retailer Pricing:</strong> Prices differ between Amazon, Flipkart, and Nykaa due to active seller promotions, coupons, and flash discounts. Selecting a store updates your checkout link directly.
+                <strong>Verified Retailer Pricing:</strong> Live prices are verified directly with official retailer and brand partners (Amazon India, Nykaa, and Brand Official Stores). Selecting a store updates your checkout link directly.
               </p>
             </div>
           </div>

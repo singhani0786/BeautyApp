@@ -39,18 +39,18 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 649.0,
-            "current_price": 454.0,
-            "discount_percent": 30.0,
+            "mrp": 329.0,
+            "current_price": 155.0,
+            "discount_percent": 53.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/Maybelline-Matte-Poreless-Liquid-Foundation/dp/B07L3R68G2"
+            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
           },
           {
             "retailer": "nykaa",
-            "mrp": 649.0,
-            "current_price": 487.0,
-            "discount_percent": 25.0,
+            "mrp": 679.0,
+            "current_price": 407.0,
+            "discount_percent": 40.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
@@ -69,18 +69,18 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 649.0,
-            "current_price": 454.0,
-            "discount_percent": 30.0,
+            "mrp": 329.0,
+            "current_price": 155.0,
+            "discount_percent": 53.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/Maybelline-Matte-Poreless-Liquid-Foundation/dp/B07L3R68G2"
+            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
           },
           {
             "retailer": "nykaa",
-            "mrp": 649.0,
-            "current_price": 487.0,
-            "discount_percent": 25.0,
+            "mrp": 679.0,
+            "current_price": 407.0,
+            "discount_percent": 40.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
@@ -99,18 +99,18 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 649.0,
-            "current_price": 454.0,
-            "discount_percent": 30.0,
+            "mrp": 329.0,
+            "current_price": 155.0,
+            "discount_percent": 53.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/Maybelline-Matte-Poreless-Liquid-Foundation/dp/B07L3R68G2"
+            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
           },
           {
             "retailer": "nykaa",
-            "mrp": 649.0,
-            "current_price": 487.0,
-            "discount_percent": 25.0,
+            "mrp": 679.0,
+            "current_price": 407.0,
+            "discount_percent": 40.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
@@ -129,12 +129,21 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 649.0,
-            "current_price": 479.0,
-            "discount_percent": 26.0,
+            "mrp": 329.0,
+            "current_price": 155.0,
+            "discount_percent": 53.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/Maybelline-Matte-Poreless-Liquid-Foundation/dp/B07L3R68G2"
+            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 679.0,
+            "current_price": 407.0,
+            "discount_percent": 40.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
           }
         ]
       },
@@ -150,12 +159,21 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 649.0,
-            "current_price": 479.0,
-            "discount_percent": 26.0,
+            "mrp": 329.0,
+            "current_price": 155.0,
+            "discount_percent": 53.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/Maybelline-Matte-Poreless-Liquid-Foundation/dp/B07L3R68G2"
+            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 679.0,
+            "current_price": 407.0,
+            "discount_percent": 40.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
           }
         ]
       }
@@ -202,18 +220,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 3900.0,
-            "current_price": 3510.0,
-            "discount_percent": 10.0,
-            "in_stock": true,
-            "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/88999"
-          },
-          {
-            "retailer": "amazon_in",
-            "mrp": 3900.0,
-            "current_price": 3700.0,
-            "discount_percent": 5.0,
+            "mrp": 3400.0,
+            "current_price": 2900.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/88999"
@@ -232,9 +241,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 3900.0,
-            "current_price": 3510.0,
-            "discount_percent": 10.0,
+            "mrp": 3400.0,
+            "current_price": 2900.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/88999"
@@ -253,9 +262,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 3900.0,
-            "current_price": 3510.0,
-            "discount_percent": 10.0,
+            "mrp": 3400.0,
+            "current_price": 2900.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/88999"
@@ -274,9 +283,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 3900.0,
-            "current_price": 3510.0,
-            "discount_percent": 10.0,
+            "mrp": 3400.0,
+            "current_price": 2900.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/88999"
@@ -326,9 +335,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 1299.0,
-            "current_price": 1039.0,
-            "discount_percent": 20.0,
+            "mrp": 1350.0,
+            "current_price": 1013.0,
+            "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1229442"
@@ -347,9 +356,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 1299.0,
-            "current_price": 1039.0,
-            "discount_percent": 20.0,
+            "mrp": 1350.0,
+            "current_price": 1013.0,
+            "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1229442"
@@ -368,9 +377,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 1299.0,
-            "current_price": 1104.0,
-            "discount_percent": 15.0,
+            "mrp": 1350.0,
+            "current_price": 1013.0,
+            "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1229442"
@@ -416,31 +425,22 @@
         "image_url": "https://m.media-amazon.com/images/I/61NlUo0V2EL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "amazon_in",
-            "mrp": 1299.0,
-            "current_price": 884.0,
-            "discount_percent": 32.0,
-            "in_stock": true,
-            "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B08X869BKZ"
-          },
-          {
-            "retailer": "flipkart",
-            "mrp": 1299.0,
-            "current_price": 884.0,
-            "discount_percent": 32.0,
-            "in_stock": true,
-            "stock_status": "in_stock",
-            "product_url": "https://www.flipkart.com/l-oral-paris-infallible-32h-fresh-wear-foundation/p/itmf0f236c281933"
-          },
-          {
             "retailer": "nykaa",
-            "mrp": 1299.0,
+            "mrp": 899.0,
             "current_price": 899.0,
-            "discount_percent": 31.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/l-oreal-paris-infallible-pro-matte-foundation/p/257863"
+          },
+          {
+            "retailer": "amazon_in",
+            "mrp": 1099.0,
+            "current_price": 999.0,
+            "discount_percent": 9.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07D7LZ7GK"
           }
         ]
       },
@@ -455,31 +455,22 @@
         "image_url": "https://m.media-amazon.com/images/I/61NlUo0V2EL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "amazon_in",
-            "mrp": 1299.0,
-            "current_price": 884.0,
-            "discount_percent": 32.0,
-            "in_stock": true,
-            "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B08X869BKZ"
-          },
-          {
-            "retailer": "flipkart",
-            "mrp": 1299.0,
-            "current_price": 884.0,
-            "discount_percent": 32.0,
-            "in_stock": true,
-            "stock_status": "in_stock",
-            "product_url": "https://www.flipkart.com/l-oral-paris-infallible-32h-fresh-wear-foundation/p/itmf0f236c281933"
-          },
-          {
             "retailer": "nykaa",
-            "mrp": 1299.0,
+            "mrp": 899.0,
             "current_price": 899.0,
-            "discount_percent": 31.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/l-oreal-paris-infallible-pro-matte-foundation/p/257863"
+          },
+          {
+            "retailer": "amazon_in",
+            "mrp": 1099.0,
+            "current_price": 999.0,
+            "discount_percent": 9.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07D7LZ7GK"
           }
         ]
       }
@@ -522,10 +513,28 @@
         "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "lakme_official",
-            "mrp": 525.0,
+            "retailer": "amazon_in",
+            "mrp": 475.0,
+            "current_price": 224.0,
+            "discount_percent": 53.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07YVH5KFK"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 699.0,
             "current_price": 489.0,
-            "discount_percent": 7.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/lakme-9-to-5-primer-matte-perfect-cover-foundation/p/574201"
+          },
+          {
+            "retailer": "lakme_official",
+            "mrp": 699.0,
+            "current_price": 594.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"
@@ -543,10 +552,28 @@
         "image_url": "https://m.media-amazon.com/images/I/51r7gP-9GTL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "lakme_official",
-            "mrp": 525.0,
+            "retailer": "amazon_in",
+            "mrp": 475.0,
+            "current_price": 224.0,
+            "discount_percent": 53.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07YVH5KFK"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 699.0,
             "current_price": 489.0,
-            "discount_percent": 7.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/lakme-9-to-5-primer-matte-perfect-cover-foundation/p/574201"
+          },
+          {
+            "retailer": "lakme_official",
+            "mrp": 699.0,
+            "current_price": 594.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"
@@ -596,11 +623,20 @@
           {
             "retailer": "amazon_in",
             "mrp": 729.0,
-            "current_price": 546.0,
-            "discount_percent": 25.0,
+            "current_price": 399.0,
+            "discount_percent": 45.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0791YY1P1"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 799.0,
+            "current_price": 599.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-instant-age-rewind-concealer/p/186524"
           }
         ]
       },
@@ -617,11 +653,20 @@
           {
             "retailer": "amazon_in",
             "mrp": 729.0,
-            "current_price": 546.0,
-            "discount_percent": 25.0,
+            "current_price": 399.0,
+            "discount_percent": 45.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0791YY1P1"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 799.0,
+            "current_price": 599.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-instant-age-rewind-concealer/p/186524"
           }
         ]
       },
@@ -638,11 +683,20 @@
           {
             "retailer": "amazon_in",
             "mrp": 729.0,
-            "current_price": 546.0,
-            "discount_percent": 25.0,
+            "current_price": 399.0,
+            "discount_percent": 45.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0791YY1P1"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 799.0,
+            "current_price": 599.0,
+            "discount_percent": 25.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-instant-age-rewind-concealer/p/186524"
           }
         ]
       }
@@ -687,22 +741,22 @@
         "image_url": "https://m.media-amazon.com/images/I/51H9N2XpCIL._SL1000_.jpg",
         "prices": [
           {
+            "retailer": "amazon_in",
+            "mrp": 249.0,
+            "current_price": 174.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07WTNH18L"
+          },
+          {
             "retailer": "nykaa",
             "mrp": 249.0,
-            "current_price": 217.0,
-            "discount_percent": 13.0,
+            "current_price": 187.0,
+            "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/swiss-beauty-liquid-concealer/p/419682"
-          },
-          {
-            "retailer": "amazon_in",
-            "mrp": 249.0,
-            "current_price": 199.0,
-            "discount_percent": 20.0,
-            "in_stock": true,
-            "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B0D9LSMKD2"
           }
         ]
       },
@@ -717,22 +771,22 @@
         "image_url": "https://m.media-amazon.com/images/I/51H9N2XpCIL._SL1000_.jpg",
         "prices": [
           {
+            "retailer": "amazon_in",
+            "mrp": 249.0,
+            "current_price": 174.0,
+            "discount_percent": 30.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07WTNH18L"
+          },
+          {
             "retailer": "nykaa",
             "mrp": 249.0,
-            "current_price": 217.0,
-            "discount_percent": 13.0,
+            "current_price": 187.0,
+            "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/swiss-beauty-liquid-concealer/p/419682"
-          },
-          {
-            "retailer": "amazon_in",
-            "mrp": 249.0,
-            "current_price": 199.0,
-            "discount_percent": 20.0,
-            "in_stock": true,
-            "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B0D9LSMKD2"
           }
         ]
       }
@@ -778,9 +832,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 2300.0,
-            "current_price": 2070.0,
-            "discount_percent": 10.0,
+            "mrp": 2550.0,
+            "current_price": 2550.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/25176"
@@ -799,9 +853,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 2300.0,
-            "current_price": 2070.0,
-            "discount_percent": 10.0,
+            "mrp": 2550.0,
+            "current_price": 2550.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/25176"
@@ -820,9 +874,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 2300.0,
-            "current_price": 2070.0,
-            "discount_percent": 10.0,
+            "mrp": 2550.0,
+            "current_price": 2550.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/25176"
@@ -869,10 +923,19 @@
         "image_url": "https://m.media-amazon.com/images/I/61NqF7n8eJL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "amazon_in",
+            "retailer": "nykaa",
             "mrp": 329.0,
-            "current_price": 249.0,
-            "discount_percent": 24.0,
+            "current_price": 329.0,
+            "discount_percent": 0.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipstick/p/108527"
+          },
+          {
+            "retailer": "amazon_in",
+            "mrp": 399.0,
+            "current_price": 330.0,
+            "discount_percent": 17.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07R47TDYM"
@@ -890,10 +953,19 @@
         "image_url": "https://m.media-amazon.com/images/I/61NqF7n8eJL._SL1000_.jpg",
         "prices": [
           {
-            "retailer": "amazon_in",
+            "retailer": "nykaa",
             "mrp": 329.0,
-            "current_price": 249.0,
-            "discount_percent": 24.0,
+            "current_price": 329.0,
+            "discount_percent": 0.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipstick/p/108527"
+          },
+          {
+            "retailer": "amazon_in",
+            "mrp": 399.0,
+            "current_price": 330.0,
+            "discount_percent": 17.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07R47TDYM"
@@ -941,11 +1013,20 @@
           {
             "retailer": "amazon_in",
             "mrp": 275.0,
-            "current_price": 206.0,
-            "discount_percent": 25.0,
+            "current_price": 121.0,
+            "discount_percent": 56.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B08QSQ6QX5"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 239.0,
+            "current_price": 215.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-compact-powder/p/671040"
           }
         ]
       },
@@ -962,11 +1043,20 @@
           {
             "retailer": "amazon_in",
             "mrp": 275.0,
-            "current_price": 206.0,
-            "discount_percent": 25.0,
+            "current_price": 121.0,
+            "discount_percent": 56.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B08QSQ6QX5"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 239.0,
+            "current_price": 215.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-compact-powder/p/671040"
           }
         ]
       }
@@ -1012,11 +1102,20 @@
           {
             "retailer": "amazon_in",
             "mrp": 599.0,
-            "current_price": 449.0,
-            "discount_percent": 25.0,
+            "current_price": 300.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0BD258Q7L"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 599.0,
+            "current_price": 539.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-blush/p/241852"
           }
         ]
       },
@@ -1033,11 +1132,20 @@
           {
             "retailer": "amazon_in",
             "mrp": 599.0,
-            "current_price": 449.0,
-            "discount_percent": 25.0,
+            "current_price": 300.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0BD258Q7L"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 599.0,
+            "current_price": 539.0,
+            "discount_percent": 10.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-blush/p/241852"
           }
         ]
       }
