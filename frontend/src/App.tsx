@@ -96,39 +96,57 @@ export function App() {
         detectedUndertone={undertone}
       />
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-10 sm:space-y-14">
         {/* Editorial Luxury Hero Section */}
-        <div className="text-center max-w-3xl mx-auto space-y-5 pt-2 sm:pt-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-50 via-amber-50 to-rose-50 border border-rose-200/70 text-rose-800 text-xs font-bold tracking-wide shadow-2xs">
-            <Sparkles className="w-4 h-4 text-rose-600 animate-pulse" />
-            <span>AI-Powered Shade & Undertone Harmonization</span>
+        <div className="text-center max-w-4xl mx-auto space-y-6 pt-2 sm:pt-4 relative">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-rose-200/80 text-rose-800 text-xs font-bold tracking-wide shadow-sm hover:scale-105 transition-all">
+            <span className="flex h-2 w-2 rounded-full bg-rose-500 animate-ping" />
+            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
+            <span>AI Precision Matcher • Indian Complexion Science</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black font-serif-display text-stone-900 tracking-tight leading-[1.15]">
-            Discover Your True Shade Formulation for{' '}
-            <span className="bg-gradient-to-r from-rose-600 via-amber-600 to-rose-700 bg-clip-text text-transparent">
-              Indian Complexions
+          <h1 className="text-4xl sm:text-6xl font-black font-serif-display text-stone-900 tracking-tight leading-[1.12]">
+            Never Buy The Wrong Shade Again.{' '}
+            <span className="block mt-1 bg-gradient-to-r from-rose-600 via-amber-600 to-rose-700 bg-clip-text text-transparent">
+              Exact Matches. Lowest Store Prices.
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl mx-auto">
-            Eliminate makeup shade guesswork. Scan your face to reveal your exact undertone and depth, then explore verified, in-stock products with authentic store pricing.
+          <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl mx-auto font-normal">
+            Eliminate makeup shade guesswork. Scan your face or upload a photo to reveal your true depth and undertone, then compare authentic, in-stock formulations across verified Indian retailers.
           </p>
 
-          {/* Luxury Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-xs font-semibold text-stone-600">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/80 rounded-full border border-stone-200/80 shadow-2xs">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              100% In-Stock Product PDPs
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/80 rounded-full border border-stone-200/80 shadow-2xs">
-              <Award className="w-3.5 h-3.5 text-amber-600" />
-              Official Partner Stores
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/80 rounded-full border border-stone-200/80 shadow-2xs">
-              <ShieldCheck className="w-3.5 h-3.5 text-rose-600" />
-              Zero Photo Storage
-            </span>
+          {/* 3-Step Interactive Process Pill Bar */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/70 backdrop-blur-sm border border-stone-200/80 shadow-2xs">
+              <div className="w-8 h-8 rounded-xl bg-rose-50 text-rose-700 font-black text-xs flex items-center justify-center flex-shrink-0">
+                01
+              </div>
+              <div className="text-left min-w-0">
+                <span className="text-xs font-bold text-stone-900 block truncate">Snap or Upload</span>
+                <span className="text-[11px] text-stone-500 block truncate">In-memory zero storage</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/70 backdrop-blur-sm border border-stone-200/80 shadow-2xs">
+              <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-700 font-black text-xs flex items-center justify-center flex-shrink-0">
+                02
+              </div>
+              <div className="text-left min-w-0">
+                <span className="text-xs font-bold text-stone-900 block truncate">AI Measures Tone</span>
+                <span className="text-[11px] text-stone-500 block truncate">ITA° & undertone lock</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/70 backdrop-blur-sm border border-stone-200/80 shadow-2xs">
+              <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 font-black text-xs flex items-center justify-center flex-shrink-0">
+                03
+              </div>
+              <div className="text-left min-w-0">
+                <span className="text-xs font-bold text-stone-900 block truncate">Shop Real Deals</span>
+                <span className="text-[11px] text-stone-500 block truncate">Nykaa & Amazon live</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -162,33 +180,43 @@ export function App() {
         <section className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-200/80 pb-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-rose-600 block">
-                Tailored Results
-              </span>
-              <h2 className="text-2xl font-bold font-serif-display text-stone-900">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-black uppercase tracking-widest text-rose-600 block">
+                  Tailored For You
+                </span>
+                <span className="text-[10px] uppercase font-bold tracking-wider bg-rose-100/70 text-rose-800 px-2.5 py-0.5 rounded-full">
+                  {category}
+                </span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black font-serif-display text-stone-900 mt-0.5">
                 Curated Recommendations
               </h2>
-              <p className="text-xs text-stone-500 mt-1">
-                Showing matches for{' '}
-                <span className="font-bold capitalize text-stone-800">{skinDepth}</span> depth,{' '}
-                <span className="font-bold capitalize text-stone-800">{undertone}</span> undertone
+              <p className="text-xs text-stone-600 mt-1">
+                Matched for{' '}
+                <span className="font-bold capitalize text-stone-900 bg-stone-100 px-2 py-0.5 rounded">
+                  {skinDepth}
+                </span>{' '}
+                depth &{' '}
+                <span className="font-bold capitalize text-stone-900 bg-stone-100 px-2 py-0.5 rounded">
+                  {undertone}
+                </span>{' '}
+                undertone
                 {budgetInr ? (
                   <span>
-                    {' '}within{' '}
-                    <span className="font-bold text-rose-600">
+                    {' '}• Budget capped at{' '}
+                    <span className="font-black text-rose-600">
                       ₹{budgetInr.toLocaleString('en-IN')}
                     </span>
                   </span>
                 ) : (
-                  <span> with no budget cap</span>
+                  <span> • All luxury tiers included</span>
                 )}
-                .
               </p>
             </div>
 
             {recommendations && (
-              <span className="text-xs font-semibold text-stone-500 bg-stone-100 px-3 py-1.5 rounded-full">
-                {recommendations.total_candidates_found} suitable variants evaluated
+              <span className="text-xs font-bold text-stone-700 bg-white border border-stone-200 px-3.5 py-1.5 rounded-full shadow-2xs self-start sm:self-auto">
+                ✨ {recommendations.total_candidates_found} suitable variants evaluated
               </span>
             )}
           </div>

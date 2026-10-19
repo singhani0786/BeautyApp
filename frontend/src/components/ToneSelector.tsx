@@ -17,12 +17,12 @@ interface ToneSelectorProps {
 }
 
 const CATEGORIES = [
-  { id: 'foundation', label: 'Foundation' },
-  { id: 'concealer', label: 'Concealer' },
-  { id: 'lipstick', label: 'Lipstick' },
-  { id: 'blush', label: 'Blush' },
-  { id: 'compact', label: 'Compact Powder' },
-  { id: 'all', label: 'All Categories' },
+  { id: 'foundation', label: 'Foundation', icon: '🧴' },
+  { id: 'concealer', label: 'Concealer', icon: '🪄' },
+  { id: 'lipstick', label: 'Lipstick', icon: '💄' },
+  { id: 'blush', label: 'Blush', icon: '🌸' },
+  { id: 'compact', label: 'Compact Powder', icon: '🪞' },
+  { id: 'all', label: 'All Products', icon: '✨' },
 ];
 
 const QUICK_BUDGETS = [500, 1000, 1500, 2500, 4000];
@@ -84,7 +84,7 @@ export const ToneSelector: React.FC<ToneSelectorProps> = ({
             What product are you looking for?
           </label>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {CATEGORIES.map(cat => (
             <button
               key={cat.id}
@@ -93,13 +93,14 @@ export const ToneSelector: React.FC<ToneSelectorProps> = ({
                 // Trigger immediate update
                 setTimeout(onFetchRecommendations, 50);
               }}
-              className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
+              className={`px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all active:scale-95 ${
                 category === cat.id
-                  ? 'bg-rose-600 text-white shadow-md shadow-rose-600/20'
-                  : 'bg-stone-100 hover:bg-stone-200/80 text-stone-700'
+                  ? 'bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md shadow-rose-600/25 ring-2 ring-rose-300'
+                  : 'bg-white hover:bg-stone-100 text-stone-700 border border-stone-200/80 shadow-2xs'
               }`}
             >
-              {cat.label}
+              <span>{cat.icon}</span>
+              <span>{cat.label}</span>
             </button>
           ))}
         </div>
@@ -189,10 +190,10 @@ export const ToneSelector: React.FC<ToneSelectorProps> = ({
         <button
           onClick={onFetchRecommendations}
           disabled={isLoading}
-          className="w-full py-3.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+          className="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-700 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-extrabold text-sm shadow-lg shadow-rose-600/25 flex items-center justify-center gap-2.5 transition-all duration-300 active:scale-98 disabled:opacity-50"
         >
-          <Sparkles className="w-4 h-4 text-amber-400" />
-          <span>{isLoading ? 'Updating Recommendations...' : 'Refresh Matching Recommendations'}</span>
+          <Sparkles className="w-4 h-4 text-amber-200 animate-pulse" />
+          <span>{isLoading ? 'Calibrating Recommendations...' : 'Discover & Compare Live Store Matches'}</span>
         </button>
       </div>
     </div>

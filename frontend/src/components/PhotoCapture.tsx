@@ -202,9 +202,9 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
 
       {/* Camera / Upload view */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        <div className="relative aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 border-2 border-dashed border-stone-300 flex flex-col items-center justify-center p-4">
+        <div className="relative aspect-square sm:aspect-[4/3] rounded-3xl overflow-hidden bg-gradient-to-b from-rose-50/40 via-white to-stone-50/60 border-2 border-dashed border-rose-200/90 shadow-inner flex flex-col items-center justify-center p-4">
           {isCameraActive ? (
-            <div className="relative w-full h-full flex items-center justify-center bg-black rounded-xl overflow-hidden">
+            <div className="relative w-full h-full flex items-center justify-center bg-black rounded-2xl overflow-hidden shadow-2xl">
               <video
                 ref={videoRef}
                 autoPlay
@@ -216,14 +216,14 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
                 style={{ transform: 'scaleX(-1)' }}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 pointer-events-none border-2 border-rose-400/60 rounded-full w-48 h-64 m-auto shadow-inner" />
+              <div className="absolute inset-0 pointer-events-none border-2 border-rose-400/70 rounded-full w-48 h-64 m-auto shadow-[0_0_20px_rgba(244,63,94,0.3)]" />
               <button
                 type="button"
                 onClick={handleCapturePhoto}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-full shadow-lg flex items-center gap-2 transition-all active:scale-95"
+                className="absolute bottom-5 left-1/2 -translate-x-1/2 px-7 py-3 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white font-bold rounded-full shadow-lg shadow-rose-600/30 flex items-center gap-2 transition-all active:scale-95 text-xs"
               >
                 <Camera className="w-4 h-4" />
-                <span>Snap Selfie</span>
+                <span>Capture Facial Scan</span>
               </button>
             </div>
           ) : previewUrl ? (
@@ -231,49 +231,51 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
               <img
                 src={previewUrl}
                 alt="Face preview"
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover rounded-2xl shadow-sm"
               />
               {isLoading && (
-                <div className="absolute inset-0 bg-stone-900/40 backdrop-blur-sm flex flex-col items-center justify-center text-white">
-                  <RefreshCw className="w-8 h-8 animate-spin mb-2 text-rose-400" />
-                  <span className="text-sm font-medium">Measuring ITA & Undertone...</span>
+                <div className="absolute inset-0 bg-stone-950/50 backdrop-blur-sm flex flex-col items-center justify-center text-white rounded-2xl">
+                  <div className="w-full h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent absolute top-0 animate-scan-glow" />
+                  <RefreshCw className="w-9 h-9 animate-spin mb-3 text-rose-400 drop-shadow" />
+                  <span className="text-sm font-bold tracking-wide">Measuring ITA° & Undertone...</span>
+                  <span className="text-xs text-rose-200/80 mt-1">Calibrating Indian Complexion Metrics</span>
                 </div>
               )}
               <button
                 type="button"
                 onClick={handleReset}
-                className="absolute top-3 right-3 bg-white/90 hover:bg-white text-stone-700 text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md transition-all"
+                className="absolute top-3.5 right-3.5 bg-white/95 hover:bg-white text-stone-800 text-xs font-bold px-3.5 py-1.5 rounded-xl shadow-md transition-all border border-stone-200"
               >
                 Change Photo
               </button>
             </div>
           ) : (
             <div className="text-center p-6">
-              <div className="w-16 h-16 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mx-auto mb-4 border border-rose-100 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-rose-100 to-amber-100 text-rose-600 flex items-center justify-center mx-auto mb-4 border border-rose-200/70 shadow-sm">
                 <Camera className="w-8 h-8" />
               </div>
-              <p className="text-sm font-semibold text-stone-800">Select capture method</p>
-              <p className="text-xs text-stone-500 mt-1 max-w-xs mx-auto">
-                Ensure natural daylight without colored filters for true shade calibration. High-res photos auto-compress.
+              <p className="text-base font-bold text-stone-900">Choose Face Calibration Method</p>
+              <p className="text-xs text-stone-500 mt-1.5 max-w-xs mx-auto leading-relaxed">
+                Natural daylight without makeup or filters gives the most accurate 99% match. Photos are processed purely in-memory.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center gap-3 mt-5">
+              <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
                 <button
                   type="button"
                   onClick={startCamera}
-                  className="px-4 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-sm transition-all active:scale-95"
+                  className="px-5 py-3 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-sm hover:shadow-md transition-all active:scale-95"
                 >
-                  <Camera className="w-4 h-4" />
-                  <span>Use Webcam / Selfie</span>
+                  <Camera className="w-4 h-4 text-rose-400" />
+                  <span>Open Live Camera</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="px-4 py-2.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all active:scale-95"
+                  className="px-5 py-3 bg-white hover:bg-rose-50/80 text-rose-700 border border-rose-200 rounded-xl text-xs font-bold flex items-center gap-2 shadow-2xs hover:shadow-sm transition-all active:scale-95"
                 >
-                  <Upload className="w-4 h-4" />
-                  <span>Upload Phone Photo</span>
+                  <Upload className="w-4 h-4 text-rose-600" />
+                  <span>Upload Face Photo</span>
                 </button>
                 <input
                   ref={fileInputRef}

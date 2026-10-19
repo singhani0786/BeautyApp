@@ -118,13 +118,13 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
         {/* Product Details Section */}
         <div className="p-5">
           <div className="flex gap-4 items-start">
-            {/* Product Image Frame */}
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-stone-50 p-2 flex-shrink-0 overflow-hidden border border-stone-200/70 flex items-center justify-center relative group-hover:scale-105 group-hover:border-stone-300 transition-all duration-300">
+            {/* High-End Product Image Frame */}
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-b from-stone-50/80 via-white to-stone-50/40 p-2.5 flex-shrink-0 overflow-hidden border border-stone-200/80 shadow-2xs flex items-center justify-center relative group-hover:scale-105 group-hover:shadow-md group-hover:border-rose-200 transition-all duration-300">
               {variant?.image_url ? (
                 <img
                   src={variant.image_url}
                   alt={product.title}
-                  className="w-full h-full object-contain mix-blend-multiply"
+                  className="w-full h-full object-contain mix-blend-multiply drop-shadow-xs"
                   loading="lazy"
                   onError={(e) => {
                     const target = e.currentTarget;
@@ -149,7 +149,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
 
             {/* Brand & Title */}
             <div className="flex-1 min-w-0">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-rose-600 block">
+              <span className="text-[10px] font-black uppercase tracking-widest text-rose-600 block">
                 {product.brand}
               </span>
               <h3 className="font-bold text-sm text-stone-900 leading-snug line-clamp-2 mt-0.5 group-hover:text-rose-600 transition-colors">
@@ -169,10 +169,10 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
 
               {/* Finish & Coverage tags */}
               <div className="flex flex-wrap gap-1 mt-2">
-                <span className="text-[9px] font-semibold bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded capitalize">
+                <span className="text-[9px] font-bold bg-stone-100/90 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200/50 capitalize">
                   {product.finish}
                 </span>
-                <span className="text-[9px] font-semibold bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded capitalize">
+                <span className="text-[9px] font-bold bg-stone-100/90 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200/50 capitalize">
                   {product.coverage} cov
                 </span>
               </div>
@@ -181,15 +181,15 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
 
           {/* Precision Shade Swatch Bar */}
           {variant && (
-            <div className="mt-4 p-3 rounded-2xl bg-gradient-to-r from-stone-50 via-rose-50/40 to-stone-50 border border-stone-200/70 flex items-center justify-between">
+            <div className="mt-4 p-3 rounded-2xl bg-gradient-to-r from-stone-50 via-rose-50/50 to-stone-50 border border-stone-200/80 flex items-center justify-between shadow-2xs">
               <div className="flex items-center gap-2.5 min-w-0">
                 <div
-                  className="w-7 h-7 rounded-full border-2 border-white shadow-sm flex-shrink-0 ring-1 ring-stone-200"
+                  className="w-8 h-8 rounded-full border-2 border-white shadow-md flex-shrink-0 ring-2 ring-stone-300/60"
                   style={{ backgroundColor: variant.hex_color }}
                   title={`Swatch Hex: ${variant.hex_color}`}
                 />
                 <div className="min-w-0">
-                  <span className="text-[9px] uppercase font-extrabold tracking-wider text-rose-600 block">
+                  <span className="text-[9px] uppercase font-black tracking-wider text-rose-600 block">
                     Your Face Match
                   </span>
                   <span className="font-bold text-xs text-stone-900 truncate block">
@@ -202,7 +202,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
                 <span className="text-[9px] uppercase font-bold text-stone-400 block">
                   Tone
                 </span>
-                <span className="text-[11px] font-bold text-stone-700 capitalize">
+                <span className="text-[11px] font-black text-stone-800 capitalize">
                   {variant.undertone}
                 </span>
               </div>
@@ -214,23 +214,23 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
             <div className="mt-4 pt-3.5 border-t border-stone-100 flex items-baseline justify-between">
               <div>
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-xl font-black text-stone-900">
+                  <span className="text-2xl font-black text-stone-900 tracking-tight">
                     ₹{displayPrice.toLocaleString('en-IN')}
                   </span>
                   {displayMrp > displayPrice && (
-                    <span className="text-[11px] text-stone-400 line-through">
+                    <span className="text-xs text-stone-400 line-through">
                       ₹{displayMrp.toLocaleString('en-IN')}
                     </span>
                   )}
                   {displayDiscount > 0 && (
-                    <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/60">
+                    <span className="text-[10px] font-black text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md border border-emerald-200">
                       {displayDiscount}% OFF
                     </span>
                   )}
                 </div>
               </div>
 
-              <span className="text-[11px] font-semibold text-stone-600 bg-stone-100/80 px-2 py-0.5 rounded-md">
+              <span className="text-[11px] font-bold text-stone-700 bg-stone-100 px-2.5 py-1 rounded-lg border border-stone-200/60">
                 {displayRetailer}
               </span>
             </div>
@@ -247,9 +247,9 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
               e.stopPropagation();
               handleClick();
             }}
-            className={`w-full py-3 px-4 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all duration-200 ${cardTheme.buttonBg}`}
+            className={`w-full py-3 px-4 rounded-xl text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all duration-200 active:scale-98 ${cardTheme.buttonBg}`}
           >
-            <span>View & Buy This Product</span>
+            <span>View Verified Deals & Stores</span>
             <Eye className="w-3.5 h-3.5" />
           </button>
         </div>
