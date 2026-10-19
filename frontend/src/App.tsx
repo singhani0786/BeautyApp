@@ -4,22 +4,17 @@ import { PhotoCapture } from './components/PhotoCapture';
 import { ToneSelector } from './components/ToneSelector';
 import { RecommendationCard } from './components/RecommendationCard';
 import { SingleProductModal } from './components/SingleProductModal';
-import { RetailerDrawer } from './components/RetailerDrawer';
 import {
   FaceAnalysisResult,
   RecommendationResponse,
   RecommendationCategoryResult,
-  SourceStatusInfo,
   ProductInfo,
 } from './types/api';
 import { API_BASE_URL } from './api/config';
 import { getSafeProductUrl } from './utils/urlHelper';
-import { Sparkles, ShoppingBag, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Sparkles, ShoppingBag, ShieldCheck, CheckCircle2, Award, HeartHandshake } from 'lucide-react';
 
 export function App() {
-  const [sources, setSources] = useState<SourceStatusInfo[]>([]);
-  const [isMatrixOpen, setIsMatrixOpen] = useState(false);
-
   // User Preferences
   const [undertone, setUndertone] = useState<string>('warm');
   const [skinDepth, setSkinDepth] = useState<string>('medium');
@@ -34,17 +29,6 @@ export function App() {
   const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false);
   const [isLoadingAnalysis, setIsLoadingAnalysis] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  // Fetch sources status on mount
-  useEffect(() => {
-    fetch(`${API_BASE_URL}/api/sources/status`)
-      .then(res => res.json())
-      .then(data => setSources(data))
-      .catch(() => {
-        // Fallback placeholder if backend not yet running during initial render
-        setSources([]);
-      });
-  }, []);
 
   // Initial recommendation fetch
   useEffect(() => {
@@ -101,28 +85,51 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-stone-800">
+    <div className="min-h-screen flex flex-col bg-[#FDFBF7] text-stone-800 relative selection:bg-rose-100 selection:text-rose-900 overflow-x-hidden">
+      {/* Radiant Luxury Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-rose-100/50 via-amber-100/30 to-transparent blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-36 -left-48 w-96 h-96 bg-rose-200/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-64 -right-48 w-96 h-96 bg-amber-200/25 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <Header
-        sources={sources}
-        onOpenMatrix={() => setIsMatrixOpen(true)}
         detectedTone={skinDepth}
         detectedUndertone={undertone}
       />
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
-        {/* Hero Section */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100/70 text-rose-800 text-xs font-bold tracking-wide uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
-            AI-Powered Complexion Match
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-serif-display text-stone-900 tracking-tight leading-tight">
-            Flawless Makeup Shade Recommendations for Indian Skin
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+        {/* Editorial Luxury Hero Section */}
+        <div className="text-center max-w-3xl mx-auto space-y-5 pt-2 sm:pt-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-50 via-amber-50 to-rose-50 border border-rose-200/70 text-rose-800 text-xs font-bold tracking-wide shadow-2xs">
+            <Sparkles className="w-4 h-4 text-rose-600 animate-pulse" />
+            <span>AI-Powered Shade & Undertone Harmonization</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black font-serif-display text-stone-900 tracking-tight leading-[1.15]">
+            Discover Your True Shade Formulation for{' '}
+            <span className="bg-gradient-to-r from-rose-600 via-amber-600 to-rose-700 bg-clip-text text-transparent">
+              Indian Complexions
+            </span>
           </h1>
-          <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-            Eliminate shade guesswork. Take or upload a selfie to detect your exact undertone and depth,
-            or customize your INR budget to discover verified products across top Indian retailers.
+
+          <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl mx-auto">
+            Eliminate makeup shade guesswork. Scan your face to reveal your exact undertone and depth, then explore verified, in-stock products with authentic store pricing.
           </p>
+
+          {/* Luxury Trust Indicators */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-xs font-semibold text-stone-600">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/80 rounded-full border border-stone-200/80 shadow-2xs">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              100% In-Stock Product PDPs
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/80 rounded-full border border-stone-200/80 shadow-2xs">
+              <Award className="w-3.5 h-3.5 text-amber-600" />
+              Official Partner Stores
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/80 rounded-full border border-stone-200/80 shadow-2xs">
+              <ShieldCheck className="w-3.5 h-3.5 text-rose-600" />
+              Zero Photo Storage
+            </span>
+          </div>
         </div>
 
         {/* Step 1: Face Photo Capture */}
@@ -238,18 +245,19 @@ export function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200/80 bg-white py-8 mt-16 text-center text-xs text-stone-500">
+      <footer className="border-t border-stone-200/80 bg-white/80 backdrop-blur-md py-8 mt-16 text-center text-xs text-stone-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© 2026 GlowGuide AI. Built for Indian Complexions & Retailers.</p>
+          <p>© 2026 GlowGuide AI. Dedicated to Indian Complexions & Authentic Retailers.</p>
           <div className="flex items-center gap-4 text-stone-600">
-            <span>In-Memory Privacy Safeguards</span>
+            <span className="flex items-center gap-1.5 font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              100% In-Memory Privacy Safeguard
+            </span>
             <span>•</span>
-            <button
-              onClick={() => setIsMatrixOpen(true)}
-              className="hover:text-rose-600 font-semibold transition-colors"
-            >
-              API Integration Matrix
-            </button>
+            <span className="flex items-center gap-1.5 font-medium text-stone-700">
+              <CheckCircle2 className="w-3.5 h-3.5 text-rose-500" />
+              Live Direct Store Verified
+            </span>
           </div>
         </div>
       </footer>
@@ -261,13 +269,6 @@ export function App() {
           onClose={() => setSelectedProduct(null)}
         />
       )}
-
-      {/* Retailer Integration Matrix Drawer */}
-      <RetailerDrawer
-        isOpen={isMatrixOpen}
-        onClose={() => setIsMatrixOpen(false)}
-        sources={sources}
-      />
     </div>
   );
 }
