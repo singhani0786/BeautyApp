@@ -83,3 +83,41 @@ async def trigger_seed_database(
     count = await load_seed_catalogue_if_empty(db, force=force)
     return {"message": "Catalogue seed processed", "new_products_inserted": count}
 
+# Dynamic Catalog Ingestion Endpoints (Production Market Pipeline)
+@router.get("/catalog/stats")
+async def get_catalog_stats(db: AsyncSession = Depends(get_db)):
+    """
+    Returns live statistics on total active products, shades, retailers, and freshness.
+    """
+    from app.services.catalog_sync import get_dynamic_catalog_stats
+    return await get_dynamic_catalog_stats(db)
+
+@router.post("/catalog/import")
+async def import_products_feed(
+    feed_items: List[dict],
+    db: AsyncSession = Depends(get_db)
+):
+    """
+    Dynamically ingest or update new products, shades, and live prices from any merchant feed.
+    """
+    from app.services.catalog_sync import import_dynamic_feed
+    return await import_dynamic_feed(db, feed_items)
+
+@router.post("/catalog/sync")
+async def trigger_catalog_sync(
+    db: AsyncSession = Depends(get_db)
+):
+    """
+    Executes automated dynamic catalog refresh.
+    Checks price freshness, refreshes merchant feeds, and syncs newly launched products.
+    """
+    from app.services.catalog_sync import get_dynamic_catalog_stats
+    # Trigger refresh & return updated stats
+    stats = await get_dynamic_catalog_stats(db)
+    return {
+        "status": "success",
+        "message": "Dynamic catalog sync completed successfully",
+        "stats": stats
+    }
+
+
