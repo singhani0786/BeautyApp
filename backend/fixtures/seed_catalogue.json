@@ -426,9 +426,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 899.0,
+            "mrp": 1099.0,
             "current_price": 899.0,
-            "discount_percent": 0.0,
+            "discount_percent": 18.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/l-oreal-paris-infallible-pro-matte-foundation/p/257863"
@@ -436,8 +436,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 1099.0,
-            "current_price": 999.0,
-            "discount_percent": 9.0,
+            "current_price": 1099.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07D7LZ7GK"
@@ -456,9 +456,9 @@
         "prices": [
           {
             "retailer": "nykaa",
-            "mrp": 899.0,
+            "mrp": 1099.0,
             "current_price": 899.0,
-            "discount_percent": 0.0,
+            "discount_percent": 18.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/l-oreal-paris-infallible-pro-matte-foundation/p/257863"
@@ -466,8 +466,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 1099.0,
-            "current_price": 999.0,
-            "discount_percent": 9.0,
+            "current_price": 1099.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07D7LZ7GK"
@@ -515,17 +515,17 @@
           {
             "retailer": "amazon_in",
             "mrp": 475.0,
-            "current_price": 224.0,
-            "discount_percent": 53.0,
+            "current_price": 279.0,
+            "discount_percent": 41.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07YVH5KFK"
           },
           {
             "retailer": "nykaa",
-            "mrp": 699.0,
+            "mrp": 550.0,
             "current_price": 489.0,
-            "discount_percent": 30.0,
+            "discount_percent": 11.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/lakme-9-to-5-primer-matte-perfect-cover-foundation/p/574201"
@@ -554,17 +554,17 @@
           {
             "retailer": "amazon_in",
             "mrp": 475.0,
-            "current_price": 224.0,
-            "discount_percent": 53.0,
+            "current_price": 279.0,
+            "discount_percent": 41.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07YVH5KFK"
           },
           {
             "retailer": "nykaa",
-            "mrp": 699.0,
+            "mrp": 550.0,
             "current_price": 489.0,
-            "discount_percent": 30.0,
+            "discount_percent": 11.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/lakme-9-to-5-primer-matte-perfect-cover-foundation/p/574201"

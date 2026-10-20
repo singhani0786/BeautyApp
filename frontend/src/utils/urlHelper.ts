@@ -170,11 +170,11 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     nykaa: { price: 441, mrp: 679 },
   },
   'loreal-infallible': {
-    nykaa: { price: 899, mrp: 899 },
-    amazon: { price: 999, mrp: 1099 },
+    nykaa: { price: 899, mrp: 1099 },
+    amazon: { price: 1099, mrp: 1099 },
   },
   'lakme-9-to-5': {
-    amazon: { price: 224, mrp: 475 },
+    amazon: { price: 279, mrp: 475 },
     nykaa: { price: 489, mrp: 699 },
     lakme: { price: 594, mrp: 699 },
   },
