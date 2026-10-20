@@ -134,3 +134,4 @@ def infer_product_metadata(title: str, category: str = "") -> Dict[str, Any]:
         "coverage": coverage,
         "skin_types": skin_types,
     }
+

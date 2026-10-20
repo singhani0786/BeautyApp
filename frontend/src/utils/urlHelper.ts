@@ -166,8 +166,8 @@ export function getStoreUrl(
 // Rock-solid verified market benchmark pricing matching EXACT live prices on retailer stores
 const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: number; mrp: number }>>> = {
   'maybelline-fit-me': {
-    amazon: { price: 155, mrp: 329 },
-    nykaa: { price: 407, mrp: 679 },
+    amazon: { price: 279, mrp: 329 },
+    nykaa: { price: 441, mrp: 679 },
   },
   'loreal-infallible': {
     nykaa: { price: 899, mrp: 899 },
@@ -274,10 +274,12 @@ export function getAvailableStores(
       id: 'amazon',
       name: 'Amazon India',
       domain: 'amazon.in',
-      badge: 'Amazon Verified',
+      badge: productKey === 'maybelline-fit-me' ? '18ml Mini Tube' : 'Amazon Verified',
       url: getStoreUrl('amazon', brand, title, shadeName),
       logo: '📦',
-      tagline: 'Direct single-product page on Amazon India with verified stock & price',
+      tagline: productKey === 'maybelline-fit-me'
+        ? '18ml Travel Pack Tube • Direct on Amazon India'
+        : 'Direct single-product page on Amazon India with verified stock & price',
       isOfficial: false,
       price: amazonInfo.price,
       mrp: amazonInfo.mrp,
@@ -292,10 +294,12 @@ export function getAvailableStores(
     id: 'nykaa',
     name: 'Nykaa',
     domain: 'nykaa.com',
-    badge: isNykaaExclusive ? 'Authorized Retail Partner' : 'Direct Beauty Product',
+    badge: isNykaaExclusive ? 'Authorized Retail Partner' : (productKey === 'maybelline-fit-me' ? '30ml Full Size Bottle' : 'Direct Beauty Product'),
     url: getStoreUrl('nykaa', brand, title, shadeName),
     logo: '💄',
-    tagline: 'Direct verified single-product page with live reviews & shades',
+    tagline: productKey === 'maybelline-fit-me'
+      ? '30ml Full Glass Pump Bottle • Live Diwali Sale on Nykaa'
+      : 'Direct verified single-product page with live reviews & shades',
     isOfficial: isNykaaExclusive || b.includes('loreal') || b.includes("l'oreal"),
     price: nykaaInfo.price,
     mrp: nykaaInfo.mrp,

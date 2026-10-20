@@ -40,8 +40,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 155.0,
-            "discount_percent": 53.0,
+            "current_price": 279.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07L3R68FM"
@@ -49,8 +49,8 @@
           {
             "retailer": "nykaa",
             "mrp": 679.0,
-            "current_price": 407.0,
-            "discount_percent": 40.0,
+            "current_price": 441.0,
+            "discount_percent": 35.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
@@ -70,8 +70,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 155.0,
-            "discount_percent": 53.0,
+            "current_price": 279.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07L3R68FM"
@@ -79,8 +79,8 @@
           {
             "retailer": "nykaa",
             "mrp": 679.0,
-            "current_price": 407.0,
-            "discount_percent": 40.0,
+            "current_price": 441.0,
+            "discount_percent": 35.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
@@ -100,8 +100,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 155.0,
-            "discount_percent": 53.0,
+            "current_price": 279.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07L3R68FM"
@@ -109,8 +109,8 @@
           {
             "retailer": "nykaa",
             "mrp": 679.0,
-            "current_price": 407.0,
-            "discount_percent": 40.0,
+            "current_price": 441.0,
+            "discount_percent": 35.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
@@ -130,8 +130,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 155.0,
-            "discount_percent": 53.0,
+            "current_price": 279.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07L3R68FM"
@@ -139,8 +139,8 @@
           {
             "retailer": "nykaa",
             "mrp": 679.0,
-            "current_price": 407.0,
-            "discount_percent": 40.0,
+            "current_price": 441.0,
+            "discount_percent": 35.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"
@@ -160,8 +160,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 155.0,
-            "discount_percent": 53.0,
+            "current_price": 279.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07L3R68FM"
@@ -169,8 +169,8 @@
           {
             "retailer": "nykaa",
             "mrp": 679.0,
-            "current_price": 407.0,
-            "discount_percent": 40.0,
+            "current_price": 441.0,
+            "discount_percent": 35.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074"

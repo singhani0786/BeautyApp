@@ -215,3 +215,4 @@ async def get_dynamic_catalog_stats(session: AsyncSession) -> Dict[str, Any]:
         "last_synced_at": datetime.now(timezone.utc).isoformat(),
         "is_dynamic": True,
     }
+
