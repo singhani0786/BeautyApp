@@ -532,9 +532,9 @@
           },
           {
             "retailer": "lakme_official",
-            "mrp": 550.0,
-            "current_price": 525.0,
-            "discount_percent": 5.0,
+            "mrp": 699.0,
+            "current_price": 594.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"
@@ -571,9 +571,9 @@
           },
           {
             "retailer": "lakme_official",
-            "mrp": 550.0,
-            "current_price": 525.0,
-            "discount_percent": 5.0,
+            "mrp": 699.0,
+            "current_price": 594.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"
@@ -610,9 +610,9 @@
           },
           {
             "retailer": "lakme_official",
-            "mrp": 550.0,
-            "current_price": 525.0,
-            "discount_percent": 5.0,
+            "mrp": 699.0,
+            "current_price": 594.0,
+            "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"

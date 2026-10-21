@@ -190,7 +190,7 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
   'lakme-9-to-5': {
     amazon: { price: 350, mrp: 475 },
     nykaa: { price: 489, mrp: 550 },
-    lakme: { price: 525, mrp: 550 },
+    lakme: { price: 594, mrp: 699 },
   },
   'swiss-beauty': {
     amazon: { price: 174, mrp: 249 },
