@@ -62,6 +62,15 @@ const SingleProductModalContent: React.FC<{
   const currentStoreMrp = activeStore?.mrp || price?.mrp || currentStorePrice;
   const currentStoreDiscount = activeStore?.discountPercent ?? (currentStoreMrp > currentStorePrice ? Math.round(((currentStoreMrp - currentStorePrice) / currentStoreMrp) * 100) : 0);
 
+  // Synchronize price in the textual explanation with the active store price
+  const formattedReason = useMemo(() => {
+    if (!reason) return '';
+    return reason.replace(
+      /at ₹\d+(?:,\d+)*(?: \(\d+% off MRP\))?/,
+      `at ₹${currentStorePrice.toLocaleString('en-IN')}${currentStoreDiscount > 0 ? ` (${currentStoreDiscount}% off MRP)` : ''}`
+    );
+  }, [reason, currentStorePrice, currentStoreDiscount]);
+
   const handleCopy = () => {
     navigator.clipboard.writeText(`${product.brand} ${product.title} - Shade: ${variant?.shade_name}`);
     setCopied(true);
@@ -332,7 +341,7 @@ const SingleProductModalContent: React.FC<{
               AI Match Analysis
             </span>
             <p className="text-xs text-stone-600 leading-relaxed">
-              {reason} {product.description}
+              {formattedReason} {product.description}
             </p>
           </div>
 

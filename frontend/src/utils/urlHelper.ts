@@ -146,6 +146,20 @@ export function getStoreUrl(
     }
 
     case 'amazon': {
+      // Precise shade-level 1-to-1 direct product URLs for multi-shade foundations
+      if (productKey === 'lakme-9-to-5') {
+        const s = (shadeName || '').toLowerCase();
+        if (s.includes('w160') || s.includes('sand')) return 'https://www.amazon.in/dp/B07YVGPHYQ';
+        if (s.includes('w240') || s.includes('beige')) return 'https://www.amazon.in/dp/B07YVHV8R9';
+        if (s.includes('w120') || s.includes('creme') || s.includes('crème')) return 'https://www.amazon.in/dp/B07YVH1QSY';
+        if (s.includes('w320') || s.includes('caramel')) return 'https://www.amazon.in/dp/B07YVGX9F2';
+        if (s.includes('n220') || s.includes('natural medium') || s.includes('medium')) return 'https://www.amazon.in/dp/B07YVHS2BJ';
+        if (s.includes('n200') || s.includes('nude')) return 'https://www.amazon.in/dp/B07YVH5KFK';
+        if (s.includes('c100') || s.includes('ivory')) return 'https://www.amazon.in/dp/B07YVHV8QY';
+        if (s.includes('c140') || s.includes('rose')) return 'https://www.amazon.in/dp/B07YVGPHYP';
+        return 'https://www.amazon.in/dp/B07YVGPHYQ';
+      }
+
       // 100% verified 1-to-1 direct product page on Amazon India
       if (productKey && AMAZON_VERIFIED_URLS[productKey]) {
         return AMAZON_VERIFIED_URLS[productKey];
@@ -174,9 +188,9 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     amazon: { price: 1099, mrp: 1099 },
   },
   'lakme-9-to-5': {
-    amazon: { price: 279, mrp: 475 },
-    nykaa: { price: 489, mrp: 699 },
-    lakme: { price: 594, mrp: 699 },
+    amazon: { price: 350, mrp: 475 },
+    nykaa: { price: 489, mrp: 550 },
+    lakme: { price: 525, mrp: 550 },
   },
   'swiss-beauty': {
     amazon: { price: 174, mrp: 249 },

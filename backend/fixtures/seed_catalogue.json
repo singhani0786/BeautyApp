@@ -503,8 +503,8 @@
     "review_count": 28400,
     "variants": [
       {
-        "id": "lakme-w160-warm-beige",
-        "shade_name": "W160 Warm Beige",
+        "id": "lakme-w160-warm-sand",
+        "shade_name": "W160 Warm Sand",
         "shade_code": "W160",
         "hex_color": "#E3AF80",
         "undertone": "warm",
@@ -515,11 +515,11 @@
           {
             "retailer": "amazon_in",
             "mrp": 475.0,
-            "current_price": 279.0,
-            "discount_percent": 41.0,
+            "current_price": 350.0,
+            "discount_percent": 26.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07YVH5KFK"
+            "product_url": "https://www.amazon.in/dp/B07YVGPHYQ"
           },
           {
             "retailer": "nykaa",
@@ -532,9 +532,48 @@
           },
           {
             "retailer": "lakme_official",
-            "mrp": 699.0,
-            "current_price": 594.0,
-            "discount_percent": 15.0,
+            "mrp": 550.0,
+            "current_price": 525.0,
+            "discount_percent": 5.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"
+          }
+        ]
+      },
+      {
+        "id": "lakme-w240-warm-beige",
+        "shade_name": "W240 Warm Beige",
+        "shade_code": "W240",
+        "hex_color": "#DC9B65",
+        "undertone": "warm",
+        "depth_level": "medium",
+        "sku": "LAK-9TO5-W240",
+        "image_url": "https://images-static.nykaa.com/media/catalog/product/0/0/0060d708901030569210-new_1.jpg",
+        "prices": [
+          {
+            "retailer": "amazon_in",
+            "mrp": 475.0,
+            "current_price": 350.0,
+            "discount_percent": 26.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.amazon.in/dp/B07YVHV8R9"
+          },
+          {
+            "retailer": "nykaa",
+            "mrp": 550.0,
+            "current_price": 489.0,
+            "discount_percent": 11.0,
+            "in_stock": true,
+            "stock_status": "in_stock",
+            "product_url": "https://www.nykaa.com/lakme-9-to-5-primer-matte-perfect-cover-foundation/p/574201"
+          },
+          {
+            "retailer": "lakme_official",
+            "mrp": 550.0,
+            "current_price": 525.0,
+            "discount_percent": 5.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"
@@ -554,11 +593,11 @@
           {
             "retailer": "amazon_in",
             "mrp": 475.0,
-            "current_price": 279.0,
-            "discount_percent": 41.0,
+            "current_price": 350.0,
+            "discount_percent": 26.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07YVH5KFK"
+            "product_url": "https://www.amazon.in/dp/B07YVHS2BJ"
           },
           {
             "retailer": "nykaa",
@@ -571,9 +610,9 @@
           },
           {
             "retailer": "lakme_official",
-            "mrp": 699.0,
-            "current_price": 594.0,
-            "discount_percent": 15.0,
+            "mrp": 550.0,
+            "current_price": 525.0,
+            "discount_percent": 5.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.lakmeindia.com/products/lakme-9to5-powerplay-priming-foundation"
