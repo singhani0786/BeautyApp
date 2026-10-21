@@ -40,11 +40,11 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 279.0,
-            "discount_percent": 15.0,
+            "current_price": 204.0,
+            "discount_percent": 38.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
+            "product_url": "https://www.amazon.in/dp/B07PMCNNPY"
           },
           {
             "retailer": "nykaa",
@@ -70,11 +70,11 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 279.0,
-            "discount_percent": 15.0,
+            "current_price": 165.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
+            "product_url": "https://www.amazon.in/dp/B07L3R68G2"
           },
           {
             "retailer": "nykaa",
@@ -100,11 +100,11 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 279.0,
-            "discount_percent": 15.0,
+            "current_price": 164.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
+            "product_url": "https://www.amazon.in/dp/B07L419N74"
           },
           {
             "retailer": "nykaa",
@@ -130,11 +130,11 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 279.0,
-            "discount_percent": 15.0,
+            "current_price": 165.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
+            "product_url": "https://www.amazon.in/dp/B07L3PBX8W"
           },
           {
             "retailer": "nykaa",
@@ -164,7 +164,7 @@
             "discount_percent": 15.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07L3R68FM"
+            "product_url": "https://www.amazon.in/dp/B07PRRBX8J"
           },
           {
             "retailer": "nykaa",
@@ -514,9 +514,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 475.0,
-            "current_price": 350.0,
-            "discount_percent": 26.0,
+            "mrp": 699.0,
+            "current_price": 395.0,
+            "discount_percent": 43.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07YVGPHYQ"
@@ -553,9 +553,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 475.0,
-            "current_price": 350.0,
-            "discount_percent": 26.0,
+            "mrp": 699.0,
+            "current_price": 395.0,
+            "discount_percent": 43.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07YVHV8R9"
@@ -592,9 +592,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 475.0,
-            "current_price": 350.0,
-            "discount_percent": 26.0,
+            "mrp": 699.0,
+            "current_price": 395.0,
+            "discount_percent": 43.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07YVHS2BJ"

@@ -146,7 +146,19 @@ export function getStoreUrl(
     }
 
     case 'amazon': {
-      // Precise shade-level 1-to-1 direct product URLs for multi-shade foundations
+      // Precise shade-level 1-to-1 direct product URLs for multi-shade foundations & concealers
+      if (productKey === 'maybelline-fit-me') {
+        const s = (shadeName || '').toLowerCase();
+        if (s.includes('310') || s.includes('sun beige')) return 'https://www.amazon.in/dp/B07L3PBX8W';
+        if (s.includes('128') || s.includes('warm nude')) return 'https://www.amazon.in/dp/B07L3R68G2';
+        if (s.includes('220') || s.includes('natural beige')) return 'https://www.amazon.in/dp/B07L419N74';
+        if (s.includes('230') || s.includes('natural buff')) return 'https://www.amazon.in/dp/B07L3R68FM';
+        if (s.includes('115') || s.includes('ivory')) return 'https://www.amazon.in/dp/B07PMCNNPY';
+        if (s.includes('332') || s.includes('330') || s.includes('caramel') || s.includes('toffee')) return 'https://www.amazon.in/dp/B07PRRBX8J';
+        if (s.includes('120') || s.includes('classic ivory')) return 'https://www.amazon.in/dp/B07L3Q29K3';
+        return 'https://www.amazon.in/dp/B07L3PBX8W';
+      }
+
       if (productKey === 'lakme-9-to-5') {
         const s = (shadeName || '').toLowerCase();
         if (s.includes('w160') || s.includes('sand')) return 'https://www.amazon.in/dp/B07YVGPHYQ';
@@ -158,6 +170,20 @@ export function getStoreUrl(
         if (s.includes('c100') || s.includes('ivory')) return 'https://www.amazon.in/dp/B07YVHV8QY';
         if (s.includes('c140') || s.includes('rose')) return 'https://www.amazon.in/dp/B07YVGPHYP';
         return 'https://www.amazon.in/dp/B07YVGPHYQ';
+      }
+
+      if (productKey === 'loreal-infallible') {
+        const s = (shadeName || '').toLowerCase();
+        if (s.includes('250') || s.includes('radiant')) return 'https://www.amazon.in/dp/B07D7LL94V';
+        if (s.includes('260') || s.includes('golden sun')) return 'https://www.amazon.in/dp/B07D7M9Q3T';
+        return 'https://www.amazon.in/dp/B07D7LZ7GK';
+      }
+
+      if (productKey === 'swiss-beauty') {
+        const s = (shadeName || '').toLowerCase();
+        if (s.includes('03') || s.includes('light medium')) return 'https://www.amazon.in/dp/B07WTRH371';
+        if (s.includes('04') || s.includes('medium')) return 'https://www.amazon.in/dp/B07WV69D26';
+        return 'https://www.amazon.in/dp/B07WTNH18L';
       }
 
       // 100% verified 1-to-1 direct product page on Amazon India
@@ -180,7 +206,7 @@ export function getStoreUrl(
 // Rock-solid verified market benchmark pricing matching EXACT live prices on retailer stores
 const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: number; mrp: number }>>> = {
   'maybelline-fit-me': {
-    amazon: { price: 279, mrp: 329 },
+    amazon: { price: 165, mrp: 329 },
     nykaa: { price: 441, mrp: 679 },
   },
   'loreal-infallible': {
@@ -188,7 +214,7 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     amazon: { price: 1099, mrp: 1099 },
   },
   'lakme-9-to-5': {
-    amazon: { price: 350, mrp: 475 },
+    amazon: { price: 395, mrp: 699 },
     nykaa: { price: 489, mrp: 550 },
     lakme: { price: 594, mrp: 699 },
   },
@@ -234,16 +260,16 @@ export function getAvailableStores(
   title?: string,
   shadeName?: string,
   activeRetailer?: string,
-  variantPrices?: Array<{ retailer: string; current_price: number; mrp: number; discount_percent?: number }>,
-  basePrice?: { current_price: number; mrp: number; discount_percent?: number; retailer?: string }
+  variantPrices?: Array<{ retailer: string; current_price: number; mrp: number; discount_percent?: number; product_url?: string }>,
+  basePrice?: { current_price: number; mrp: number; discount_percent?: number; retailer?: string; product_url?: string }
 ): StoreOption[] {
   const b = (brand || '').toLowerCase();
   const productKey = getProductKey(brand, title);
   const options: StoreOption[] = [];
 
-  // Helper to resolve price for a specific store (Dynamic Live Backend First)
-  const resolvePrice = (storeId: StoreId): { price: number; mrp: number; discountPercent: number } => {
-    // 1. Prioritize live dynamic prices from backend database/API
+  // Helper to resolve price and exact URL for a specific store (Dynamic Live Backend First)
+  const resolvePrice = (storeId: StoreId): { price: number; mrp: number; discountPercent: number; url?: string } => {
+    // 1. Prioritize live dynamic prices & URLs from backend database/API
     if (variantPrices && variantPrices.length > 0) {
       const match = variantPrices.find(p => {
         const ret = p.retailer.toLowerCase();
@@ -256,7 +282,7 @@ export function getAvailableStores(
         const p = match.current_price;
         const m = match.mrp || p;
         const d = match.discount_percent ?? (m > p ? Math.round(((m - p) / m) * 100) : 0);
-        return { price: p, mrp: m, discountPercent: d };
+        return { price: p, mrp: m, discountPercent: d, url: match.product_url };
       }
     }
 
@@ -271,11 +297,23 @@ export function getAvailableStores(
         const p = basePrice.current_price;
         const m = basePrice.mrp || p;
         const d = m > p ? Math.round(((m - p) / m) * 100) : 0;
-        return { price: p, mrp: m, discountPercent: d };
+        return { price: p, mrp: m, discountPercent: d, url: basePrice.product_url };
       }
     }
 
-    // 3. Resilient fallback to verified catalog benchmark price
+    // 3. Shade-specific dynamic market pricing for multi-SKU items
+    if (productKey === 'maybelline-fit-me' && storeId === 'amazon') {
+      const s = (shadeName || '').toLowerCase();
+      if (s.includes('230') || s.includes('332') || s.includes('toffee')) {
+        return { price: 279, mrp: 329, discountPercent: 15 };
+      }
+      if (s.includes('115')) {
+        return { price: 204, mrp: 329, discountPercent: 38 };
+      }
+      return { price: 165, mrp: 329, discountPercent: 50 };
+    }
+
+    // 4. Resilient fallback to verified catalog benchmark price
     const benchmark = productKey ? PRODUCT_STORE_PRICES[productKey]?.[storeId] : undefined;
     if (benchmark) {
       const p = benchmark.price;
@@ -284,7 +322,7 @@ export function getAvailableStores(
       return { price: p, mrp: m, discountPercent: d };
     }
 
-    // 4. Default realistic price
+    // 5. Default realistic price
     return { price: 899, mrp: 1099, discountPercent: 18 };
   };
 
@@ -296,7 +334,7 @@ export function getAvailableStores(
       name: 'Amazon India',
       domain: 'amazon.in',
       badge: productKey === 'maybelline-fit-me' ? '18ml Mini Tube' : 'Amazon Verified',
-      url: getStoreUrl('amazon', brand, title, shadeName),
+      url: amazonInfo.url || getStoreUrl('amazon', brand, title, shadeName),
       logo: '📦',
       tagline: productKey === 'maybelline-fit-me'
         ? '18ml Travel Pack Tube • Direct on Amazon India'
@@ -316,7 +354,7 @@ export function getAvailableStores(
     name: 'Nykaa',
     domain: 'nykaa.com',
     badge: isNykaaExclusive ? 'Authorized Retail Partner' : (productKey === 'maybelline-fit-me' ? '30ml Full Size Bottle' : 'Direct Beauty Product'),
-    url: getStoreUrl('nykaa', brand, title, shadeName),
+    url: nykaaInfo.url || getStoreUrl('nykaa', brand, title, shadeName),
     logo: '💄',
     tagline: productKey === 'maybelline-fit-me'
       ? '30ml Full Glass Pump Bottle • Live Diwali Sale on Nykaa'
@@ -335,7 +373,7 @@ export function getAvailableStores(
       name: 'Lakmé Official Store',
       domain: 'lakmeindia.com',
       badge: 'Brand Official',
-      url: LAKME_OFFICIAL_URL,
+      url: pInfo.url || LAKME_OFFICIAL_URL,
       logo: '👑',
       tagline: '100% Authentic direct single product page on Lakmé India',
       isOfficial: true,
@@ -374,6 +412,13 @@ export function getSafeProductUrl(
   const r = (retailer || '').toLowerCase();
   const orig = (originalUrl || '').toLowerCase();
 
+  // If a valid direct PDP URL was already attached to the variant/price, preserve it!
+  if (originalUrl && originalUrl.startsWith('http')) {
+    if (orig.includes('/dp/') || orig.includes('/p/') || orig.includes('lakmeindia.com/products/')) {
+      return originalUrl;
+    }
+  }
+
   // 1. If retailer explicitly specifies Lakmé or brand is Lakmé (and not specifically Amazon/Nykaa)
   if (r.includes('lakme') || (b.includes('lakme') && !r.includes('amazon') && !r.includes('nykaa'))) {
     return getStoreUrl('lakme', brand, title, shadeName);
@@ -389,14 +434,7 @@ export function getSafeProductUrl(
     return getStoreUrl('nykaa', brand, title, shadeName);
   }
 
-  // 4. If originalUrl contains a known domain, route safely to direct product page
-  if (originalUrl && originalUrl.startsWith('http')) {
-    if (orig.includes('lakmeindia.com')) return getStoreUrl('lakme', brand, title, shadeName);
-    if (orig.includes('amazon.in')) return getStoreUrl('amazon', brand, title, shadeName);
-    if (orig.includes('nykaa.com')) return getStoreUrl('nykaa', brand, title, shadeName);
-  }
-
-  // 5. Brand-based natural routing
+  // 4. Brand-based natural routing
   if (b.includes('lakme')) {
     return getStoreUrl('lakme', brand, title, shadeName);
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Trash2, ArrowRight } from 'lucide-react';
 import { RecommendationCategoryResult } from '../types/api';
+import { getAvailableStores } from '../utils/urlHelper';
 
 interface ShortlistModalProps {
   isOpen: boolean;
@@ -46,55 +47,68 @@ export const ShortlistModal: React.FC<ShortlistModalProps> = ({
               <p className="mt-1">Tap the ♡ heart icon on any product card to save it here.</p>
             </div>
           ) : (
-            shortlist.map((item) => (
-              <div
-                key={item.product.id}
-                className="bg-white rounded-2xl p-3.5 border border-stone-200 flex items-center justify-between gap-3 shadow-2xs"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-12 h-12 rounded-xl bg-stone-50 p-1 border border-stone-200 flex-shrink-0 flex items-center justify-center">
-                    {item.product.matched_variant?.image_url ? (
-                      <img
-                        src={item.product.matched_variant.image_url}
-                        alt={item.product.title}
-                        className="w-full h-full object-contain mix-blend-multiply"
-                      />
-                    ) : null}
-                  </div>
-                  <div className="min-w-0 text-left">
-                    <span className="text-[10px] uppercase font-bold text-stone-400 block">
-                      {item.product.brand}
-                    </span>
-                    <h4 className="text-xs font-bold text-[#2D2825] truncate">
-                      {item.product.title}
-                    </h4>
-                    <span className="text-[11px] text-[#4A6953] font-semibold">
-                      ₹{item.product.best_price?.current_price.toLocaleString('en-IN')}
-                    </span>
-                  </div>
-                </div>
+            shortlist.map((item) => {
+              const stores = getAvailableStores(
+                item.product.brand,
+                item.product.title,
+                item.product.matched_variant?.shade_name,
+                item.product.best_price?.retailer,
+                item.product.matched_variant?.prices,
+                item.product.best_price
+              );
+              const bestStore = stores.find(s => s.isLowest) || stores[0];
+              const displayPrice = bestStore?.price || item.product.best_price?.current_price || 0;
 
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => {
-                      onSelectProduct(item);
-                      onClose();
-                    }}
-                    className="px-3 py-1.5 rounded-full bg-[#2D2825] hover:bg-stone-800 text-white text-xs font-semibold flex items-center gap-1 shadow-2xs"
-                  >
-                    <span>View</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
-                  <button
-                    onClick={() => onRemove(item)}
-                    className="p-1.5 text-stone-400 hover:text-rose-600 transition-colors"
-                    title="Remove from shortlist"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
+              return (
+                <div
+                  key={item.product.id}
+                  className="bg-white rounded-2xl p-3.5 border border-stone-200 flex items-center justify-between gap-3 shadow-2xs"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-12 h-12 rounded-xl bg-stone-50 p-1 border border-stone-200 flex-shrink-0 flex items-center justify-center">
+                      {item.product.matched_variant?.image_url ? (
+                        <img
+                          src={item.product.matched_variant.image_url}
+                          alt={item.product.title}
+                          className="w-full h-full object-contain mix-blend-multiply"
+                        />
+                      ) : null}
+                    </div>
+                    <div className="min-w-0 text-left">
+                      <span className="text-[10px] uppercase font-bold text-stone-400 block">
+                        {item.product.brand}
+                      </span>
+                      <h4 className="text-xs font-bold text-[#2D2825] truncate">
+                        {item.product.title}
+                      </h4>
+                      <span className="text-[11px] text-[#4A6953] font-semibold">
+                        ₹{displayPrice.toLocaleString('en-IN')}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => {
+                        onSelectProduct(item);
+                        onClose();
+                      }}
+                      className="px-3 py-1.5 rounded-full bg-[#2D2825] hover:bg-stone-800 text-white text-xs font-semibold flex items-center gap-1 shadow-2xs"
+                    >
+                      <span>View</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                    <button
+                      onClick={() => onRemove(item)}
+                      className="p-1.5 text-stone-400 hover:text-rose-600 transition-colors"
+                      title="Remove from shortlist"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
 

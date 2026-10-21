@@ -82,6 +82,15 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
   const displayDiscount = bestStore?.discountPercent ?? (displayMrp > displayPrice ? Math.round(((displayMrp - displayPrice) / displayMrp) * 100) : 0);
   const displayRetailer = bestStore?.name || getRetailerDisplayName(price?.retailer, product.brand);
 
+  // Synchronize price in the textual explanation with the displayed card price
+  const formattedReason = useMemo(() => {
+    if (!reason) return '';
+    return reason.replace(
+      /at ₹\d+(?:,\d+)*(?: \(\d+% off MRP\))?/,
+      `at ₹${displayPrice.toLocaleString('en-IN')}${displayDiscount > 0 ? ` (${displayDiscount}% off MRP)` : ''}`
+    );
+  }, [reason, displayPrice, displayDiscount]);
+
   const handleClick = () => {
     if (onSelectProduct) {
       onSelectProduct(item);
@@ -112,7 +121,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ item, on
 
         {/* Reason pill */}
         <div className="px-5 py-2.5 bg-stone-50/80 border-b border-stone-100 text-[11px] text-stone-600 leading-relaxed font-medium">
-          {reason}
+          {formattedReason}
         </div>
 
         {/* Product Details Section */}
