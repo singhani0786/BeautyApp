@@ -216,3 +216,71 @@ async def get_dynamic_catalog_stats(session: AsyncSession) -> Dict[str, Any]:
         "is_dynamic": True,
     }
 
+async def refresh_all_database_prices(session: AsyncSession, limit: int = 50) -> Dict[str, Any]:
+    """
+    Scans database price records, fetches real-time live prices from retailer pages,
+    and atomically updates the database records with zero manual intervention.
+    """
+    import asyncio
+    from app.services.price_fetcher import fetch_live_product_price
+
+    now = datetime.now(timezone.utc)
+    stmt = select(PriceRecord).limit(limit)
+    res = await session.execute(stmt)
+    records = res.scalars().all()
+
+    updated = 0
+    failed = 0
+
+    for rec in records:
+        if not rec.product_url:
+            continue
+        try:
+            live = await fetch_live_product_price(rec.product_url)
+            if live and live.get("current_price"):
+                rec.current_price = live["current_price"]
+                rec.mrp = live.get("mrp", live["current_price"])
+                rec.discount_percent = live.get("discount_percent", 0.0)
+                rec.in_stock = live.get("in_stock", True)
+                rec.last_checked_at = now
+                rec.is_stale = False
+                updated += 1
+            else:
+                failed += 1
+            # Gentle delay to respect retailer servers
+            await asyncio.sleep(0.5)
+        except Exception:
+            failed += 1
+
+    await session.commit()
+    return {
+        "status": "success",
+        "total_checked": len(records),
+        "successfully_updated": updated,
+        "unmodified_or_failed": failed,
+        "refreshed_at": now.isoformat(),
+    }
+
+async def add_new_dynamic_product(session: AsyncSession, product_payload: Dict[str, Any]) -> Tuple[Product, bool]:
+    """
+    Dynamically inserts any newly launched market product with automated shade classification and live price extraction.
+    """
+    from app.services.price_fetcher import fetch_live_product_price
+
+    raw_variants = product_payload.get("variants", [])
+    for v in raw_variants:
+        for p in v.get("prices", []):
+            if not p.get("current_price") and p.get("product_url"):
+                try:
+                    live = await fetch_live_product_price(p["product_url"])
+                    if live:
+                        p["current_price"] = live["current_price"]
+                        p["mrp"] = live.get("mrp", live["current_price"])
+                        p["discount_percent"] = live.get("discount_percent", 0.0)
+                        p["in_stock"] = live.get("in_stock", True)
+                except Exception:
+                    pass
+
+    product, is_new = await upsert_product_record(session, product_payload)
+    return product, is_new
+

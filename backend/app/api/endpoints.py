@@ -111,13 +111,47 @@ async def trigger_catalog_sync(
     Executes automated dynamic catalog refresh.
     Checks price freshness, refreshes merchant feeds, and syncs newly launched products.
     """
-    from app.services.catalog_sync import get_dynamic_catalog_stats
-    # Trigger refresh & return updated stats
+    from app.services.catalog_sync import get_dynamic_catalog_stats, refresh_all_database_prices
+    # Execute live price refresh
+    refresh_result = await refresh_all_database_prices(db)
     stats = await get_dynamic_catalog_stats(db)
     return {
         "status": "success",
         "message": "Dynamic catalog sync completed successfully",
+        "refresh_summary": refresh_result,
         "stats": stats
     }
+
+@router.post("/catalog/refresh-prices")
+async def trigger_price_refresh(
+    limit: int = Query(50, description="Max number of price records to check and update"),
+    db: AsyncSession = Depends(get_db)
+):
+    """
+    Live on-demand price refresh: scans database product URLs and updates live prices.
+    Can be called by cron or webhooks for 100% free automated price updates.
+    """
+    from app.services.catalog_sync import refresh_all_database_prices
+    return await refresh_all_database_prices(db, limit=limit)
+
+@router.post("/catalog/products")
+async def add_dynamic_product(
+    payload: dict,
+    db: AsyncSession = Depends(get_db)
+):
+    """
+    Dynamically add any new market product. Automatically classifies shades and pulls live prices.
+    """
+    from app.services.catalog_sync import add_new_dynamic_product
+    product, is_new = await add_new_dynamic_product(db, payload)
+    return {
+        "status": "success",
+        "product_id": product.id,
+        "title": product.title,
+        "brand": product.brand,
+        "is_new": is_new,
+        "variants_count": len(product.variants) if product.variants else 0
+    }
+
 
 

@@ -241,18 +241,9 @@ export function getAvailableStores(
   const productKey = getProductKey(brand, title);
   const options: StoreOption[] = [];
 
-  // Helper to resolve price for a specific store
+  // Helper to resolve price for a specific store (Dynamic Live Backend First)
   const resolvePrice = (storeId: StoreId): { price: number; mrp: number; discountPercent: number } => {
-    // 1. Check verified live catalog benchmark prices first (prevents stale backend prices)
-    const benchmark = productKey ? PRODUCT_STORE_PRICES[productKey]?.[storeId] : undefined;
-    if (benchmark) {
-      const p = benchmark.price;
-      const m = benchmark.mrp;
-      const d = m > p ? Math.round(((m - p) / m) * 100) : 0;
-      return { price: p, mrp: m, discountPercent: d };
-    }
-
-    // 2. Check if backend variant prices has an entry for this store
+    // 1. Prioritize live dynamic prices from backend database/API
     if (variantPrices && variantPrices.length > 0) {
       const match = variantPrices.find(p => {
         const ret = p.retailer.toLowerCase();
@@ -269,10 +260,26 @@ export function getAvailableStores(
       }
     }
 
-    // 3. Fallback to basePrice if available
+    // 2. Check basePrice if retailer matches
     if (basePrice && basePrice.current_price > 0) {
-      const p = basePrice.current_price;
-      const m = basePrice.mrp || p;
+      const ret = (basePrice.retailer || '').toLowerCase();
+      const matchesStore =
+        (storeId === 'amazon' && ret.includes('amazon')) ||
+        (storeId === 'nykaa' && ret.includes('nykaa')) ||
+        (storeId === 'lakme' && ret.includes('lakme'));
+      if (matchesStore) {
+        const p = basePrice.current_price;
+        const m = basePrice.mrp || p;
+        const d = m > p ? Math.round(((m - p) / m) * 100) : 0;
+        return { price: p, mrp: m, discountPercent: d };
+      }
+    }
+
+    // 3. Resilient fallback to verified catalog benchmark price
+    const benchmark = productKey ? PRODUCT_STORE_PRICES[productKey]?.[storeId] : undefined;
+    if (benchmark) {
+      const p = benchmark.price;
+      const m = benchmark.mrp;
       const d = m > p ? Math.round(((m - p) / m) * 100) : 0;
       return { price: p, mrp: m, discountPercent: d };
     }

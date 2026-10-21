@@ -6,14 +6,43 @@ from app.db.session import init_db, async_session_maker
 from app.services.seed_loader import load_seed_catalogue_if_empty
 from app.api.endpoints import router as api_router
 
+import asyncio
+import logging
+
+logger = logging.getLogger(__name__)
+
+async def background_price_sync_worker():
+    """
+    Continuous background loop that refreshes database prices every 12 hours.
+    Completely free, non-blocking, and automatic.
+    """
+    # Wait 60 seconds after server startup before running first scan
+    await asyncio.sleep(60)
+    while True:
+        try:
+            logger.info("Starting automated background market price sync...")
+            from app.services.catalog_sync import refresh_all_database_prices
+            async with async_session_maker() as session:
+                result = await refresh_all_database_prices(session, limit=30)
+                logger.info(f"Background price sync completed: {result}")
+        except Exception as e:
+            logger.warning(f"Background price sync error: {e}")
+        # Run every 12 hours
+        await asyncio.sleep(12 * 3600)
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: ensure tables and seed data exist
     await init_db()
     async with async_session_maker() as session:
         await load_seed_catalogue_if_empty(session)
+
+    # Launch automated background price synchronization
+    worker_task = asyncio.create_task(background_price_sync_worker())
+
     yield
-    # Shutdown logic if needed
+
+    worker_task.cancel()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
