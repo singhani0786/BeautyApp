@@ -81,3 +81,4 @@ export const HowItWorksModal: React.FC<HowItWorksModalProps> = ({ isOpen, onClos
     </div>
   );
 };
+

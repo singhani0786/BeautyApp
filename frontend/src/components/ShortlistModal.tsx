@@ -102,3 +102,4 @@ export const ShortlistModal: React.FC<ShortlistModalProps> = ({
     </div>
   );
 };
+

@@ -157,3 +157,4 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
     </div>
   );
 };
+

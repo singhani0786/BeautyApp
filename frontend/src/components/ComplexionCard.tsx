@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Lock, Sliders, Sparkles } from 'lucide-react';
+import { Camera, Lock, Sliders, Sparkles } from 'lucide-react';
 import { FaceAnalysisResult } from '../types/api';
 
 interface ComplexionCardProps {
@@ -115,10 +115,10 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
           <button
             type="button"
             onClick={onOpenPhotoModal}
-            className="w-full py-1.5 px-2 bg-white hover:bg-stone-50 text-[#2D2825] text-[11px] font-semibold rounded-lg border border-stone-300 shadow-2xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
+            className="w-full py-1.5 px-2 bg-[#4A6953] hover:bg-[#3D5644] text-white text-[11px] font-semibold rounded-lg shadow-xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
           >
-            <Upload className="w-3 h-3 text-[#4A6953]" />
-            <span>Add photo</span>
+            <Camera className="w-3 h-3 text-[#EBF1EC]" />
+            <span>Click / Add Pic</span>
           </button>
           
           <button
@@ -178,3 +178,4 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
     </div>
   );
 };
+

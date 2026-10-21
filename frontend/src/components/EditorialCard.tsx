@@ -197,3 +197,4 @@ export const EditorialCard: React.FC<EditorialCardProps> = ({
     </div>
   );
 };
+

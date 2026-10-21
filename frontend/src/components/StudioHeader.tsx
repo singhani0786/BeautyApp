@@ -1,14 +1,12 @@
 import React from 'react';
-import { Sparkles, Heart } from 'lucide-react';
-import { UserMenu } from './UserMenu';
+import { Camera, Heart } from 'lucide-react';
 
 interface StudioHeaderProps {
   activeTab: 'studio' | 'how-it-works';
   onTabChange: (tab: 'studio' | 'how-it-works') => void;
   shortlistCount: number;
   onOpenShortlist: () => void;
-  detectedTone?: string;
-  detectedUndertone?: string;
+  onOpenPhotoModal: () => void;
 }
 
 export const StudioHeader: React.FC<StudioHeaderProps> = ({
@@ -16,8 +14,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
   onTabChange,
   shortlistCount,
   onOpenShortlist,
-  detectedTone,
-  detectedUndertone,
+  onOpenPhotoModal,
 }) => {
   return (
     <header className="w-full border-b border-[#E8E2D9] bg-[#FAF7F2]/90 backdrop-blur-md sticky top-0 z-30 transition-all">
@@ -55,11 +52,11 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
           </button>
         </nav>
 
-        {/* Right Wishlist / Shortlist & Profile */}
-        <div className="flex items-center gap-3">
+        {/* Right Actions: Shortlist & Prominent "Click Pic" Button (Sign In Removed) */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <button
             onClick={onOpenShortlist}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#D9D1C5] hover:border-[#4A6953] bg-white/70 text-xs text-[#2D2825] font-medium transition-all shadow-2xs hover:shadow-xs"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full border border-[#D9D1C5] hover:border-[#4A6953] bg-white/80 text-xs text-[#2D2825] font-medium transition-all shadow-2xs hover:shadow-xs"
           >
             <Heart className={`w-3.5 h-3.5 ${shortlistCount > 0 ? 'fill-rose-500 text-rose-500' : 'text-stone-500'}`} />
             <span className="hidden sm:inline">Shortlist</span>
@@ -68,10 +65,15 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
             </span>
           </button>
 
-          <UserMenu
-            detectedTone={detectedTone}
-            detectedUndertone={detectedUndertone}
-          />
+          {/* Prominent "Click Pic / Scan Face" CTA Button */}
+          <button
+            onClick={onOpenPhotoModal}
+            className="flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#4A6953] hover:bg-[#3D5644] text-white text-xs font-semibold shadow-xs hover:shadow-md transition-all active:scale-95"
+            title="Click selfie or upload photo"
+          >
+            <Camera className="w-3.5 h-3.5 text-[#EBF1EC]" />
+            <span>Click Pic</span>
+          </button>
         </div>
 
       </div>

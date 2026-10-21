@@ -62,3 +62,4 @@ export const PhotoModal: React.FC<PhotoModalProps> = ({
     </div>
   );
 };
+

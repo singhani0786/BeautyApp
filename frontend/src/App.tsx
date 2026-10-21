@@ -135,8 +135,7 @@ export function App() {
         onTabChange={handleTabChange}
         shortlistCount={shortlist.length}
         onOpenShortlist={() => setIsShortlistOpen(true)}
-        detectedTone={skinDepth}
-        detectedUndertone={undertone}
+        onOpenPhotoModal={() => setIsPhotoModalOpen(true)}
       />
 
       {/* 2. Main Studio Viewport Workspace */}
