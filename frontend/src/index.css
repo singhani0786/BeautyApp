@@ -11,6 +11,16 @@ body {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
+.font-serif-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-serif-italic {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+
 @keyframes scan-glow {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100%); }
