@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Star, Heart, ArrowRight } from 'lucide-react';
 import { RecommendationCategoryResult } from '../types/api';
 import { getAvailableStores, getRetailerDisplayName } from '../utils/urlHelper';
+import { getProductDisplayImage } from '../utils/productImages';
 
 interface EditorialCardProps {
   item: RecommendationCategoryResult;
@@ -81,33 +82,20 @@ export const EditorialCard: React.FC<EditorialCardProps> = ({
           </button>
         </div>
 
-        {/* Centered Product Bottle Image */}
+        {/* Centered Product Item Image */}
         <div className="my-auto py-1 flex items-center justify-center h-28 sm:h-32">
-          {variant?.image_url ? (
-            <img
-              src={variant.image_url}
-              alt={product.title}
-              className="max-h-full w-auto object-contain mix-blend-multiply drop-shadow-md group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-              onError={(e) => {
-                const target = e.currentTarget;
-                const b = product.brand?.toLowerCase() || '';
-                if (b.includes('lakme')) {
-                  target.src = 'https://images-static.nykaa.com/media/catalog/product/0/0/0060d708901030569210-new_1.jpg';
-                } else if (b.includes('loreal') || b.includes("l'oreal")) {
-                  target.src = 'https://images-static.nykaa.com/media/catalog/product/f/d/fd0ed65LOREA00000050_1.jpg';
-                } else if (b.includes('mac') || b.includes('m.a.c')) {
-                  target.src = 'https://m.media-amazon.com/images/I/51wlTTPlSPL._SL1000_.jpg';
-                } else if (b.includes('kay')) {
-                  target.src = 'https://m.media-amazon.com/images/I/51pnyFKFi4L._SL1000_.jpg';
-                } else {
-                  target.src = 'https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg';
-                }
-              }}
-            />
-          ) : (
-            <div className="w-16 h-20 rounded-xl bg-white/50 border border-stone-200" />
-          )}
+          <img
+            src={getProductDisplayImage(product.category, product.brand, product.title, variant?.image_url)}
+            alt={product.title}
+            className="max-h-full w-auto object-contain mix-blend-multiply drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.onerror = null;
+              target.src = getProductDisplayImage(product.category, product.brand, product.title);
+            }}
+          />
         </div>
 
         {/* Bottom index and finish tag */}

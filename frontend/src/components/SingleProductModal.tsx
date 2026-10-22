@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { RecommendationCategoryResult } from '../types/api';
 import { getAvailableStores, StoreOption, getRetailerDisplayName } from '../utils/urlHelper';
+import { getProductDisplayImage } from '../utils/productImages';
 
 interface SingleProductModalProps {
   item: RecommendationCategoryResult | null;
@@ -112,31 +113,19 @@ const SingleProductModalContent: React.FC<{
           {/* Main Visual & Title Block */}
           <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
             {/* Product Image */}
-            <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-stone-50 p-3 border border-stone-200/80 shadow-inner flex items-center justify-center flex-shrink-0 relative overflow-hidden">
-              {variant?.image_url ? (
-                <img
-                  src={variant.image_url}
-                  alt={product.title}
-                  className="w-full h-full object-contain mix-blend-multiply"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    const b = product.brand?.toLowerCase() || '';
-                    if (b.includes('lakme')) {
-                      target.src = 'https://images-static.nykaa.com/media/catalog/product/0/0/0060d708901030569210-new_1.jpg';
-                    } else if (b.includes('loreal') || b.includes("l'oreal")) {
-                      target.src = 'https://images-static.nykaa.com/media/catalog/product/f/d/fd0ed65LOREA00000050_1.jpg';
-                    } else if (b.includes('mac') || b.includes('m.a.c')) {
-                      target.src = 'https://m.media-amazon.com/images/I/51wlTTPlSPL._SL1000_.jpg';
-                    } else if (b.includes('kay')) {
-                      target.src = 'https://m.media-amazon.com/images/I/51pnyFKFi4L._SL1000_.jpg';
-                    } else {
-                      target.src = 'https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg';
-                    }
-                  }}
-                />
-              ) : (
-                <ShoppingBag className="w-12 h-12 text-stone-300" />
-              )}
+            <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-white p-3 border border-rose-100 shadow-inner flex items-center justify-center flex-shrink-0 relative overflow-hidden">
+              <img
+                src={getProductDisplayImage(product.category, product.brand, product.title, variant?.image_url)}
+                alt={product.title}
+                className="w-full h-full object-contain mix-blend-multiply drop-shadow-sm"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.onerror = null;
+                  target.src = getProductDisplayImage(product.category, product.brand, product.title);
+                }}
+              />
             </div>
 
             {/* Title & Brand */}
