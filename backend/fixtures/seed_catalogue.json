@@ -160,8 +160,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 279.0,
-            "discount_percent": 15.0,
+            "current_price": 260.0,
+            "discount_percent": 21.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07PRRBX8J"

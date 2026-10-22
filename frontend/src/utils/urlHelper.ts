@@ -307,8 +307,8 @@ export function getAvailableStores(
         if (s.includes('310') || s.includes('sun beige')) {
           return { price: 247, mrp: 329, discountPercent: 25, url: verifiedUrl };
         }
-        if (s.includes('332') || s.includes('toffee') || s.includes('caramel')) {
-          return { price: 279, mrp: 329, discountPercent: 15, url: verifiedUrl };
+        if (s.includes('332') || s.includes('330') || s.includes('toffee') || s.includes('caramel')) {
+          return { price: 260, mrp: 329, discountPercent: 21, url: verifiedUrl };
         }
         return { price: 238, mrp: 329, discountPercent: 28, url: verifiedUrl };
       }
