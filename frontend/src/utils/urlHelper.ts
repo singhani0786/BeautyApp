@@ -29,21 +29,21 @@ const NYKAA_VERIFIED_URLS: Record<string, string> = {
   'mac-studio-fix': 'https://www.nykaa.com/m-a-c-studio-fix-fluid-spf-15/p/88999',
   'kay-beauty': 'https://www.nykaa.com/kay-beauty-hydrating-foundation/p/1229442',
   'swiss-beauty': 'https://www.nykaa.com/swiss-beauty-liquid-concealer/p/419682',
-  'maybelline-age-rewind': 'https://www.nykaa.com/maybelline-new-york-instant-age-rewind-concealer/p/186524',
-  'mac-lipstick': 'https://www.nykaa.com/m-a-c-matte-lipstick/p/25176',
-  'maybelline-creamy-matte': 'https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipstick/p/108527',
-  'maybelline-compact': 'https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-compact-powder/p/671040',
-  'maybelline-blush': 'https://www.nykaa.com/maybelline-new-york-fit-me-blush/p/241852',
+  'maybelline-age-rewind': 'https://www.nykaa.com/maybelline-new-york-instant-age-rewind-eraser-dark-circles-treatment-concealer/p/375096',
+  'mac-lipstick': 'https://www.nykaa.com/m-a-c-macximal-matte-lipstick/p/13931665',
+  'maybelline-creamy-matte': 'https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipsticks/p/353926',
+  'maybelline-compact': 'https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-16h-oil-control-compact-powder/p/1271649',
+  'maybelline-blush': 'https://www.nykaa.com/maybelline-new-york-fit-me-mono-blush/p/7066988',
 };
 
 // 2. Verified live 1-to-1 canonical single-product URLs on Amazon India (Direct ASIN PDPs)
 const AMAZON_VERIFIED_URLS: Record<string, string> = {
-  'maybelline-fit-me': 'https://www.amazon.in/dp/B07L3R68FM',
+  'maybelline-fit-me': 'https://www.amazon.in/dp/B07L3PBX8W',
   'loreal-infallible': 'https://www.amazon.in/dp/B07D7LZ7GK',
-  'lakme-9-to-5': 'https://www.amazon.in/dp/B07YVH5KFK',
+  'lakme-9-to-5': 'https://www.amazon.in/dp/B07YVGPHYQ',
   'swiss-beauty': 'https://www.amazon.in/dp/B07WTNH18L',
   'maybelline-age-rewind': 'https://www.amazon.in/dp/B0791YY1P1',
-  'maybelline-creamy-matte': 'https://www.amazon.in/dp/B07R47TDYM',
+  'maybelline-creamy-matte': 'https://www.amazon.in/dp/B00YJJWBUA',
   'maybelline-compact': 'https://www.amazon.in/dp/B08QSQ6QX5',
   'maybelline-blush': 'https://www.amazon.in/dp/B0BD258Q7L',
 };
@@ -180,9 +180,6 @@ export function getStoreUrl(
       }
 
       if (productKey === 'swiss-beauty') {
-        const s = (shadeName || '').toLowerCase();
-        if (s.includes('03') || s.includes('light medium')) return 'https://www.amazon.in/dp/B07WTRH371';
-        if (s.includes('04') || s.includes('medium')) return 'https://www.amazon.in/dp/B07WV69D26';
         return 'https://www.amazon.in/dp/B07WTNH18L';
       }
 
@@ -237,15 +234,15 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
   },
   'swiss-beauty': {
     amazon: { price: 174, mrp: 249 },
-    nykaa: { price: 187, mrp: 249 },
+    nykaa: { price: 174, mrp: 249 },
   },
   'maybelline-age-rewind': {
     amazon: { price: 399, mrp: 729 },
     nykaa: { price: 599, mrp: 799 },
   },
   'maybelline-creamy-matte': {
-    nykaa: { price: 329, mrp: 329 },
-    amazon: { price: 330, mrp: 399 },
+    amazon: { price: 181, mrp: 329 },
+    nykaa: { price: 247, mrp: 329 },
   },
   'maybelline-compact': {
     amazon: { price: 121, mrp: 275 },

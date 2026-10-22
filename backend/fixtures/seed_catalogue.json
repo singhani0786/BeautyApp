@@ -791,8 +791,8 @@
           {
             "retailer": "nykaa",
             "mrp": 249.0,
-            "current_price": 187.0,
-            "discount_percent": 25.0,
+            "current_price": 174.0,
+            "discount_percent": 30.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/swiss-beauty-liquid-concealer/p/419682"
@@ -821,8 +821,8 @@
           {
             "retailer": "nykaa",
             "mrp": 249.0,
-            "current_price": 187.0,
-            "discount_percent": 25.0,
+            "current_price": 174.0,
+            "discount_percent": 30.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.nykaa.com/swiss-beauty-liquid-concealer/p/419682"
@@ -876,7 +876,7 @@
             "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/25176"
+            "product_url": "https://www.nykaa.com/m-a-c-macximal-matte-lipstick/p/13931665"
           }
         ]
       },
@@ -897,7 +897,7 @@
             "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/25176"
+            "product_url": "https://www.nykaa.com/m-a-c-macximal-matte-lipstick/p/13931665"
           }
         ]
       },
@@ -918,7 +918,7 @@
             "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/m-a-c-matte-lipstick/p/25176"
+            "product_url": "https://www.nykaa.com/m-a-c-macximal-matte-lipstick/p/13931665"
           }
         ]
       }
@@ -964,20 +964,20 @@
           {
             "retailer": "nykaa",
             "mrp": 329.0,
-            "current_price": 329.0,
-            "discount_percent": 0.0,
+            "current_price": 247.0,
+            "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipstick/p/108527"
+            "product_url": "https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipsticks/p/353926"
           },
           {
             "retailer": "amazon_in",
-            "mrp": 399.0,
-            "current_price": 330.0,
-            "discount_percent": 17.0,
+            "mrp": 329.0,
+            "current_price": 181.0,
+            "discount_percent": 45.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07R47TDYM"
+            "product_url": "https://www.amazon.in/dp/B00YJJWBUA"
           }
         ]
       },
@@ -994,20 +994,20 @@
           {
             "retailer": "nykaa",
             "mrp": 329.0,
-            "current_price": 329.0,
-            "discount_percent": 0.0,
+            "current_price": 247.0,
+            "discount_percent": 25.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipstick/p/108527"
+            "product_url": "https://www.nykaa.com/maybelline-new-york-color-sensational-creamy-matte-lipsticks/p/353926"
           },
           {
             "retailer": "amazon_in",
-            "mrp": 399.0,
-            "current_price": 330.0,
-            "discount_percent": 17.0,
+            "mrp": 329.0,
+            "current_price": 181.0,
+            "discount_percent": 45.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.amazon.in/dp/B07R47TDYM"
+            "product_url": "https://www.amazon.in/dp/B00YJJWBUA"
           }
         ]
       }
@@ -1065,7 +1065,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-compact-powder/p/671040"
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-16h-oil-control-compact-powder/p/1271649"
           }
         ]
       },
@@ -1095,7 +1095,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-compact-powder/p/671040"
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-16h-oil-control-compact-powder/p/1271649"
           }
         ]
       }
@@ -1154,7 +1154,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-blush/p/241852"
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-mono-blush/p/7066988"
           }
         ]
       },
@@ -1184,7 +1184,7 @@
             "discount_percent": 10.0,
             "in_stock": true,
             "stock_status": "in_stock",
-            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-blush/p/241852"
+            "product_url": "https://www.nykaa.com/maybelline-new-york-fit-me-mono-blush/p/7066988"
           }
         ]
       }
