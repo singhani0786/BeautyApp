@@ -40,8 +40,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 204.0,
-            "discount_percent": 38.0,
+            "current_price": 165.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07PMCNNPY"
@@ -70,8 +70,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 238.0,
-            "discount_percent": 28.0,
+            "current_price": 165.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07L3R68G2"
@@ -100,7 +100,7 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 164.0,
+            "current_price": 165.0,
             "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
@@ -130,8 +130,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 247.0,
-            "discount_percent": 25.0,
+            "current_price": 165.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07L3PBX8W"
@@ -160,8 +160,8 @@
           {
             "retailer": "amazon_in",
             "mrp": 329.0,
-            "current_price": 260.0,
-            "discount_percent": 21.0,
+            "current_price": 165.0,
+            "discount_percent": 50.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B07PRRBX8J"
@@ -661,9 +661,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 729.0,
-            "current_price": 399.0,
-            "discount_percent": 45.0,
+            "mrp": 749.0,
+            "current_price": 429.0,
+            "discount_percent": 42.7,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0791YY1P1"
@@ -691,9 +691,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 729.0,
-            "current_price": 399.0,
-            "discount_percent": 45.0,
+            "mrp": 749.0,
+            "current_price": 429.0,
+            "discount_percent": 42.7,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0791YY1P1"
@@ -721,9 +721,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 729.0,
-            "current_price": 399.0,
-            "discount_percent": 45.0,
+            "mrp": 749.0,
+            "current_price": 429.0,
+            "discount_percent": 42.7,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0791YY1P1"
@@ -1051,9 +1051,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 275.0,
-            "current_price": 121.0,
-            "discount_percent": 56.0,
+            "mrp": 259.0,
+            "current_price": 143.0,
+            "discount_percent": 44.8,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B08QSQ6QX5"
@@ -1081,9 +1081,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 275.0,
-            "current_price": 121.0,
-            "discount_percent": 56.0,
+            "mrp": 259.0,
+            "current_price": 143.0,
+            "discount_percent": 44.8,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B08QSQ6QX5"
@@ -1140,9 +1140,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 599.0,
-            "current_price": 300.0,
-            "discount_percent": 50.0,
+            "mrp": 450.0,
+            "current_price": 450.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0BD258Q7L"
@@ -1170,9 +1170,9 @@
         "prices": [
           {
             "retailer": "amazon_in",
-            "mrp": 599.0,
-            "current_price": 300.0,
-            "discount_percent": 50.0,
+            "mrp": 450.0,
+            "current_price": 450.0,
+            "discount_percent": 0.0,
             "in_stock": true,
             "stock_status": "in_stock",
             "product_url": "https://www.amazon.in/dp/B0BD258Q7L"

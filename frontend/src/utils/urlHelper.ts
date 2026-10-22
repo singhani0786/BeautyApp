@@ -220,7 +220,7 @@ export function getStoreUrl(
 // Rock-solid verified market benchmark pricing matching EXACT live prices on retailer stores
 const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: number; mrp: number }>>> = {
   'maybelline-fit-me': {
-    amazon: { price: 238, mrp: 329 },
+    amazon: { price: 165, mrp: 329 },
     nykaa: { price: 441, mrp: 679 },
   },
   'loreal-infallible': {
@@ -237,7 +237,7 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     nykaa: { price: 174, mrp: 249 },
   },
   'maybelline-age-rewind': {
-    amazon: { price: 399, mrp: 729 },
+    amazon: { price: 429, mrp: 749 },
     nykaa: { price: 599, mrp: 799 },
   },
   'maybelline-creamy-matte': {
@@ -245,11 +245,11 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     nykaa: { price: 247, mrp: 329 },
   },
   'maybelline-compact': {
-    amazon: { price: 121, mrp: 275 },
+    amazon: { price: 143, mrp: 259 },
     nykaa: { price: 215, mrp: 239 },
   },
   'maybelline-blush': {
-    amazon: { price: 300, mrp: 599 },
+    amazon: { price: 450, mrp: 450 },
     nykaa: { price: 539, mrp: 599 },
   },
   'kay-beauty': {
@@ -290,10 +290,10 @@ export function getAvailableStores(
       if (storeId === 'amazon') {
         const s = (shadeName || '').toLowerCase();
         if (s.includes('128') || s.includes('warm nude')) {
-          return { price: 238, mrp: 329, discountPercent: 28, url: verifiedUrl };
+          return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
         }
         if (s.includes('115') || s.includes('ivory')) {
-          return { price: 214, mrp: 329, discountPercent: 35, url: verifiedUrl };
+          return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
         }
         if (s.includes('220') || s.includes('natural beige')) {
           return { price: 164, mrp: 329, discountPercent: 50, url: verifiedUrl };
@@ -302,12 +302,12 @@ export function getAvailableStores(
           return { price: 164, mrp: 329, discountPercent: 50, url: verifiedUrl };
         }
         if (s.includes('310') || s.includes('sun beige')) {
-          return { price: 247, mrp: 329, discountPercent: 25, url: verifiedUrl };
+          return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
         }
         if (s.includes('332') || s.includes('330') || s.includes('toffee') || s.includes('caramel')) {
-          return { price: 260, mrp: 329, discountPercent: 21, url: verifiedUrl };
+          return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
         }
-        return { price: 238, mrp: 329, discountPercent: 28, url: verifiedUrl };
+        return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
       }
       if (storeId === 'nykaa') {
         return { price: 441, mrp: 679, discountPercent: 35, url: verifiedUrl };
