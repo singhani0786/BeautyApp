@@ -4,7 +4,7 @@ import { FaceAnalysisResult } from '../types/api';
 import { API_BASE_URL } from '../api/config';
 
 interface PhotoCaptureProps {
-  onAnalysisComplete: (result: FaceAnalysisResult) => void;
+  onAnalysisComplete: (result: FaceAnalysisResult, photoUrl?: string) => void;
   isLoading: boolean;
   analysisResult: FaceAnalysisResult | null;
 }
@@ -63,12 +63,13 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
 
     // Draw un-mirrored for accurate skin reading
     ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
     canvas.toBlob(blob => {
       if (blob) {
         const file = new File([blob], 'selfie_capture.jpg', { type: 'image/jpeg' });
-        setPreviewUrl(URL.createObjectURL(blob));
+        setPreviewUrl(dataUrl);
         stopCamera();
-        uploadAndAnalyze(file);
+        uploadAndAnalyze(file, dataUrl);
       }
     }, 'image/jpeg', 0.92);
   };
@@ -133,14 +134,15 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
     }
 
     setErrorMsg(null);
-    setPreviewUrl(URL.createObjectURL(file));
+    const objectUrl = URL.createObjectURL(file);
+    setPreviewUrl(objectUrl);
 
     // Compress heavy mobile camera photos (> 1MB) so upload is instantaneous
     const finalFile = file.size > 1024 * 1024 ? await compressImage(file) : file;
-    uploadAndAnalyze(finalFile);
+    uploadAndAnalyze(finalFile, objectUrl);
   };
 
-  const uploadAndAnalyze = async (file: File) => {
+  const uploadAndAnalyze = async (file: File, capturedPhotoUrl?: string) => {
     try {
       const formData = new FormData();
       formData.append('file', file);
@@ -156,7 +158,7 @@ export const PhotoCapture: React.FC<PhotoCaptureProps> = ({
       }
 
       const result: FaceAnalysisResult = await res.json();
-      onAnalysisComplete(result);
+      onAnalysisComplete(result, capturedPhotoUrl || previewUrl || undefined);
     } catch (err: any) {
       setErrorMsg(err.message || 'Error communicating with analysis service.');
     }

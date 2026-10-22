@@ -10,6 +10,7 @@ interface ComplexionCardProps {
   onOpenPhotoModal: () => void;
   onOpenEditProfile: () => void;
   faceAnalysis: FaceAnalysisResult | null;
+  userPhotoUrl?: string | null;
 }
 
 export const ComplexionCard: React.FC<ComplexionCardProps> = ({
@@ -20,6 +21,7 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
   onOpenPhotoModal,
   onOpenEditProfile,
   faceAnalysis,
+  userPhotoUrl,
 }) => {
   // Swatch hex fallback
   const swatchColor = faceAnalysis?.dominant_hex || (
@@ -44,7 +46,7 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
           </span>
         </div>
 
-        {/* Minimalist Line-Art Face Inside Organic Swatch */}
+        {/* Minimalist Line-Art Face Inside Organic Swatch / Real User Photo */}
         <div className="relative my-2 py-3 flex flex-col items-center justify-center">
           {/* Concentric subtle line rings */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
@@ -52,35 +54,43 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
             <div className="absolute w-44 h-24 rounded-[50%] border border-stone-400/30 rotate-12" />
           </div>
 
-          {/* Organic Face Swatch Oval */}
+          {/* Organic Face Swatch Oval / Real User Photo Portrait */}
           <div
-            className="w-20 h-24 rounded-[45%] shadow-md flex items-center justify-center relative transition-all duration-500 transform hover:scale-105 border-2 border-white/70"
+            className="w-20 h-24 rounded-[45%] shadow-md flex items-center justify-center relative transition-all duration-500 transform hover:scale-105 border-2 border-white/90 overflow-hidden ring-2 ring-stone-300/40"
             style={{ backgroundColor: swatchColor }}
           >
-            {/* Minimal SVG Face Line Art */}
-            <svg
-              className="w-10 h-10 text-white/80 drop-shadow-xs"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              {/* Face contour */}
-              <path d="M12 3a6 7 0 0 0-6 7c0 4 3 8 6 10 3-2 6-6 6-10a6 7 0 0 0-6-7z" />
-              {/* Eyes */}
-              <circle cx="9.5" cy="10" r="0.8" fill="currentColor" />
-              <circle cx="14.5" cy="10" r="0.8" fill="currentColor" />
-              {/* Nose */}
-              <path d="M12 10.5v2a.5.5 0 0 0 .5.5" />
-              {/* Soft smile */}
-              <path d="M10 15a2.5 2.5 0 0 0 4 0" />
-            </svg>
+            {userPhotoUrl ? (
+              <img
+                src={userPhotoUrl}
+                alt="Your calibrated complexion photo"
+                className="w-full h-full object-cover rounded-[45%]"
+              />
+            ) : (
+              /* Minimal SVG Face Line Art */
+              <svg
+                className="w-10 h-10 text-white/80 drop-shadow-xs"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {/* Face contour */}
+                <path d="M12 3a6 7 0 0 0-6 7c0 4 3 8 6 10 3-2 6-6 6-10a6 7 0 0 0-6-7z" />
+                {/* Eyes */}
+                <circle cx="9.5" cy="10" r="0.8" fill="currentColor" />
+                <circle cx="14.5" cy="10" r="0.8" fill="currentColor" />
+                {/* Nose */}
+                <path d="M12 10.5v2a.5.5 0 0 0 .5.5" />
+                {/* Soft smile */}
+                <path d="M10 15a2.5 2.5 0 0 0 4 0" />
+              </svg>
+            )}
           </div>
 
           <p className="font-serif-italic text-[11px] text-stone-600 mt-2 tracking-wide">
-            a tone that's all your own
+            {userPhotoUrl ? 'Your AI Calibrated Selfie' : "a tone that's all your own"}
           </p>
         </div>
 
@@ -118,7 +128,7 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
             className="w-full py-1.5 px-2 bg-[#4A6953] hover:bg-[#3D5644] text-white text-[11px] font-semibold rounded-lg shadow-xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
           >
             <Camera className="w-3 h-3 text-[#EBF1EC]" />
-            <span>Click / Add Pic</span>
+            <span>{userPhotoUrl ? 'Retake / New Pic' : 'Click / Add Pic'}</span>
           </button>
           
           <button

@@ -231,7 +231,7 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     amazon: { price: 1099, mrp: 1099 },
   },
   'lakme-9-to-5': {
-    amazon: { price: 315, mrp: 525 },
+    amazon: { price: 285, mrp: 525 },
     nykaa: { price: 489, mrp: 550 },
     lakme: { price: 594, mrp: 699 },
   },
@@ -320,7 +320,7 @@ export function getAvailableStores(
     // 2. Verified pricing for Lakme 9 to 5
     if (productKey === 'lakme-9-to-5') {
       if (storeId === 'amazon') {
-        return { price: 315, mrp: 525, discountPercent: 40, url: verifiedUrl };
+        return { price: 285, mrp: 525, discountPercent: 46, url: verifiedUrl };
       }
       if (storeId === 'nykaa') {
         return { price: 489, mrp: 550, discountPercent: 11, url: verifiedUrl };

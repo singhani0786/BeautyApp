@@ -6,7 +6,7 @@ import { FaceAnalysisResult } from '../types/api';
 interface PhotoModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onAnalysisComplete: (result: FaceAnalysisResult) => void;
+  onAnalysisComplete: (result: FaceAnalysisResult, photoUrl?: string) => void;
   isLoading: boolean;
   analysisResult: FaceAnalysisResult | null;
 }
@@ -20,8 +20,8 @@ export const PhotoModal: React.FC<PhotoModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
-  const handleComplete = (result: FaceAnalysisResult) => {
-    onAnalysisComplete(result);
+  const handleComplete = (result: FaceAnalysisResult, photoUrl?: string) => {
+    onAnalysisComplete(result, photoUrl);
     // Automatically close modal after brief confirmation
     setTimeout(onClose, 600);
   };

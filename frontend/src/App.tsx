@@ -33,6 +33,7 @@ export function App() {
 
   // Data States
   const [faceAnalysis, setFaceAnalysis] = useState<FaceAnalysisResult | null>(null);
+  const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
   const [recommendations, setRecommendations] = useState<RecommendationResponse | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<RecommendationCategoryResult | null>(null);
   const [shortlist, setShortlist] = useState<RecommendationCategoryResult[]>([]);
@@ -52,8 +53,11 @@ export function App() {
     fetchRecommendations();
   }, []);
 
-  const handleAnalysisComplete = (result: FaceAnalysisResult) => {
+  const handleAnalysisComplete = (result: FaceAnalysisResult, photoUrl?: string) => {
     setFaceAnalysis(result);
+    if (photoUrl) {
+      setUserPhotoUrl(photoUrl);
+    }
     setUndertone(result.undertone);
     setSkinDepth(result.skin_depth);
 
@@ -189,6 +193,7 @@ export function App() {
               onOpenPhotoModal={() => setIsPhotoModalOpen(true)}
               onOpenEditProfile={() => setIsEditProfileOpen(true)}
               faceAnalysis={faceAnalysis}
+              userPhotoUrl={userPhotoUrl}
             />
           </div>
 
