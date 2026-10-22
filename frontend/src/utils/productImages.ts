@@ -26,6 +26,9 @@ export function getProductDisplayImage(
 
   // 3. LIPSTICK
   if (cat.includes('lipstick') || t.includes('lipstick') || t.includes('lip ') || t.includes('matte lipstick') || t.includes('creamy matte')) {
+    if (b.includes('mac') || t.includes('mac') || t.includes('ruby woo')) {
+      return 'https://images-static.nykaa.com/media/catalog/product/7/7/773602685954_1_1.jpg';
+    }
     return 'https://m.media-amazon.com/images/I/71xtdu5CyAL._SL1000_.jpg';
   }
 
@@ -57,3 +60,4 @@ export function getProductDisplayImage(
 
   return 'https://m.media-amazon.com/images/I/41OUDlgEgnL._SL1080_.jpg';
 }
+

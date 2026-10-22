@@ -126,11 +126,15 @@ export const EditorialCard: React.FC<EditorialCardProps> = ({
           </div>
 
           {/* Product Title */}
-          <h3 className="font-serif-editorial text-lg font-semibold text-[#2D2529] leading-tight line-clamp-1">
-            {product.title.split('Foundation')[0].split('Matte')[0].trim()}
+          <h3 className="font-serif-editorial text-lg font-semibold text-[#2D2529] leading-tight line-clamp-1" title={product.title}>
+            {product.category === 'foundation'
+              ? product.title.replace(' Liquid Foundation', '').replace(' Foundation', '')
+              : product.title}
           </h3>
           <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
-            {product.category === 'foundation' ? 'Matte Cover Formulation' : product.title}
+            {product.category === 'foundation'
+              ? 'Matte Cover Formulation'
+              : `${product.finish ? product.finish.charAt(0).toUpperCase() + product.finish.slice(1) : 'Authentic'} ${product.category}`}
           </p>
         </div>
 

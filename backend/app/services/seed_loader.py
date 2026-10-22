@@ -18,6 +18,8 @@ async def load_seed_catalogue_if_empty(session: AsyncSession, force: bool = Fals
             return 0  # Already seeded
     else:
         from sqlalchemy import delete
+        await session.execute(delete(PriceRecord))
+        await session.execute(delete(ProductVariant))
         await session.execute(delete(Product))
         await session.commit()
 
