@@ -16,11 +16,11 @@ import { API_BASE_URL } from './api/config';
 import { Sparkles, ShoppingBag } from 'lucide-react';
 
 const CATEGORIES = [
-  { id: 'foundation', label: 'Foundation' },
-  { id: 'concealer', label: 'Concealer' },
-  { id: 'lipstick', label: 'Lipstick' },
-  { id: 'blush', label: 'Blush' },
-  { id: 'compact', label: 'Compact' },
+  { id: 'foundation', label: 'Foundation', icon: '🧴' },
+  { id: 'concealer', label: 'Concealer', icon: '🪄' },
+  { id: 'lipstick', label: 'Lipstick', icon: '💄' },
+  { id: 'blush', label: 'Blush', icon: '🌸' },
+  { id: 'compact', label: 'Compact', icon: '🪞' },
 ];
 
 export function App() {
@@ -131,8 +131,13 @@ export function App() {
   ];
 
   return (
-    <div className="min-h-screen lg:h-screen lg:overflow-hidden flex flex-col justify-between bg-[#FAF7F2] text-[#2D2825] selection:bg-rose-100 selection:text-rose-900">
+    <div className="min-h-screen lg:h-screen lg:overflow-hidden flex flex-col justify-between bg-gradient-to-br from-[#FFF5F7] via-[#FFFBF9] to-[#FDF4F8] text-[#2D2529] selection:bg-rose-100 selection:text-rose-900 relative">
       
+      {/* Ambient Dreamy Floating Glow Orbs */}
+      <div className="absolute top-10 left-1/4 w-96 h-96 bg-rose-200/30 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle" />
+      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-pink-200/25 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 right-10 w-72 h-72 bg-amber-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+
       {/* 1. Minimalist Editorial Header */}
       <StudioHeader
         activeTab={activeTab}
@@ -146,33 +151,33 @@ export function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3.5 flex flex-col justify-between overflow-y-auto lg:overflow-hidden gap-3">
         
         {/* Compact Hero Banner Matching Screenshot */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pt-1 border-b border-[#E8E2D9]/60 pb-2.5">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pt-1 border-b border-rose-100/80 pb-2.5">
           <div className="text-left">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-stone-500 block mb-0.5">
-              A little science, a little self-expression.
+            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500 block mb-0.5">
+              ✨ A little science, a whole lot of glam 💄
             </span>
-            <h1 className="font-serif-editorial text-2xl sm:text-4xl text-[#2D2825] font-normal tracking-tight leading-none">
-              Find your kind of <span className="font-serif-italic text-[#48634F] font-semibold">match.</span>
+            <h1 className="font-serif-editorial text-2xl sm:text-4xl text-[#2D2529] font-normal tracking-tight leading-none">
+              Find your kind of <span className="font-serif-italic bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500 bg-clip-text text-transparent font-semibold">match. ✨</span>
             </h1>
             <p className="text-xs text-stone-600 mt-1">
-              Good makeup starts with you. Let's find your foundation.
+              Good makeup starts with you. Let's find your dream shade. 🌸
             </p>
           </div>
 
           {/* Right Natural Shade Belonging Swatch Bar */}
           <div className="flex flex-col sm:items-end gap-1">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 bg-white/80 px-2.5 py-1 rounded-full border border-rose-100/80 shadow-2xs">
               {sampleShadeDots.map((dot) => (
                 <span
                   key={dot.label}
-                  className="w-3.5 h-3.5 rounded-full border border-white shadow-2xs"
+                  className="w-3.5 h-3.5 rounded-full border border-white shadow-2xs transition-transform hover:scale-125"
                   style={{ backgroundColor: dot.bg }}
                   title={dot.label}
                 />
               ))}
             </div>
             <span className="font-serif-italic text-[11px] text-stone-500">
-              Every shade belongs.
+              Every skin shade belongs. 💖
             </span>
           </div>
         </div>
@@ -201,13 +206,13 @@ export function App() {
           <div className="flex-1 flex flex-col justify-between min-w-0">
             
             {/* Filter Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-2 pb-1.5 border-b border-[#E8E2D9]">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-2 pb-1.5 border-b border-rose-100/80">
               <div className="flex items-center gap-2.5">
-                <h2 className="font-serif-editorial text-lg text-[#2D2825] font-semibold tracking-tight capitalize">
-                  Your {category} edit
+                <h2 className="font-serif-editorial text-lg text-[#2D2529] font-semibold tracking-tight capitalize">
+                  Your {category} edit ✨
                 </h2>
-                <span className="text-[11px] font-mono text-stone-400 bg-white px-2 py-0.5 rounded-full border border-stone-200">
-                  {recommendations ? `0${recommendations.recommendations.length}` : '04'}
+                <span className="text-[11px] font-bold text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200/70">
+                  {recommendations ? `0${recommendations.recommendations.length} Matches` : '04 Matches'}
                 </span>
               </div>
 
@@ -220,20 +225,21 @@ export function App() {
                       setCategory(cat.id);
                       fetchRecommendationsWithParams(undertone, skinDepth, skinType, cat.id, budgetInr);
                     }}
-                    className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                    className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all shadow-2xs ${
                       category === cat.id
-                        ? 'bg-[#EBF1EC] text-[#3D5644] font-bold border border-[#C6DAC9]'
-                        : 'bg-white hover:bg-stone-100 text-stone-600 border border-stone-200/80'
+                        ? 'bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 text-white shadow-xs shadow-rose-200 border border-transparent'
+                        : 'bg-white/85 hover:bg-rose-50/70 text-stone-600 border border-rose-200/60'
                     }`}
                   >
-                    {cat.label}
+                    <span>{cat.icon}</span>
+                    <span>{cat.label}</span>
                   </button>
                 ))}
               </div>
 
-              <div className="hidden sm:flex items-center gap-1 text-[11px] text-stone-500">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#4A6953]" />
-                <span>Considered for your complexion</span>
+              <div className="hidden sm:flex items-center gap-1 text-[11px] text-stone-500 bg-white/70 px-2.5 py-1 rounded-full border border-rose-100">
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                <span>Calibrated for your skin 💖</span>
               </div>
             </div>
 

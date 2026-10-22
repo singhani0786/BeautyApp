@@ -34,29 +34,29 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
     <div className="flex flex-col gap-3.5 w-full max-w-[270px]">
       
       {/* Main Complexion Portrait Card */}
-      <div className="bg-[#F6F2EC] rounded-2xl p-4 border border-[#E8E1D5] shadow-xs flex flex-col justify-between relative overflow-hidden">
+      <div className="bg-white/85 backdrop-blur-md rounded-2xl p-4 border border-rose-100/90 shadow-sm shadow-rose-100/50 flex flex-col justify-between relative overflow-hidden">
         
         {/* Card Header */}
         <div className="flex items-center justify-between mb-2">
-          <h2 className="font-serif-editorial text-lg text-[#2D2825] font-semibold tracking-tight">
+          <h2 className="font-serif-editorial text-lg text-[#2D2529] font-semibold tracking-tight">
             Your complexion
           </h2>
-          <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/80 text-stone-600 border border-stone-200/60 shadow-2xs">
-            {faceAnalysis ? 'AI Calibrated' : 'Sample'}
+          <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200/70 shadow-2xs">
+            {faceAnalysis ? 'AI Calibrated 💖' : 'Sample ✨'}
           </span>
         </div>
 
-        {/* Minimalist Line-Art Face Inside Organic Swatch / Real User Photo */}
+        {/* Line-Art Face Inside Organic Swatch / Real User Photo */}
         <div className="relative my-2 py-3 flex flex-col items-center justify-center">
           {/* Concentric subtle line rings */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
-            <div className="w-36 h-28 rounded-[50%] border border-stone-400/50" />
-            <div className="absolute w-44 h-24 rounded-[50%] border border-stone-400/30 rotate-12" />
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
+            <div className="w-36 h-28 rounded-[50%] border border-rose-200/70 animate-pulse-subtle" />
+            <div className="absolute w-44 h-24 rounded-[50%] border border-pink-200/50 rotate-12" />
           </div>
 
-          {/* Organic Face Swatch Oval / Real User Photo Portrait */}
+          {/* Organic Face Swatch Oval / Real User Photo Portrait with Rose Gold Glowing Ring */}
           <div
-            className="w-20 h-24 rounded-[45%] shadow-md flex items-center justify-center relative transition-all duration-500 transform hover:scale-105 border-2 border-white/90 overflow-hidden ring-2 ring-stone-300/40"
+            className="w-20 h-24 rounded-[45%] shadow-md flex items-center justify-center relative transition-all duration-500 transform hover:scale-105 border-2 border-white overflow-hidden ring-4 ring-rose-200/90 shadow-[0_0_20px_rgba(244,63,94,0.22)]"
             style={{ backgroundColor: swatchColor }}
           >
             {userPhotoUrl ? (
@@ -68,7 +68,7 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
             ) : (
               /* Minimal SVG Face Line Art */
               <svg
-                className="w-10 h-10 text-white/80 drop-shadow-xs"
+                className="w-10 h-10 text-white/90 drop-shadow-xs"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -90,26 +90,26 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
           </div>
 
           <p className="font-serif-italic text-[11px] text-stone-600 mt-2 tracking-wide">
-            {userPhotoUrl ? 'Your AI Calibrated Selfie' : "a tone that's all your own"}
+            {userPhotoUrl ? 'Your AI Calibrated Selfie ✨' : "a tone that's all your own 🌸"}
           </p>
         </div>
 
         {/* Depth & Undertone Metadata */}
-        <div className="grid grid-cols-2 gap-2 pt-2 border-t border-stone-200/80 mb-3 text-left">
+        <div className="grid grid-cols-2 gap-2 pt-2 border-t border-rose-100 mb-3 text-left">
           <div>
-            <span className="text-[9px] uppercase tracking-wider text-stone-500 font-bold block">
+            <span className="text-[9px] uppercase tracking-wider text-rose-900/60 font-bold block">
               Skin Depth
             </span>
-            <span className="font-serif-display text-sm font-bold text-[#2D2825] capitalize">
+            <span className="font-serif-display text-sm font-bold text-[#2D2529] capitalize">
               {skinDepth}
             </span>
           </div>
           <div>
-            <span className="text-[9px] uppercase tracking-wider text-stone-500 font-bold block">
+            <span className="text-[9px] uppercase tracking-wider text-rose-900/60 font-bold block">
               Undertone
             </span>
             <div className="flex items-center gap-1.5 mt-0.5">
-              <span className="font-serif-display text-sm font-bold text-[#2D2825] capitalize">
+              <span className="font-serif-display text-sm font-bold text-[#2D2529] capitalize">
                 {undertone}
               </span>
               <span
@@ -125,25 +125,25 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
           <button
             type="button"
             onClick={onOpenPhotoModal}
-            className="w-full py-1.5 px-2 bg-[#4A6953] hover:bg-[#3D5644] text-white text-[11px] font-semibold rounded-lg shadow-xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
+            className="w-full py-1.5 px-2 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 hover:from-rose-600 hover:to-pink-600 text-white text-[11px] font-semibold rounded-lg shadow-xs shadow-rose-200/70 flex items-center justify-center gap-1.5 transition-all active:scale-95"
           >
-            <Camera className="w-3 h-3 text-[#EBF1EC]" />
-            <span>{userPhotoUrl ? 'Retake / New Pic' : 'Click / Add Pic'}</span>
+            <Camera className="w-3 h-3 text-white" />
+            <span>{userPhotoUrl ? 'Retake Pic' : 'Click / Add Pic'}</span>
           </button>
           
           <button
             type="button"
             onClick={onOpenEditProfile}
-            className="w-full py-1.5 px-2 bg-white hover:bg-stone-50 text-[#2D2825] text-[11px] font-semibold rounded-lg border border-stone-300 shadow-2xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
+            className="w-full py-1.5 px-2 bg-white hover:bg-rose-50/50 text-[#2D2529] text-[11px] font-semibold rounded-lg border border-rose-200/80 shadow-2xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
           >
-            <Sliders className="w-3 h-3 text-stone-500" />
+            <Sliders className="w-3 h-3 text-rose-500" />
             <span>Edit profile</span>
           </button>
         </div>
 
         {/* Privacy Note */}
         <div className="flex items-center justify-center gap-1 text-[10px] text-stone-500 mt-2.5">
-          <Lock className="w-2.5 h-2.5 text-emerald-700" />
+          <Lock className="w-2.5 h-2.5 text-rose-500" />
           <span>Your photo stays in this tab</span>
         </div>
 
@@ -152,8 +152,8 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
       {/* Budget Selector Box */}
       <div className="space-y-1 text-left">
         <div className="flex items-center justify-between">
-          <label className="text-[11px] font-bold text-[#2D2825]">
-            Your budget
+          <label className="text-[11px] font-bold text-[#2D2529]">
+            Your budget 💖
           </label>
           <span className="text-[10px] text-stone-500">per product</span>
         </div>
@@ -164,23 +164,23 @@ export const ComplexionCard: React.FC<ComplexionCardProps> = ({
             const val = e.target.value === 'any' ? null : Number(e.target.value);
             onBudgetChange(val);
           }}
-          className="w-full py-1.5 px-3 bg-white text-xs font-semibold text-[#2D2825] rounded-xl border border-stone-300 shadow-2xs focus:outline-[#4A6953] cursor-pointer"
+          className="w-full py-1.5 px-3 bg-white text-xs font-semibold text-[#2D2529] rounded-xl border border-rose-200/80 shadow-2xs focus:outline-rose-400 cursor-pointer"
         >
-          <option value={500}>Under ₹500</option>
-          <option value={1000}>Under ₹1,000</option>
+          <option value={500}>Under ₹500 (Budget Besties)</option>
+          <option value={1000}>Under ₹1,000 (Popular)</option>
           <option value={1500}>Under ₹1,500</option>
           <option value={2500}>Under ₹2,500</option>
-          <option value="any">No budget limit</option>
+          <option value="any">No budget limit (All Luxe)</option>
         </select>
       </div>
 
       {/* Philosophy Quote */}
       <div className="pt-1 text-left">
         <div className="flex items-start gap-1.5 text-stone-500">
-          <span className="text-[#4A6953] text-xs leading-none">✦</span>
+          <span className="text-rose-500 text-xs leading-none">✨</span>
           <p className="font-serif-italic text-xs text-stone-600 leading-snug">
             Your skin is unique.<br />
-            <span className="text-[#2D2825]">A shade is just the beginning.</span>
+            <span className="text-rose-950 font-medium">A shade is just the beginning. 🌸</span>
           </p>
         </div>
       </div>

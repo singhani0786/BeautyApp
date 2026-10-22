@@ -86,20 +86,20 @@ const SingleProductModalContent: React.FC<{
       <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-200/90 z-10 max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-200">
         
         {/* Top Header Bar */}
-        <div className="px-6 py-4 border-b border-stone-100 flex items-center justify-between bg-stone-50/70">
+        <div className="px-6 py-4 border-b border-rose-100 flex items-center justify-between bg-gradient-to-r from-rose-50/70 via-white to-pink-50/60">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 border border-rose-200">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 border border-rose-200/80 shadow-2xs">
               <Award className="w-3.5 h-3.5" />
-              {label}
+              {label} ✨
             </span>
-            <span className="text-xs text-stone-400 font-medium hidden sm:inline">
-              Selected AI Shade Formulation
+            <span className="text-xs text-rose-900/50 font-medium hidden sm:inline">
+              Selected AI Shade Formulation 💖
             </span>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-200/60 transition-colors"
+            className="p-2 text-stone-400 hover:text-rose-600 rounded-full hover:bg-rose-50 transition-colors"
             title="Close modal"
           >
             <X className="w-5 h-5" />
@@ -397,9 +397,9 @@ const SingleProductModalContent: React.FC<{
                 return;
               }
             }}
-            className="flex-1 w-full py-3.5 px-6 rounded-xl bg-stone-900 hover:bg-rose-600 text-white font-bold text-sm shadow-lg shadow-stone-900/10 hover:shadow-rose-600/20 transition-all flex items-center justify-center gap-2 group cursor-pointer"
+            className="flex-1 w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500 hover:from-rose-700 hover:to-pink-700 text-white font-bold text-sm shadow-lg shadow-rose-200/80 hover:shadow-rose-300 transition-all flex items-center justify-center gap-2 group cursor-pointer active:scale-98"
           >
-            <span>Buy on {activeStore.name} — ₹{currentStorePrice.toLocaleString('en-IN')}</span>
+            <span>Buy on {activeStore.name} — ₹{currentStorePrice.toLocaleString('en-IN')} ✨</span>
             <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
