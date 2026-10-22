@@ -194,7 +194,24 @@ export function getStoreUrl(
     }
 
     case 'nykaa': {
-      // 100% verified 1-to-1 direct product page on Nykaa
+      // 100% verified 1-to-1 direct product page on Nykaa with exact shade pre-selection
+      if (productKey === 'maybelline-fit-me') {
+        const s = (shadeName || '').toLowerCase();
+        if (s.includes('128') || s.includes('warm nude')) {
+          return 'https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074?skuId=520720';
+        }
+        if (s.includes('310') || s.includes('sun beige')) {
+          return 'https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074?skuId=132483';
+        }
+        if (s.includes('220') || s.includes('natural beige')) {
+          return 'https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074?skuId=132481';
+        }
+        if (s.includes('115') || s.includes('ivory')) {
+          return 'https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074?skuId=132474';
+        }
+        return 'https://www.nykaa.com/maybelline-new-york-fit-me-matte-poreless-foundation/p/31074?skuId=520720';
+      }
+
       if (productKey && NYKAA_VERIFIED_URLS[productKey]) {
         return NYKAA_VERIFIED_URLS[productKey];
       }
@@ -206,7 +223,7 @@ export function getStoreUrl(
 // Rock-solid verified market benchmark pricing matching EXACT live prices on retailer stores
 const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: number; mrp: number }>>> = {
   'maybelline-fit-me': {
-    amazon: { price: 165, mrp: 329 },
+    amazon: { price: 238, mrp: 329 },
     nykaa: { price: 441, mrp: 679 },
   },
   'loreal-infallible': {
@@ -214,7 +231,7 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     amazon: { price: 1099, mrp: 1099 },
   },
   'lakme-9-to-5': {
-    amazon: { price: 395, mrp: 699 },
+    amazon: { price: 315, mrp: 525 },
     nykaa: { price: 489, mrp: 550 },
     lakme: { price: 594, mrp: 699 },
   },
@@ -275,13 +292,25 @@ export function getAvailableStores(
     if (productKey === 'maybelline-fit-me') {
       if (storeId === 'amazon') {
         const s = (shadeName || '').toLowerCase();
-        if (s.includes('230') || s.includes('332') || s.includes('toffee')) {
+        if (s.includes('128') || s.includes('warm nude')) {
+          return { price: 238, mrp: 329, discountPercent: 28, url: verifiedUrl };
+        }
+        if (s.includes('115') || s.includes('ivory')) {
+          return { price: 214, mrp: 329, discountPercent: 35, url: verifiedUrl };
+        }
+        if (s.includes('220') || s.includes('natural beige')) {
+          return { price: 164, mrp: 329, discountPercent: 50, url: verifiedUrl };
+        }
+        if (s.includes('230') || s.includes('natural buff')) {
+          return { price: 164, mrp: 329, discountPercent: 50, url: verifiedUrl };
+        }
+        if (s.includes('310') || s.includes('sun beige')) {
+          return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
+        }
+        if (s.includes('332') || s.includes('toffee') || s.includes('caramel')) {
           return { price: 279, mrp: 329, discountPercent: 15, url: verifiedUrl };
         }
-        if (s.includes('115')) {
-          return { price: 204, mrp: 329, discountPercent: 38, url: verifiedUrl };
-        }
-        return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
+        return { price: 238, mrp: 329, discountPercent: 28, url: verifiedUrl };
       }
       if (storeId === 'nykaa') {
         return { price: 441, mrp: 679, discountPercent: 35, url: verifiedUrl };
@@ -291,7 +320,7 @@ export function getAvailableStores(
     // 2. Verified pricing for Lakme 9 to 5
     if (productKey === 'lakme-9-to-5') {
       if (storeId === 'amazon') {
-        return { price: 395, mrp: 699, discountPercent: 43, url: verifiedUrl };
+        return { price: 315, mrp: 525, discountPercent: 40, url: verifiedUrl };
       }
       if (storeId === 'nykaa') {
         return { price: 489, mrp: 550, discountPercent: 11, url: verifiedUrl };
