@@ -231,7 +231,7 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
     amazon: { price: 1099, mrp: 1099 },
   },
   'lakme-9-to-5': {
-    amazon: { price: 285, mrp: 525 },
+    amazon: { price: 395, mrp: 699 },
     nykaa: { price: 489, mrp: 550 },
     lakme: { price: 594, mrp: 699 },
   },
@@ -305,7 +305,7 @@ export function getAvailableStores(
           return { price: 164, mrp: 329, discountPercent: 50, url: verifiedUrl };
         }
         if (s.includes('310') || s.includes('sun beige')) {
-          return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
+          return { price: 247, mrp: 329, discountPercent: 25, url: verifiedUrl };
         }
         if (s.includes('332') || s.includes('toffee') || s.includes('caramel')) {
           return { price: 279, mrp: 329, discountPercent: 15, url: verifiedUrl };
@@ -320,7 +320,7 @@ export function getAvailableStores(
     // 2. Verified pricing for Lakme 9 to 5
     if (productKey === 'lakme-9-to-5') {
       if (storeId === 'amazon') {
-        return { price: 285, mrp: 525, discountPercent: 46, url: verifiedUrl };
+        return { price: 395, mrp: 699, discountPercent: 43, url: verifiedUrl };
       }
       if (storeId === 'nykaa') {
         return { price: 489, mrp: 550, discountPercent: 11, url: verifiedUrl };
