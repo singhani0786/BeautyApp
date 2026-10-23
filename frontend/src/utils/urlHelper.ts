@@ -221,7 +221,7 @@ export function getStoreUrl(
 const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: number; mrp: number }>>> = {
   'maybelline-fit-me': {
     amazon: { price: 165, mrp: 329 },
-    nykaa: { price: 441, mrp: 679 },
+    nykaa: { price: 373, mrp: 649 },
   },
   'loreal-infallible': {
     nykaa: { price: 899, mrp: 1099 },
@@ -229,7 +229,7 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
   },
   'lakme-9-to-5': {
     amazon: { price: 395, mrp: 699 },
-    nykaa: { price: 489, mrp: 550 },
+    nykaa: { price: 489, mrp: 699 },
     lakme: { price: 594, mrp: 699 },
   },
   'swiss-beauty': {
@@ -238,15 +238,15 @@ const PRODUCT_STORE_PRICES: Record<string, Partial<Record<StoreId, { price: numb
   },
   'maybelline-age-rewind': {
     amazon: { price: 429, mrp: 749 },
-    nykaa: { price: 599, mrp: 799 },
+    nykaa: { price: 439, mrp: 799 },
   },
   'maybelline-creamy-matte': {
     amazon: { price: 181, mrp: 329 },
-    nykaa: { price: 247, mrp: 329 },
+    nykaa: { price: 181, mrp: 329 },
   },
   'maybelline-compact': {
     amazon: { price: 143, mrp: 259 },
-    nykaa: { price: 215, mrp: 239 },
+    nykaa: { price: 191, mrp: 239 },
   },
   'maybelline-blush': {
     amazon: { price: 450, mrp: 450 },
@@ -310,7 +310,7 @@ export function getAvailableStores(
         return { price: 165, mrp: 329, discountPercent: 50, url: verifiedUrl };
       }
       if (storeId === 'nykaa') {
-        return { price: 441, mrp: 679, discountPercent: 35, url: verifiedUrl };
+        return { price: 373, mrp: 649, discountPercent: 42, url: verifiedUrl };
       }
     }
 
